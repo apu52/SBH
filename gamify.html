@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>EduVersity</title>
+
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: #090707;
+        color: rgb(18, 113, 196);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+
+    }
+
+    .card {
+        position: relative;
+        background-color: white;
+        width: 400px;
+        height: 500px;
+        margin: 0 auto;
+    }
+
+    .card .content {
+        widows: 400px;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+
+    .card .sliderText {
+        background-color: #5ace5e;
+        position: relative;
+        width: 400px;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .card .content a {
+        display: inline-block;
+        margin: 10px 0 0;
+        padding: 10px 20px;
+        text-decoration: none;
+        border: 2px solid #262626;
+        color: #262626;
+        font-weight: 900;
+        border-radius: 5px;
+        
+    }
+    .card .content a:hover{
+        display: inline-block;
+        margin: 10px 0 0;
+        padding: 10px 20px;
+        text-decoration: none;
+        border: 2px solid #f1eaea;
+        color: #f3e6e6;
+        font-weight: 900;
+        border-radius: 5px;
+        background-color: #000000;
+    }
+    .card .content p{
+        font-size: 12px;
+        color: #584e4e;
+    }
+    
+    .swiper {
+      width: 400px;
+      height: 500px;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      font-size: 16px;
+      /* font-weight: bold; */
+      color: #000000;
+    }
+
+    #froggy{
+        background-image: url("https://www.giantbomb.com/a/uploads/scale_medium/87/878890/3318923-flexbox-froggy.png");
+        /* background-position: center;
+         */
+         background-size: cover;
+    }
+   
+</style>
+
+<body>
+    <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"> <div class="card">
+        <div class="sliderText" id="froggy">
+            <!-- <img src="https://www.giantbomb.com/a/uploads/scale_medium/87/878890/3318923-flexbox-froggy.png" alt="Flex Froggy"> -->
+            
+        </div>
+        <div class="content">
+            <h2>Flexbox Froggy</h2>
+            <p>Flexbox Froggy is a fun and interactive game designed to help you learn and practice CSS Flexbox layout. In this game, you are presented with a series of challenges where you need to arrange a group of frogs on lily pads using Flexbox properties.</p>
+            <a href="https://flexboxfroggy.com/" target="_blank">Click Here</a>
+        </div>
+    </div></div>
+      <div class="swiper-slide"> <div class="card">
+        <div class="sliderText">
+            <h3>Slide 2</h3>
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa nam tempore possimus in quos
+                magni, atque cum tempora illo non nihil asperiores totam? Molestias, doloremque.</p>
+            <a href="#">Click Here</a>
+        </div>
+    </div></div>
+      <div class="swiper-slide"> <div class="card">
+        <div class="sliderText">
+            <h3>Slide 3</h3>
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa nam tempore possimus in quos
+                magni, atque cum tempora illo non nihil asperiores totam? Molestias, doloremque.</p>
+            <a href="#">Click Here</a>
+        </div>
+    </div></div>
+      <div class="swiper-slide"> <div class="card">
+        <div class="sliderText">
+            <h3>Slide 4</h3>
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa nam tempore possimus in quos
+                magni, atque cum tempora illo non nihil asperiores totam? Molestias, doloremque.</p>
+            <a href="#">Click Here</a>
+        </div>
+    </div></div>
+      <div class="swiper-slide"> <div class="card">
+        <div class="sliderText">
+            <h3>Slide 5</h3>
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa nam tempore possimus in quos
+                magni, atque cum tempora illo non nihil asperiores totam? Molestias, doloremque.</p>
+            <a href="#">Click Here</a>
+        </div>
+    </div></div>
+      <div class="swiper-slide"> <div class="card">
+        <div class="sliderText">
+            <h3>Slide 7</h3>
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa nam tempore possimus in quos
+                magni, atque cum tempora illo non nihil asperiores totam? Molestias, doloremque.</p>
+            <a href="#">Click Here</a>
+        </div>
+    </div></div>
+      <div class="swiper-slide"> <div class="card">
+        <div class="sliderText">
+            <h3>Slide 8</h3>
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa nam tempore possimus in quos
+                magni, atque cum tempora illo non nihil asperiores totam? Molestias, doloremque.</p>
+            <a href="#">Click Here</a>
+        </div>
+    </div></div>
+      <div class="swiper-slide"> <div class="card">
+        <div class="sliderText">
+            <h3>Slide 9</h3>
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa nam tempore possimus in quos
+                magni, atque cum tempora illo non nihil asperiores totam? Molestias, doloremque.</p>
+            <a href="#">Click Here</a>
+        </div>
+    </div></div>
+      <div class="swiper-slide"> <div class="card">
+        <div class="sliderText">
+            <h3>Slide 10</h3>
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa nam tempore possimus in quos
+                magni, atque cum tempora illo non nihil asperiores totam? Molestias, doloremque.</p>
+            <a href="#">Click Here</a>
+        </div>
+    </div></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "cards",
+      grabCursor: true,
+    });
+  </script>
+
+</body>
+
+</html>
+
+
+<!-- <div class="card">
+    <div class="sliderText">
+        <h3>Slide 1</h3>
+    </div>
+    <div class="content">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa nam tempore possimus in quos
+            magni, atque cum tempora illo non nihil asperiores totam? Molestias, doloremque.</p>
+        <a href="#">Click Here</a>
+    </div>
+</div> -->
