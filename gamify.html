@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>EduVersity</title>
+
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: #d0b0bf;
+        color: rgb(18, 113, 196);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+
+    }
+    #heading-1{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 36px;
+        padding: 0;margin: 0;
+        color: #000000;
+    }
+    #heading-2{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 28px;
+        padding: 0;
+        margin-bottom: 10px;
+        color: #000000;
+    }
+
+    .card {
+        position: relative;
+        background-color: rgb(228, 248, 228);
+        width: 400px;
+        height: 500px;
+        margin: 0 auto;
+
+    }
+
+    .card .content {
+        widows: 400px;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+
+    .card .sliderText {
+        background-color: #5ace5e;
+        position: relative;
+        width: 400px;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .card .content a {
+        display: inline-block;
+        margin: 10px 0 0;
+        padding: 10px 20px;
+        text-decoration: none;
+        border: 2px solid #262626;
+        color: #262626;
+        font-weight: 900;
+        border-radius: 5px;
+
+    }
+
+    .card .content a:hover {
+        display: inline-block;
+        margin: 10px 0 0;
+        padding: 10px 20px;
+        text-decoration: none;
+        border: 2px solid #f1eaea;
+        color: #f3e6e6;
+        font-weight: 900;
+        border-radius: 5px;
+        background-color: #000000;
+    }
+
+    .card .content p {
+        font-size: 12px;
+        color: #584e4e;
+    }
+
+    .swiper {
+        width: 400px;
+        height: 500px;
+    }
+
+    .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 18px;
+        font-size: 16px;
+        /* font-weight: bold; */
+        color: #000000;
+    }
+
+    #froggy {
+        background-image: url("https://www.giantbomb.com/a/uploads/scale_medium/87/878890/3318923-flexbox-froggy.png");
+        /* background-position: center;
+         */
+        background-size: cover;
+        transition: transform 0.5s;
+    }
+
+    #scattegories {
+        background-image: url("https://www.sayvillelibrary.org/sites/default/files/2020-11/kindness_3.jpg");
+        background-size: cover;
+        transition: transform 0.5s;
+    }
+
+    #scribble {
+        background-image: url("https://athletesforkids.org/wp-content/uploads/2020/04/Skribble-image2.png");
+        background-size: cover;
+        transition: transform 0.5s;
+    }
+
+    #typingclub {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf-3DK0iDLeP9WVS7_nARNKq49RbGZjI6oS72XgELQe5BHs4tgFJFFZ1k0h6wXn7jyeHg&usqp=CAU");
+        background-size: cover;
+        transition: transform 0.5s;
+
+    }
+
+    #prodigygame {
+        background-image: url("data:image/png;base64,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");
+        background-size: cover;
+        transition: transform 0.5s;
+    }
+
+    #blindfolded {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFi_KeYM0q9DpHBzxWU5Vaba3vj-9ZUwWCnkk_NQancw&s");
+        background-size: contain;
+        transition: transform 0.5s;
+    }
+
+    #audiogame {
+        background-image: url("https://audiogamehub.com/press/images/logo.png");
+        background-size: cover;
+        transition: transform 0.5s;
+    }
+
+    #gridgarden {
+        background-image: url("https://codepip.com/wp-content/plugins/codepip/images/thumbnails/grid-garden.png");
+        background-size: cover;
+        transition: transform 0.5s;
+    }
+
+    #flappycode {
+        background-image: url("https://www.codetheirdreams.com/wp-content/uploads/2016/09/Flappy-Game_coding-games.jpg");
+        background-size: cover;
+        transition: transform 0.5s;
+    }
+
+    #flappycode:hover{
+        transform: scale(1.1);
+    }
+    #gridgarden:hover{
+        transform: scale(1.1);
+    }
+    #audiogame:hover{
+        transform: scale(1.1);
+    }
+    #blindfolded:hover{
+        transform: scale(1.1);
+    }
+    #prodigygame:hover{
+        transform: scale(1.1);
+    }
+    #typingclub:hover{
+        transform: scale(1.1);
+    }
+    #scribble:hover{
+        transform: scale(1.1);
+    }
+    #scattegories:hover{
+        transform: scale(1.1);
+    }
+    #froggy:hover{
+        transform: scale(1.1);
+    }
+
+
+</style>
+
+<body>
+
+    <h2 id="heading-1">Gamify 🎉</h2>
+    <h1 id="heading-2">lets play and learn &#x1F603</h1>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="sliderText" id="froggy">
+                        <!-- <img src="https://www.giantbomb.com/a/uploads/scale_medium/87/878890/3318923-flexbox-froggy.png" alt="Flex Froggy"> -->
+
+                    </div>
+                    <div class="content">
+                        <h2>Flexbox Froggy😊 </h2>
+                        <p>Flexbox Froggy is a fun and interactive game designed to help you learn and practice CSS
+                            Flexbox layout. In this game, you are presented with a series of challenges where you need
+                            to arrange a group of frogs on lily pads using Flexbox properties.</p>
+                        <a href="https://flexboxfroggy.com/" target="_blank">Click Here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="sliderText" id="scattegories">
+
+                    </div>
+                    <div class="content">
+                        <h2>ScatterGories😃</h2>
+                        <p>Online version of the Categories game. The game variants are also known as Guggenheim or
+                            Scattergories. Play with friends and improve your vocabulary in any of the 40 supported
+                            languages.</p>
+                        <a href="https://scattergoriesonline.net/" target="_blank">Click Here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="sliderText" id="scribble">
+
+                    </div>
+                    <div class="content">
+                        <h2>Skribbl.io😄</h2>
+                        <p>skribbl.io is a free online multiplayer drawing and guessing pictionary game. A normal game
+                            consists of a few rounds, where every round a player has to draw their chosen word and
+                            others have to guess it to gain points!</p>
+
+                        <a href="https://skribblio.online/skribbl-games-io" target="_blank">Click Here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="sliderText" id="typingclub">
+
+                    </div>
+                    <div class="content">
+                        <h2>Typing Club😁</h2>
+                        <p>Typing Club is an online program that teaches students how to type on a QWERTY keyboard.
+                            Students learn where each letter is located on the keyboard and which finger they should use
+                            to type each letter.</p>
+                        <a href="https://www.typingclub.com/" target="_blank">Click Here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="sliderText" id="prodigygame">
+
+                    </div>
+                    <div class="content">
+                        <h2>Prodigy🥰</h2>
+                        <p>Prodigy is an online, self-paced mathematics game for students in Grades 1 to 8. The concept
+                            of the game is centered around a mythical fantasy world, where students are challenged to
+                            conquer quests in order to defeat the evil Puppet Master.</p>
+                        <a href="https://sso.prodigygame.com/" target="_blank">Click Here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="sliderText" id="blindfolded">
+
+                    </div>
+                    <div class="content">
+                        <h2>Blind Fold Games🤩</h2>
+                        <p>Nominate someone to be blindfolded. The "blind man" counts to five, while the other players
+                            spread out. The blind man must feel their way around the room, finding the other players and
+                            identifying them</p>
+
+                        <a href="https://gamesfortheblind.org/" target="_blank">Click Here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="sliderText" id="audiogame">
+
+                    </div>
+                    <div class="content">
+                        <h2>Audio Game Hub😎</h2>
+                        <p>Audio Game Hub is a set of experimental arcade audiogames that use audio as their primary
+                            interface – making them accessible for both sighted and non-sighted users.</p>
+                        <a href="https://audiogamehub.com/games/" target="_blank">Click Here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="sliderText" id="gridgarden">
+
+                    </div>
+                    <div class="content">
+                        <h2>Grid Garden🤑</h2>
+                        <p>How well can you tend to your carrot garden using CSS grid? In this game, you must water your
+                            carrot crops and poison the weeds by mastering CSS grid, a powerful new module that makes
+                            2-dimensional grid layouts a piece of cake.</p>
+                        <a href="https://cssgridgarden.com/" target="_blank">Click Here</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="sliderText" id="flappycode">
+
+                    </div>
+                    <div class="content">
+                        <h2>Flappy Code😛</h2>
+                        <p>If you want the bird to FLAP when you CLICK the mouse, you can do that by attaching the
+                            "FLAP" block to the appropriate event handler, and now in your game ...
+                        </p>
+                        <a href="https://studio.code.org/flappy/1" target="_blank">Click Here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "cards",
+            grabCursor: true,
+        });
+    </script>
+
+</body>
+
+</html>
