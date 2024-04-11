@@ -12,54 +12,54 @@ const timer = document.querySelector('.timer');
 // Questions & answers
 const quiz = [
     {
-        question: "Q. Javascript is an _______ language?",
-        choices: ["Object-oriented", "Object-based", "Procedural", "None of the above"],
-        answer: "Object-oriented"
+        question: "Q. What is the primary benefit of using cloud computing?",
+        choices: ["Increased hardware costs", "Reduced scalability", "Pay-per-use pricing model", "Limited accessibility"],
+        answer: "Pay-per-use pricing model"
     },
     {
-        question: "Q. Which of the following is not a valid way to declare a function in JavaScript?",
-        choices: ["function myFunction() {}", " let myFunction = function() {};", "myFunction: function() {}", "const myFunction = () => {};"],
-        answer: "myFunction: function() {}"
+        question: "Q. Which of the following is NOT a cloud computing service model?",
+        choices: ["Infrastructure as a Service (IaaS)", "Platform as a Service (PaaS)", "Software as a Service (SaaS)", "Database as a Service (DBaaS)"],
+        answer: "Database as a Service (DBaaS)"
     },
     {
-        question: "Q. Which of the following is not a JavaScript data type?",
-        choices: ["string", "boolean", "object", "float"],
-        answer: "float"
+        question: "Q. What is the name of the largest public cloud platform provider?",
+        choices: ["Google Cloud Platform (GCP)", "Amazon Web Services (AWS)", "Microsoft Azure", "IBM Cloud"],
+        answer: "Amazon Web Services (AWS)"
     },
     {
-        question: "Q. Which of the following methods can be used to display data in some form using Javascript?",
-        choices: ["document.write()", "console.log()", "window.alert()", "All of the above"],
-        answer: "All of the above"
+        question: "Q. Which cloud deployment model provides dedicated infrastructure for a single organization?",
+        choices: ["Public Cloud", "Private Cloud", "Hybrid Cloud", "Community Cloud"],
+        answer: "Private Cloud"
     },
     {
-        question: "Q.What keyword is used to check whether a given property is valid or not?",
-        choices: ["in", "is in", "exists", "lies"],
-        answer: "in"
+        question: "Q. What does SaaS stand for in cloud computing?",
+        choices: ["Software and as a Service", "System as a Service", "Storage as a Service", "Software as a Service"],
+        answer: "Software as a Service"
     },
     {
-        question: "Q.When an operator’s value is NULL, the typeof returned by the unary operator is:",
-        choices: ["Boolean", "undefined", "Object", "integer"],
-        answer: "Object"
+        question: "Q. Which cloud computing service model offers virtualized computing resources over the internet?",
+        choices: ["IaaS", "PaaS", "SaaS", "FaaS"],
+        answer: "IaaS"
     },
     {
-        question: "Q. The process in which an object or data structure is translated into a format suitable for transferral over a network, or storage is called?",
-        choices: ["Object Serialization", "Object Encapsulation", "Object Inheritence", "None of the above"],
-        answer: "Object Serialization"
+        question: "Q. What is the purpose of a content delivery network (CDN) in cloud computing?",
+        choices: ["To distribute content across multiple servers globally", "To encrypt sensitive data during transmission", "To manage user authentication and access control", "To automate deployment processes"],
+        answer: "To distribute content across multiple servers globally"
     },
     {
-        question: "Q.Which function is used to serialize an object into a JSON string in Javascript?",
-        choices: ["stringlify()", "perse()", "convert()", "None of the above"],
-        answer: "stringlify()"
+        question: "Q. Which of the following is NOT a characteristic of cloud computing?",
+        choices: ["On-demand self-service", "Resource pooling", "High initial capital investment", "Rapid elasticity"],
+        answer: "High initial capital investment"
     },
     {
-        question: "Q. Which of the following are closures in Javascript?",
-        choices: ["Variables", "Functions", "Objects", "All of the above"],
-        answer: "All of the above"
+        question: "Q. What is the term for the practice of using multiple cloud service providers to meet specific business needs?",
+        choices: ["Cloud collaboration", "Cloud federation", "Multi-cloud", "Cloud integration"],
+        answer: "Multi-cloud"
     },
     {
-        question: "Q. What is the purpose of the this keyword in JavaScript?",
-        choices: ["It refers to the current function.", "It refers to the current object.", "It refers to the parent object.", " It is used for comments."],
-        answer: "It refers to the current object."
+        question: "Q. Which security measure is essential for protecting data in the cloud?",
+        choices: ["Data sovereignty", "Data obfuscation", "Data encryption", "Data fragmentation"],
+        answer: "Data encryption"
     }
 ];
 
@@ -93,7 +93,7 @@ const showQuestions = () => {
         });
     }
 
-    if(currentQuestionIndex < quiz.length){
+    if (currentQuestionIndex < quiz.length) {
         startTimer();
     }
 }
@@ -125,8 +125,8 @@ const checkAnswer = () => {
 const showScore = () => {
     questionBox.textContent = "";
     choicesBox.textContent = "";
-    scoreCard.textContent = `You Scored ${score} out of ${quiz.length}!`;
-    displayAlert("You have completed this quiz!");
+    scoreCard.textContent = `You Scored ${score} out of ${quiz.length}!😁`;
+    displayAlert("You have completed this quiz!🥳");
     nextBtn.textContent = "Play Again";
     quizOver = true;
     timer.style.display = "none";
@@ -136,7 +136,7 @@ const showScore = () => {
 const displayAlert = (msg) => {
     alert.style.display = "block";
     alert.textContent = msg;
-    setTimeout(()=>{
+    setTimeout(() => {
         alert.style.display = "none";
     }, 2000);
 }
@@ -146,16 +146,16 @@ const startTimer = () => {
     clearInterval(timerID); // Check for any exist timers
     timer.textContent = timeLeft;
 
-    const countDown = ()=>{
+    const countDown = () => {
         timeLeft--;
         timer.textContent = timeLeft;
-        if(timeLeft === 0){
+        if (timeLeft === 0) {
             const confirmUser = confirm("Time Up!!! Do you want to play the quiz again");
-            if(confirmUser){
+            if (confirmUser) {
                 timeLeft = 10;
                 startQuiz();
             }
-            else{
+            else {
                 startBtn.style.display = "block";
                 container.style.display = "none";
                 return;
@@ -166,14 +166,14 @@ const startTimer = () => {
 }
 
 // Function to Stop Timer
-const stopTimer = () =>{
+const stopTimer = () => {
     clearInterval(timerID);
 }
 
 // Function to shuffle question
-const shuffleQuestions = () =>{
-    for(let i=quiz.length-1; i>0; i--){
-        const j = Math.floor(Math.random() * (i+1));
+const shuffleQuestions = () => {
+    for (let i = quiz.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
         [quiz[i], quiz[j]] = [quiz[j], quiz[i]];
     }
     currentQuestionIndex = 0;
@@ -181,14 +181,14 @@ const shuffleQuestions = () =>{
 }
 
 // Function to Start Quiz
-const startQuiz = () =>{
+const startQuiz = () => {
     timeLeft = 10;
     timer.style.display = "flex";
     shuffleQuestions();
 }
 
 // Adding Event Listener to Start Button
-startBtn.addEventListener('click', ()=>{
+startBtn.addEventListener('click', () => {
     startBtn.style.display = "none";
     container.style.display = "block";
     startQuiz();
