@@ -8,7 +8,8 @@
 body {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to right bottom, #b61cca, #d6b80a);
+    background: url("https://img.freepik.com/free-photo/person-using-laptop_53876-20652.jpg?t=st=1712832211~exp=1712835811~hmac=ccf779b85c834c439edfca0484ceaa732183cbd05b250c44800c701a0557683b&w=900");
+    background-size: cover;
     color: #fff;
     display: grid;
     place-items: center;
@@ -25,8 +26,7 @@ body {
 .container h1 {
     font-size: 36px;
     margin-bottom: 40px;
-    text-decoration: underline;
-    text-underline-offset: 8px;
+    text-decoration: none;
 }
 
 .container .question {

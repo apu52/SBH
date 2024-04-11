@@ -12,56 +12,57 @@ const timer = document.querySelector('.timer');
 // Questions & answers
 const quiz = [
     {
-        question: "Q. Javascript is an _______ language?",
-        choices: ["Object-oriented", "Object-based", "Procedural", "None of the above"],
-        answer: "Object-oriented"
-    },
-    {
-        question: "Q. Which of the following is not a valid way to declare a function in JavaScript?",
-        choices: ["function myFunction() {}", " let myFunction = function() {};", "myFunction: function() {}", "const myFunction = () => {};"],
-        answer: "myFunction: function() {}"
-    },
-    {
-        question: "Q. Which of the following is not a JavaScript data type?",
-        choices: ["string", "boolean", "object", "float"],
-        answer: "float"
-    },
-    {
-        question: "Q. Which of the following methods can be used to display data in some form using Javascript?",
-        choices: ["document.write()", "console.log()", "window.alert()", "All of the above"],
+        question: "Q. What is the primary goal of digital marketing?",
+        choices: ["Increasing brand awareness", "Generating leads", "Driving website traffic", "All of the above"],
         answer: "All of the above"
     },
     {
-        question: "Q.What keyword is used to check whether a given property is valid or not?",
-        choices: ["in", "is in", "exists", "lies"],
-        answer: "in"
+        question: "Q. Which of the following is NOT a common digital marketing channel?",
+        choices: ["Social media marketing", "Email marketing", "Television advertising", "Search engine optimization (SEO)"],
+        answer: "Television advertising"
     },
     {
-        question: "Q.When an operator’s value is NULL, the typeof returned by the unary operator is:",
-        choices: ["Boolean", "undefined", "Object", "integer"],
-        answer: "Object"
+        question: "Q. What is the term for the process of optimizing a website to rank higher in search engine results?",
+        choices: ["Pay-per-click (PPC)", "Search engine optimization (SEO)", "Cost-per-click (CPC)", "Search engine marketing (SEM)"],
+        answer: "Search engine optimization (SEO)"
     },
     {
-        question: "Q. The process in which an object or data structure is translated into a format suitable for transferral over a network, or storage is called?",
-        choices: ["Object Serialization", "Object Encapsulation", "Object Inheritence", "None of the above"],
-        answer: "Object Serialization"
+        question: "Q. Which social media platform is best suited for professional networking and B2B marketing?",
+        choices: ["Facebook", "Instagram", "LinkedIn", "Twitter"],
+        answer: "LinkedIn"
     },
     {
-        question: "Q.Which function is used to serialize an object into a JSON string in Javascript?",
-        choices: ["stringlify()", "perse()", "convert()", "None of the above"],
-        answer: "stringlify()"
+        question: "Q. What is the purpose of A/B testing in digital marketing?",
+        choices: ["To compare the effectiveness of different marketing channels", "To analyze website traffic patterns", "To test variations of a marketing asset to determine which performs better", "To track conversion rates"],
+        answer: "To test variations of a marketing asset to determine which performs better"
     },
     {
-        question: "Q. Which of the following are closures in Javascript?",
-        choices: ["Variables", "Functions", "Objects", "All of the above"],
-        answer: "All of the above"
+        question: "Q. What is the term for the practice of sending promotional messages to a group of email subscribers?",
+        choices: ["Cold calling", "Direct mail marketing", "Email marketing", "Content marketing"],
+        answer: "Email marketing"
     },
     {
-        question: "Q. What is the purpose of the this keyword in JavaScript?",
-        choices: ["It refers to the current function.", "It refers to the current object.", "It refers to the parent object.", " It is used for comments."],
-        answer: "It refers to the current object."
+        question: "Q. Which metric measures the percentage of website visitors who take a desired action, such as making a purchase or filling out a form?",
+        choices: ["Click-through rate (CTR)", "Conversion rate", "Bounce rate", "Impressions"],
+        answer: "Conversion rate"
+    },
+    {
+        question: "Q. What is the purpose of a call-to-action (CTA) in digital marketing?",
+        choices: ["To provide contact information for the business", "To encourage users to take a specific action, such as making a purchase or signing up for a newsletter", "To share interesting content with followers", "To drive organic traffic to a website"],
+        answer: "To encourage users to take a specific action, such as making a purchase or signing up for a newsletter"
+    },
+    {
+        question: "Q. Which advertising model charges advertisers based on the number of times their ad is clicked?",
+        choices: ["Cost-per-acquisition (CPA)", "Cost-per-thousand (CPM)", "Cost-per-click (CPC)", "Cost-per-view (CPV)"],
+        answer: "Cost-per-click (CPC)"
+    },
+    {
+        question: "Q. What is the term for the process of tailoring marketing efforts to a specific group of consumers based on demographics, interests, or behavior?",
+        choices: ["Targeting", "Segmentation", "Personalization", "Customization"],
+        answer: "Segmentation"
     }
 ];
+
 
 // Making Variables
 let currentQuestionIndex = 0;
