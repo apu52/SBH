@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <div class="contact">
+                <div class="first-text"onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Let's get in touch</div>
+                <img src="logo-img.png" alt="" class="image">
+                <div class="social-links">
+                    <span class="second-text" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Connect with us:</span>
+                    <ul class="social-media">
+                        <li><a href="#"><i class='bx bxl-facebook-circle'></i></a></li>
+                        <li><a href="#"></a><i class='bx bxl-instagram'  ></i></li>
+                        <li><a href="#"></a><i class='bx bxl-twitter'  ></i></li>
+                        <li><a href="#"></a><i class='bx bxl-linkedin-square' ></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="submit-form">
+                <h4 class="third-text"onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Contact us</h4>
+                <form action="#">
+                    <div class="input-box">
+                      <input type="text" class="input" />
+                      <label for="">Name</label>
+                    </div>
+                    <div class="input-box">
+                      <input type="email" class="input" required />
+                      <label for="">Email</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="tel" class="input" required />
+                        <label for="">Phone</label>
+                    </div>
+                    <div class="input-box">
+                        <textarea class="input" reqired></textarea>
+                        <label for="">Message</label>
+                    </div>
+                    <div class="button">
+                      <input type="button" value="Send Now" class="btn"/>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let utterance = new SpeechSynthesisUtterance();
+        let synth = window.speechSynthesis;
+    
+        function speakText(element) {
+          utterance.text = element.innerText;
+          synth.speak(utterance);
+        }
+    
+        function stopSpeaking() {
+          synth.cancel();
+        }
+      </script>
+</body>
+</html>
