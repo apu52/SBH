@@ -12,54 +12,54 @@ const timer = document.querySelector('.timer');
 // Questions & answers
 const quiz = [
     {
-        question: "Q. Javascript is an _______ language?",
-        choices: ["Object-oriented", "Object-based", "Procedural", "None of the above"],
-        answer: "Object-oriented"
-    },
-    {
-        question: "Q. Which of the following is not a valid way to declare a function in JavaScript?",
-        choices: ["function myFunction() {}", " let myFunction = function() {};", "myFunction: function() {}", "const myFunction = () => {};"],
-        answer: "myFunction: function() {}"
-    },
-    {
-        question: "Q. Which of the following is not a JavaScript data type?",
-        choices: ["string", "boolean", "object", "float"],
-        answer: "float"
-    },
-    {
-        question: "Q. Which of the following methods can be used to display data in some form using Javascript?",
-        choices: ["document.write()", "console.log()", "window.alert()", "All of the above"],
+        question: "Q. What is a common method cybercriminals use to gain unauthorized access to a system?",
+        choices: ["Phishing", "Social engineering", "Distributed Denial of Service (DDoS) attacks", "All of the above"],
         answer: "All of the above"
     },
     {
-        question: "Q.What keyword is used to check whether a given property is valid or not?",
-        choices: ["in", "is in", "exists", "lies"],
-        answer: "in"
+        question: "Q. Which of the following is NOT an example of multi-factor authentication (MFA)?",
+        choices: ["Password", " Security questions", "One-time password (OTP)", "Fingerprints"],
+        answer: "Password"
     },
     {
-        question: "Q.When an operator’s value is NULL, the typeof returned by the unary operator is:",
-        choices: ["Boolean", "undefined", "Object", "integer"],
-        answer: "Object"
+        question: "Q. Which type of malware encrypts files on a victim's computer and demands payment for their release?",
+        choices: ["Trojan horse", "Ransomware", "Spyware", "Adware"],
+        answer: "Ransomware"
     },
     {
-        question: "Q. The process in which an object or data structure is translated into a format suitable for transferral over a network, or storage is called?",
-        choices: ["Object Serialization", "Object Encapsulation", "Object Inheritence", "None of the above"],
-        answer: "Object Serialization"
+        question: "Q. What does VPN stand for?",
+        choices: ["Virtual Personal Network", "Very Protected Network", "Virtual Private Network", "Visualized Personal Network"],
+        answer: "Virtual Private Network"
     },
     {
-        question: "Q.Which function is used to serialize an object into a JSON string in Javascript?",
-        choices: ["stringlify()", "perse()", "convert()", "None of the above"],
-        answer: "stringlify()"
+        question: "Q. Which of the following is a secure method for storing passwords?",
+        choices: ["Writing them down on a sticky note", "Saving them in an unencrypted text file", "Using a password manager", " Memorizing them all"],
+        answer: "Using a password manager"
     },
     {
-        question: "Q. Which of the following are closures in Javascript?",
-        choices: ["Variables", "Functions", "Objects", "All of the above"],
-        answer: "All of the above"
+        question: "Q. What is the purpose of a firewall in cybersecurity?",
+        choices: ["To prevent unauthorized access to or from a private network", "To encrypt data transmissions", "To detect and remove viruses", "To track user activityinteger"],
+        answer: "To prevent unauthorized access to or from a private network"
     },
     {
-        question: "Q. What is the purpose of the this keyword in JavaScript?",
-        choices: ["It refers to the current function.", "It refers to the current object.", "It refers to the parent object.", " It is used for comments."],
-        answer: "It refers to the current object."
+        question: "Q. What is the primary goal of a penetration test?",
+        choices: ["To simulate a cyberattack and identify vulnerabilities in a system", "To encrypt sensitive data", "To monitor network traffic", "To create secure passwords"],
+        answer: "To simulate a cyberattack and identify vulnerabilities in a system"                                                                              
+    },
+    {
+        question: "Q. Which encryption algorithm is commonly used for secure communication over the internet?",
+        choices: ["AES (Advanced Encryption Standard)", "RSA (Rivest-Shamir-Adleman)", "MD5 (Message Digest Algorithm 5)", " DES (Data Encryption Standard)"],
+        answer: "AES (Advanced Encryption Standard)"
+    },
+    {
+        question: "Q. What is the term for the practice of tricking individuals into revealing sensitive information or performing actions they wouldn't normally do?",
+        choices: ["Hacking", "Social Engineering", "Phishing", "Spoofing"],
+        answer: "Social Engineering"
+    },
+    {
+        question: "Q. Which of the following is NOT a recommended best practice for securing a wireless network?",
+        choices: [" Enabling WPA2 encryption", "Disabling SSID broadcasting", "Using a default administrator password", "  Implementing MAC address filtering"],
+        answer: "Using a default administrator password"
     }
 ];
 
@@ -125,7 +125,7 @@ const checkAnswer = () => {
 const showScore = () => {
     questionBox.textContent = "";
     choicesBox.textContent = "";
-    scoreCard.textContent = `You Scored ${score} out of ${quiz.length}!`;
+    scoreCard.textContent = `You Scored ${score} out of ${quiz.length}!😊`;
     displayAlert("You have completed this quiz!");
     nextBtn.textContent = "Play Again";
     quizOver = true;
@@ -150,7 +150,7 @@ const startTimer = () => {
         timeLeft--;
         timer.textContent = timeLeft;
         if(timeLeft === 0){
-            const confirmUser = confirm("Time Up!!! Do you want to play the quiz again");
+            const confirmUser = confirm("Time Up😅!!! Do you want to play the quiz again");
             if(confirmUser){
                 timeLeft = 10;
                 startQuiz();
