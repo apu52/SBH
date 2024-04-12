@@ -8,13 +8,33 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 </head>
 <body>
+
+  
+    <!-- Accessibility Mode Button -->
+    <div class="accessibility-button hover-speak" onclick="toggleAccessibilityMenu()"
+        onmouseover="speakText('click here to select accessibility mode')" onmouseleave="stopSpeaking()">
+        <div class="accessibility-icon">
+
+        </div>
+    </div>
+
+    <!-- Accessibility Menu -->
+    <div class="accessibility-menu" id="accessibilityMenu">
+        <ul>
+            <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
+                    onmouseover="speakText('click here to change the screen reader mode')"
+                    onmouseleave="stopSpeaking()">Enable Screen Reader</button></li>
+            <li><button onclick="toggleKeyboardNavigation()">Enable Keyboard Navigation</button></li>
+        </ul>
+    </div>
+
     <div class="container">
         <div class="item">
             <div class="contact">
-                <div class="first-text"onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Let's get in touch</div>
-                <img src="logo-img.png" alt="" class="image">
+                <div class="first-text"onmouseover="speakText('Lets get in touch')" onmouseleave="stopSpeaking()">Let's get in touch</div>
+                <img src="logo-img.png" alt="contact us" class="image">
                 <div class="social-links">
-                    <span class="second-text" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Connect with us:</span>
+                    <span class="second-text" onmouseover="speakText('Connect with us')" onmouseleave="stopSpeaking()">Connect with us:</span>
                     <ul class="social-media">
                         <li><a href="#"><i class='bx bxl-facebook-circle'></i></a></li>
                         <li><a href="#"></a><i class='bx bxl-instagram'  ></i></li>
@@ -24,22 +44,22 @@
                 </div>
             </div>
             <div class="submit-form">
-                <h4 class="third-text"onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Contact us</h4>
+                <h4 class="third-text"onmouseover="speakText('contact us')" onmouseleave="stopSpeaking()">Contact us</h4>
                 <form action="#">
                     <div class="input-box">
-                      <input type="text" class="input" />
+                      <input type="text" class="input"  aria-label="Enter your username" id="name" />
                       <label for="">Name</label>
                     </div>
                     <div class="input-box">
-                      <input type="email" class="input" required />
+                      <input type="email" class="input" required aria-label="enter your email" id="email"/>
                       <label for="">Email</label>
                     </div>
                     <div class="input-box">
-                        <input type="tel" class="input" required />
+                        <input type="tel" class="input" required aria-label="enter your phone number" id="phone"/>
                         <label for="">Phone</label>
                     </div>
                     <div class="input-box">
-                        <textarea class="input" reqired></textarea>
+                        <textarea class="input" reqired aria-label="enter your massage for us" id="msg"></textarea>
                         <label for="">Message</label>
                     </div>
                     <div class="button">
@@ -51,18 +71,66 @@
     </div>
 
 
-    <script>
-        let utterance = new SpeechSynthesisUtterance();
-        let synth = window.speechSynthesis;
-    
-        function speakText(element) {
-          utterance.text = element.innerText;
-          synth.speak(utterance);
+     <script>
+ 
+        var screenReaderEnabled = false;
+
+        function toggleAccessibilityMenu() {
+            var menu = document.getElementById("accessibilityMenu");
+            menu.classList.toggle("active");
         }
-    
+
+        function toggleScreenReader() {
+            screenReaderEnabled = !screenReaderEnabled;
+            var menuButton = document.getElementById("screenReaderButton");
+            if (screenReaderEnabled) {
+                speakText("Screen reader enabled");
+                menuButton.innerText = "Disable Screen Reader";
+                document.body.classList.add("screen-reader-enabled");
+                setTimeout(toggleAccessibilityMenu, 5000);
+            } else {
+
+                speakText("Screen reader disabled");
+                menuButton.innerText = "Enable Screen Reader";
+                document.body.classList.remove("screen-reader-enabled");
+                toggleAccessibilityMenu();
+            }
+            // toggleAccessibilityMenu();
+        }
+
+        function speakText(text) {
+            if (screenReaderEnabled) {
+                var utterance = new SpeechSynthesisUtterance(text);
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
         function stopSpeaking() {
-          synth.cancel();
+            window.speechSynthesis.cancel();
         }
-      </script>
+
+        const name = document.getElementById('name');
+    name.addEventListener('mouseover', () => {
+      const labelText = name.getAttribute('aria-label');
+      speakText(labelText);
+    });
+    const email = document.getElementById('email');
+    email.addEventListener('mouseover', () => {
+      const labelText = email.getAttribute('aria-label');
+      speakText(labelText);
+    });
+    const phone = document.getElementById('phone');
+    phone.addEventListener('mouseover', () => {
+      const labelText =phone.getAttribute('aria-label');
+      speakText(labelText);
+    });
+    const Message = document.getElementById('msg');
+    Message.addEventListener('mouseover', () => {
+      const labelText = Message.getAttribute('aria-label');
+      speakText(labelText);
+    });
+
+    </script>
+ 
 </body>
 </html>
