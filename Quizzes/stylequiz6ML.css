@@ -8,7 +8,9 @@
 body {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to right bottom, #b61cca, #d6b80a);
+    background: url("/Images/Man\ and\ robot\ with\ computers\ sitting\ together\ in\ workplace.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #fff;
     display: grid;
     place-items: center;
@@ -25,13 +27,21 @@ body {
 .container h1 {
     font-size: 36px;
     margin-bottom: 40px;
-    text-decoration: underline;
-    text-underline-offset: 8px;
+    text-decoration: none;
+    color: black;
 }
-
+.inner-container{
+    background-color: white;
+    color: black;
+    padding: 10px;
+    opacity: 0.9;
+    border: 2px solid black;
+    border-radius: 10px;
+}
 .container .question {
     font-size: 26px;
     margin-top: 20px;
+    font-weight: 900;
 }
 
 .container .choices {
@@ -51,18 +61,19 @@ body {
     opacity: 0;
     transform: translateY(50%);
     animation: fade-in 0.5s ease forwards;
+    border: 2px solid black;
 }
 
-.choice:hover{
-    background-color: #ddd;
+.choice:hover {
+    background-color: #eca6a6;
 }
 
-.choice.selected{
-    background-color: #d63710;
-    color: #fff;
+.choice.selected {
+    background-color: #6edcf7;
+    color: black;
 }
 
-.btn{
+.btn {
     width: 60%;
     font-size: 20px;
     font-weight: 600;
@@ -75,17 +86,20 @@ body {
     cursor: pointer;
 }
 
-.btn:hover{
-    background-color: #f16608;
+.btn:hover {
+    background-color: #1fabf0;
+    color: black;
+    border: 2px solid black;
 }
 
-.scoreCard{
+.scoreCard {
     font-size: 24px;
     margin-top: 20px;
 }
 
-.alert{
-    background-color: #046846;
+.alert {
+    background-color: #658ef5;
+    color: black;
     border-radius: 5px;
     width: 100%;
     padding: 12px;
@@ -94,21 +108,135 @@ body {
     display: none;
 }
 
-.startBtn{
-    width: 15%;
-    padding-block: 20px;
-    text-align: center;
+.button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+    color: #0f1923;
+    cursor: pointer;
+    position: relative;
+    padding: 8px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all .15s ease;
+    width: 14vw;
 }
 
-.timer{
+.button::before,
+.button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: calc(50% - 5px);
+    border: 2px solid #7D8082;
+    transition: all .15s ease;
+}
+
+.button::before {
+    top: 0;
+    border-bottom-width: 0;
+}
+
+.button::after {
+    bottom: 0;
+    border-top-width: 0;
+}
+
+.button:active,
+.button:focus {
+    outline: none;
+}
+
+.button:active::before,
+.button:active::after {
+    right: 3px;
+    left: 3px;
+}
+
+.button:active::before {
+    top: 3px;
+}
+
+.button:active::after {
+    bottom: 3px;
+}
+
+.button_lg {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #0f1923;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.button_lg::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background-color: #0f1923;
+}
+
+.button_lg::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 4px;
+    height: 4px;
+    background-color: #0f1923;
+    transition: all .2s ease;
+}
+
+.button_sl {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: -1px;
+    left: -8px;
+    width: 0;
+    background-color: #ff4655;
+    transform: skew(-15deg);
+    transition: all .2s ease;
+}
+
+.button_text {
+    position: relative;
+}
+
+.button:hover {
+    color: #0f1923;
+}
+
+.button:hover .button_sl {
+    width: calc(100% + 15px);
+}
+
+.button:hover .button_lg::after {
+    background-color: #fff;
+}
+
+.timer {
     position: absolute;
     top: 20px;
     right: 20px;
     width: 72px;
     height: 72px;
     border-radius: 50%;
-    background-color: #08203e;
-    border: 2px solid #f00;
+    background-color: rgb(60, 156, 239);
+    border: 3px solid black;
     font-size: 24px;
     font-weight: 600;
     padding: 12px;
@@ -119,50 +247,54 @@ body {
 }
 
 /* Adding Animation to Timer */
-@keyframes pulse{
-    0%{
+@keyframes pulse {
+    0% {
         transform: scale(1);
     }
-    50%{
+
+    50% {
         transform: scale(1.2);
     }
-    100%{
+
+    100% {
         transform: scale(1);
     }
 }
 
 /* Adding Animation to choices */
-@keyframes fade-in{
-    0%{
+@keyframes fade-in {
+    0% {
         opacity: 0;
         transform: translateY(50%);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-@media screen and (max-width:900px){
+@media screen and (max-width:900px) {
     .container {
         width: 100%;
         margin-top: 50px;
     }
-    .container h1{
+
+    .container h1 {
         font-size: 24px;
     }
-    .container .question{
+
+    .container .question {
         font-size: 22px;
     }
 
-    .timer{
+    .timer {
         width: 50px;
         height: 50px;
         font-size: 20px;
     }
 
-    .startBtn{
+    .startBtn {
         width: 50%;
     }
 }
-

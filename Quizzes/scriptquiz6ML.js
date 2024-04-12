@@ -12,56 +12,57 @@ const timer = document.querySelector('.timer');
 // Questions & answers
 const quiz = [
     {
-        question: "Q. Javascript is an _______ language?",
-        choices: ["Object-oriented", "Object-based", "Procedural", "None of the above"],
-        answer: "Object-oriented"
+        question: "Q. What is the primary goal of supervised learning?",
+        choices: ["Clustering data points", "Predicting an output variable based on input data", "Finding patterns in unlabeled data", "Optimizing a reward function"],
+        answer: "Predicting an output variable based on input data"
     },
     {
-        question: "Q. Which of the following is not a valid way to declare a function in JavaScript?",
-        choices: ["function myFunction() {}", " let myFunction = function() {};", "myFunction: function() {}", "const myFunction = () => {};"],
-        answer: "myFunction: function() {}"
+        question: "Q. Which algorithm is commonly used for classification tasks in Machine Learning?",
+        choices: ["K-means clustering", "Linear regression", "Decision trees", "Gradient descent"],
+        answer: "Decision trees"
     },
     {
-        question: "Q. Which of the following is not a JavaScript data type?",
-        choices: ["string", "boolean", "object", "float"],
-        answer: "float"
+        question: "Q. What does the term 'overfitting' refer to in Machine Learning?",
+        choices: ["The model performs well on unseen data", "The model memorizes the training data but fails to generalize to new data", "The model underperforms due to lack of training", "The model converges to a local minimum"],
+        answer: "The model memorizes the training data but fails to generalize to new data"
     },
     {
-        question: "Q. Which of the following methods can be used to display data in some form using Javascript?",
-        choices: ["document.write()", "console.log()", "window.alert()", "All of the above"],
-        answer: "All of the above"
+        question: "Q. Which evaluation metric is commonly used for regression tasks?",
+        choices: ["Accuracy", "Precision", "Mean Squared Error (MSE)", "Recall"],
+        answer: "Mean Squared Error (MSE)"
     },
     {
-        question: "Q.What keyword is used to check whether a given property is valid or not?",
-        choices: ["in", "is in", "exists", "lies"],
-        answer: "in"
+        question: "Q. In unsupervised learning, what is the goal of dimensionality reduction techniques?",
+        choices: ["To remove noisy data from the dataset", "To reduce the number of features while preserving important information", "To cluster data points based on similarity", "To optimize model parameters"],
+        answer: "To reduce the number of features while preserving important information"
     },
     {
-        question: "Q.When an operator’s value is NULL, the typeof returned by the unary operator is:",
-        choices: ["Boolean", "undefined", "Object", "integer"],
-        answer: "Object"
+        question: "Q. Which of the following is an ensemble learning technique?",
+        choices: ["Logistic Regression", "Support Vector Machines (SVM)", "Random Forest", "K-nearest neighbors (KNN)"],
+        answer: "Random Forest"
     },
     {
-        question: "Q. The process in which an object or data structure is translated into a format suitable for transferral over a network, or storage is called?",
-        choices: ["Object Serialization", "Object Encapsulation", "Object Inheritence", "None of the above"],
-        answer: "Object Serialization"
+        question: "Q. What is the purpose of cross-validation in Machine Learning?",
+        choices: ["To train the model on multiple subsets of the data and evaluate its performance", "To visualize the decision boundaries of a classifier", "To select the optimal hyperparameters for the model", "To prevent overfitting by regularizing the model"],
+        answer: "To train the model on multiple subsets of the data and evaluate its performance"
     },
     {
-        question: "Q.Which function is used to serialize an object into a JSON string in Javascript?",
-        choices: ["stringlify()", "perse()", "convert()", "None of the above"],
-        answer: "stringlify()"
+        question: "Q. Which type of Machine Learning algorithm can automatically learn to perform a task without being explicitly programmed?",
+        choices: ["Supervised learning", "Unsupervised learning", "Reinforcement learning", "Semi-supervised learning"],
+        answer: "Reinforcement learning"
     },
     {
-        question: "Q. Which of the following are closures in Javascript?",
-        choices: ["Variables", "Functions", "Objects", "All of the above"],
-        answer: "All of the above"
+        question: "Q. What is the purpose of feature scaling in Machine Learning?",
+        choices: ["To remove outliers from the dataset", "To normalize the range of features to improve model convergence", "To increase the complexity of the model", "To reduce the dimensionality of the dataset"],
+        answer: "To normalize the range of features to improve model convergence"
     },
     {
-        question: "Q. What is the purpose of the this keyword in JavaScript?",
-        choices: ["It refers to the current function.", "It refers to the current object.", "It refers to the parent object.", " It is used for comments."],
-        answer: "It refers to the current object."
+        question: "Q. Which algorithm is commonly used for anomaly detection in Machine Learning?",
+        choices: ["Linear Discriminant Analysis (LDA)", "K-means clustering", "Isolation Forest", "AdaBoost"],
+        answer: "Isolation Forest"
     }
 ];
+
 
 // Making Variables
 let currentQuestionIndex = 0;
