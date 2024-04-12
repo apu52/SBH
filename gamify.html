@@ -213,25 +213,99 @@
     }
 
     .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+
+    .accessibility-button {
+        position: fixed;
+        bottom: 35px;
+        right: 35px;
+        width: 60px;
+        height: 60px;
+        /* background-color: #007bff;  */
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6O-gPv_x4ilQWYp-pyPaM-SkUUp32Kny_NIEqKZsWCw&s");
+        background-size: cover;
+        color: white;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .accessibility-menu {
+        position: fixed;
+        bottom: 80px;
+        right: 40px;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        padding: 10px;
+        display: none;
+        z-index: 999;
+    }
+
+    .accessibility-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .accessibility-menu li {
+        margin-bottom: 10px;
+    }
+
+    .accessibility-menu button {
+        background: none;
+        border: none;
+        padding: 0;
+        font: inherit;
+        color: #007bff;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .accessibility-menu button:hover {
+        color: #0056b3;
     }
 </style>
 
 <body>
 
-    <span>welcome to Gamify</span>
-
     <h2 id="heading-1" class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Gamify 🎉</h2>
-    <h1 id="heading-2" class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">&#x1F603 lets play and
+    <h1 id="heading-2" class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">&#x1F603 lets
+        play and
         learn &#x1F603</h1>
+
+
+    <!-- Accessibility Mode Button -->
+    <div class="accessibility-button" onclick="toggleAccessibilityMenu()">
+        <div class="accessibility-icon">
+
+        </div>
+    </div>
+
+    <!-- Accessibility Menu -->
+    <div class="accessibility-menu" id="accessibilityMenu">
+        <ul>
+            <li><button onclick="toggleScreenReader()">Screen Reader</button></li>
+            <li><button onclick="toggleKeyboardNavigation()">Keyboard Navigation</button></li>
+        </ul>
+    </div>
+
+
+
+
     <!-- Swiper -->
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
@@ -249,7 +323,8 @@
                             Flexbox layout. In this game, you are presented with a series of challenges where you need
                             to arrange a group of frogs on lily pads using Flexbox properties.</p>
                         <a href="https://flexboxfroggy.com/" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span class="visually-hidden">to play  flexboxfroggy</span> </a>
+                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
+                                class="visually-hidden">to play flexboxfroggy</span> </a>
                     </div>
                 </div>
             </div>
@@ -266,7 +341,8 @@
                             Scattergories. Play with friends and improve your vocabulary in any of the 40 supported
                             languages.</p>
                         <a href="https://scattergoriesonline.net/" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here  <span class="visually-hidden">to play  ScatterGories</span></a>
+                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
+                                class="visually-hidden">to play ScatterGories</span></a>
                     </div>
                 </div>
             </div>
@@ -284,7 +360,8 @@
                             others have to guess it to gain points!</p>
 
                         <a href="https://skribblio.online/skribbl-games-io" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here  <span class="visually-hidden">to play  skribbl.io </span></a>
+                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
+                                class="visually-hidden">to play skribbl.io </span></a>
                     </div>
                 </div>
             </div>
@@ -301,7 +378,8 @@
                             Students learn where each letter is located on the keyboard and which finger they should use
                             to type each letter.</p>
                         <a href="https://www.typingclub.com/" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here  <span class="visually-hidden">to play  typingclub</span> </a>
+                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
+                                class="visually-hidden">to play typingclub</span> </a>
                     </div>
                 </div>
             </div>
@@ -318,7 +396,8 @@
                             of the game is centered around a mythical fantasy world, where students are challenged to
                             conquer quests in order to defeat the evil Puppet Master.</p>
                         <a href="https://sso.prodigygame.com/" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here  <span class="visually-hidden">to play  prodigygame</span></a>
+                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
+                                class="visually-hidden">to play prodigygame</span></a>
                     </div>
                 </div>
             </div>
@@ -336,7 +415,8 @@
                             identifying them</p>
 
                         <a href="https://gamesfortheblind.org/" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here  <span class="visually-hidden">to play  blindfold games</span> </a>
+                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
+                                class="visually-hidden">to play blindfold games</span> </a>
                     </div>
                 </div>
             </div>
@@ -352,7 +432,8 @@
                             Hub is a set of experimental arcade audiogames that use audio as their primary
                             interface – making them accessible for both sighted and non-sighted users.</p>
                         <a href="https://audiogamehub.com/games/" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here    <span class="visually-hidden">to play  audio games</span></span></a>
+                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
+                                class="visually-hidden">to play audio games</span></span></a>
                     </div>
                 </div>
             </div>
@@ -369,7 +450,8 @@
                             carrot crops and poison the weeds by mastering CSS grid, a powerful new module that makes
                             2-dimensional grid layouts a piece of cake.</p>
                         <a href="https://cssgridgarden.com/" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here  <span class="visually-hidden">to play  grid garden</span></a>
+                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
+                                class="visually-hidden">to play grid garden</span></a>
                     </div>
                 </div>
             </div>
@@ -386,7 +468,8 @@
                             "FLAP" block to the appropriate event handler, and now in your game ...
                         </p>
                         <a href="https://studio.code.org/flappy/1" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here  <span class="visually-hidden">to play  flappycode</span></a>
+                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
+                                class="visually-hidden">to play flappycode</span></a>
                     </div>
                 </div>
             </div>
@@ -416,8 +499,27 @@
             synth.speak(utterance);
         }
 
+
+
         function stopSpeaking() {
             synth.cancel();
+        }
+    </script>
+
+    <script>
+        function toggleAccessibilityMenu() {
+            var menu = document.getElementById("accessibilityMenu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+
+        function toggleScreenReader() {
+            // Code to toggle screen reader mode
+            alert("Screen Reader Mode Toggled");
+        }
+
+        function toggleKeyboardNavigation() {
+            // Code to toggle keyboard navigation mode
+            alert("Keyboard Navigation Mode Toggled");
         }
     </script>
 
