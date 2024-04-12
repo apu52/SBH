@@ -166,6 +166,11 @@ textarea.input{
     font-weight: 500;
 }
 
+.btn:hover{
+    color:white;
+    background-color: #8ba0ea;
+}
+
 @media(max-width:850px){
     .item{
         grid-template-columns: 1fr;
