@@ -154,14 +154,20 @@ body {
 
 :focus-visible { outline-offset: 4px; }
 
-::-webkit-scrollbar { width: 12px; }
+/*=======Scroll Bar========*/
+::-webkit-scrollbar{
+  width: 10px;
+  background: var(--light-gray);
+}
 
-::-webkit-scrollbar-track { background-color: var(--cultured-1); }
+::-webkit-scrollbar-thumb{
+  background: var(--ultramarine-blue);
+  border-radius: 2em;
+}
 
-::-webkit-scrollbar-thumb { background-color: #077483(19, 93%, 102%); }
-
-::-webkit-scrollbar-thumb:hover { background-color: #77B0AA(0, 0%, 70%); }
-
+::-webkit-scrollbar-thumb:hover{
+  background: var(--old-lavender);
+}
 
 
 
