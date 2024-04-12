@@ -12,56 +12,57 @@ const timer = document.querySelector('.timer');
 // Questions & answers
 const quiz = [
     {
-        question: "Q. Javascript is an _______ language?",
-        choices: ["Object-oriented", "Object-based", "Procedural", "None of the above"],
-        answer: "Object-oriented"
+        question: "Q. If the ratio of boys to girls in a class is 3:2 and the number of boys is 24, what is the total number of students in the class?",
+        choices: ["30", "36", "40", "48"],
+        answer: "36"
     },
     {
-        question: "Q. Which of the following is not a valid way to declare a function in JavaScript?",
-        choices: ["function myFunction() {}", " let myFunction = function() {};", "myFunction: function() {}", "const myFunction = () => {};"],
-        answer: "myFunction: function() {}"
+        question: "Q. If the sum of two numbers is 35 and their difference is 5, what is the product of the two numbers?",
+        choices: ["144", "150", "160", "175"],
+        answer: "175"
     },
     {
-        question: "Q. Which of the following is not a JavaScript data type?",
-        choices: ["string", "boolean", "object", "float"],
-        answer: "float"
+        question: "Q. A car travels a distance of 400 km at a constant speed. If the speed of the car is increased by 10 km/hr, it would take 2 hours less to cover the same distance. What is the original speed of the car?",
+        choices: ["40 km/hr", "50 km/hr", "60 km/hr", "70 km/hr"],
+        answer: "60 km/hr"
     },
     {
-        question: "Q. Which of the following methods can be used to display data in some form using Javascript?",
-        choices: ["document.write()", "console.log()", "window.alert()", "All of the above"],
-        answer: "All of the above"
+        question: "Q. What is the least number which when divided by 5, 6, 7, and 8 leaves a remainder of 3 in each case?",
+        choices: ["113", "173", "203", "233"],
+        answer: "173"
     },
     {
-        question: "Q.What keyword is used to check whether a given property is valid or not?",
-        choices: ["in", "is in", "exists", "lies"],
-        answer: "in"
+        question: "Q. The ratio of the ages of A and B is 4:5. After 6 years, the ratio of their ages will be 6:7. What is A's age?",
+        choices: ["16 years", "18 years", "20 years", "22 years"],
+        answer: "20 years"
     },
     {
-        question: "Q.When an operator’s value is NULL, the typeof returned by the unary operator is:",
-        choices: ["Boolean", "undefined", "Object", "integer"],
-        answer: "Object"
+        question: "Q. What is the value of (6 + 3 ÷ 3) × 8 - 4?",
+        choices: ["20", "24", "26", "32"],
+        answer: "24"
     },
     {
-        question: "Q. The process in which an object or data structure is translated into a format suitable for transferral over a network, or storage is called?",
-        choices: ["Object Serialization", "Object Encapsulation", "Object Inheritence", "None of the above"],
-        answer: "Object Serialization"
+        question: "Q. If 20% of a number is 24, what is 30% of that number?",
+        choices: ["28", "32", "36", "40"],
+        answer: "36"
     },
     {
-        question: "Q.Which function is used to serialize an object into a JSON string in Javascript?",
-        choices: ["stringlify()", "perse()", "convert()", "None of the above"],
-        answer: "stringlify()"
+        question: "Q. The length of a rectangle is increased by 20% and its breadth is decreased by 10%. What is the change in its area?",
+        choices: ["8% increase", "8% decrease", "10% increase", "10% decrease"],
+        answer: "8% increase"
     },
     {
-        question: "Q. Which of the following are closures in Javascript?",
-        choices: ["Variables", "Functions", "Objects", "All of the above"],
-        answer: "All of the above"
+        question: "Q. If the perimeter of a square is 40 cm, what is its area?",
+        choices: ["100 sq. cm", "121 sq. cm", "144 sq. cm", "169 sq. cm"],
+        answer: "100 sq. cm"
     },
     {
-        question: "Q. What is the purpose of the this keyword in JavaScript?",
-        choices: ["It refers to the current function.", "It refers to the current object.", "It refers to the parent object.", " It is used for comments."],
-        answer: "It refers to the current object."
+        question: "Q. A train covers a distance of 600 km in 6 hours. What is its speed in km/hr?",
+        choices: ["100 km/hr", "150 km/hr", "200 km/hr", "250 km/hr"],
+        answer: "200 km/hr"
     }
 ];
+
 
 // Making Variables
 let currentQuestionIndex = 0;

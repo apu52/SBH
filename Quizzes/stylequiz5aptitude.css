@@ -8,7 +8,8 @@
 body {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to right bottom, #b61cca, #d6b80a);
+    background: url("/Images/3659672.jpg");
+    background-size: contain;
     color: #fff;
     display: grid;
     place-items: center;
@@ -24,9 +25,8 @@ body {
 
 .container h1 {
     font-size: 36px;
-    margin-bottom: 40px;
-    text-decoration: underline;
-    text-underline-offset: 8px;
+    text-decoration: none;
+    color: black;
 }
 
 .container .question {
@@ -53,16 +53,24 @@ body {
     animation: fade-in 0.5s ease forwards;
 }
 
-.choice:hover{
+.choice:hover {
     background-color: #ddd;
 }
 
-.choice.selected{
-    background-color: #d63710;
-    color: #fff;
+.choice.selected {
+    background-color: rgb(85, 169, 243);
+    color: black;
+    border: 2px solid black;
 }
-
-.btn{
+.out-container{
+    background-color: aqua;
+    width: 40vw;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 0 auto 30px;
+    border: 3px solid black;
+}
+.btn {
     width: 60%;
     font-size: 20px;
     font-weight: 600;
@@ -75,17 +83,20 @@ body {
     cursor: pointer;
 }
 
-.btn:hover{
-    background-color: #f16608;
+.btn:hover {
+    background-color: rgb(75, 244, 244);
+    color: black;
+    border: 2px solid black;
 }
 
-.scoreCard{
+.scoreCard {
     font-size: 24px;
     margin-top: 20px;
 }
 
-.alert{
-    background-color: #046846;
+.alert {
+    background-color: rgb(32, 215, 215);
+    color: black;
     border-radius: 5px;
     width: 100%;
     padding: 12px;
@@ -94,21 +105,97 @@ body {
     display: none;
 }
 
-.startBtn{
-    width: 15%;
-    padding-block: 20px;
-    text-align: center;
+.startBtn {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0.8em 1.3em 0.8em 0.9em;
+    color: black;
+    background: #ad5389;
+    background: linear-gradient(to right, white, rgb(239, 184, 184), rgb(245, 159, 159));
+    border: none;
+    letter-spacing: 0.05em;
+    border-radius: 16px;
+    width: 9vw;
+    border: 2px solid black;
+    font-weight: 900;
+    margin-top: 0;
 }
 
-.timer{
+.heartbeat:hover {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+@keyframes heartbeat {
+    from {
+        transform: scale(1);
+        transform-origin: center center;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        transform: scale(0.91);
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        transform: scale(0.98);
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        transform: scale(0.87);
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+}
+
+.startBtn svg {
+    margin-right: 3px;
+    transform: rotate(30deg);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+button.startBtn span {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+button.startBtn:hover svg {
+    transform: translateX(5px) rotate(90deg);
+}
+
+button.startBtn:hover span {
+    transform: translateX(7px);
+}
+
+.out-btn {
+    border: 3px solid white;
+    padding: 5px;
+    border-radius: 10px;
+}
+.inside-container{
+    background-color: white;
+    padding: 10px;
+    color: black;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.timer {
     position: absolute;
     top: 20px;
     right: 20px;
     width: 72px;
     height: 72px;
     border-radius: 50%;
-    background-color: #08203e;
-    border: 2px solid #f00;
+    background-color: white;
+    border: 4px solid black;
     font-size: 24px;
     font-weight: 600;
     padding: 12px;
@@ -119,50 +206,54 @@ body {
 }
 
 /* Adding Animation to Timer */
-@keyframes pulse{
-    0%{
+@keyframes pulse {
+    0% {
         transform: scale(1);
     }
-    50%{
+
+    50% {
         transform: scale(1.2);
     }
-    100%{
+
+    100% {
         transform: scale(1);
     }
 }
 
 /* Adding Animation to choices */
-@keyframes fade-in{
-    0%{
+@keyframes fade-in {
+    0% {
         opacity: 0;
         transform: translateY(50%);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-@media screen and (max-width:900px){
+@media screen and (max-width:900px) {
     .container {
         width: 100%;
         margin-top: 50px;
     }
-    .container h1{
+
+    .container h1 {
         font-size: 24px;
     }
-    .container .question{
+
+    .container .question {
         font-size: 22px;
     }
 
-    .timer{
+    .timer {
         width: 50px;
         height: 50px;
         font-size: 20px;
     }
 
-    .startBtn{
+    .startBtn {
         width: 50%;
     }
 }
-
