@@ -206,7 +206,7 @@
         transform: scale(1.1);
     }
 
-    .hover-speak:hover {
+    .screen-reader-enabled .hover-speak:hover {
         border: 2px solid #e26111;
         border-radius: 5px;
         padding: 5px;
@@ -255,6 +255,11 @@
         z-index: 999;
     }
 
+    .accessibility-menu.active {
+        display: block;
+    }
+
+
     .accessibility-menu ul {
         list-style-type: none;
         padding: 0;
@@ -282,14 +287,17 @@
 
 <body>
 
-    <h2 id="heading-1" class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Gamify 🎉</h2>
-    <h1 id="heading-2" class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">&#x1F603 lets
+    <h2 id="heading-1" class="hover-speak" onmouseover="speakText('Gamify')" onmouseleave="stopSpeaking()">Gamify 🎉
+    </h2>
+    <h1 id="heading-2" class="hover-speak" onmouseover="speakText('play and learn')" onmouseleave="stopSpeaking()">
+        &#x1F603 lets
         play and
         learn &#x1F603</h1>
 
 
     <!-- Accessibility Mode Button -->
-    <div class="accessibility-button" onclick="toggleAccessibilityMenu()">
+    <div class="accessibility-button hover-speak" onclick="toggleAccessibilityMenu()"
+        onmouseover="speakText('click here to select accessibility mode')" onmouseleave="stopSpeaking()">
         <div class="accessibility-icon">
 
         </div>
@@ -298,8 +306,10 @@
     <!-- Accessibility Menu -->
     <div class="accessibility-menu" id="accessibilityMenu">
         <ul>
-            <li><button onclick="toggleScreenReader()">Screen Reader</button></li>
-            <li><button onclick="toggleKeyboardNavigation()">Keyboard Navigation</button></li>
+            <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
+                    onmouseover="speakText('click here to change the screen reader mode')"
+                    onmouseleave="stopSpeaking()">Enable Screen Reader</button></li>
+            <li><button onclick="toggleKeyboardNavigation()">Enable Keyboard Navigation</button></li>
         </ul>
     </div>
 
@@ -316,15 +326,21 @@
 
                     </div>
                     <div class="content">
-                        <h2 class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Flexbox
+                        <h2 class="hover-speak" onmouseover="speakText('flexbox froggy')" onmouseleave="stopSpeaking()">
+                            Flexbox
                             Froggy😊 </h2>
-                        <p class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Flexbox
+                        <p class="hover-speak" onmouseover="speakText('Flexbox'+
+                        'Froggy is a fun and interactive game designed to help you learn and practice CSS'+
+                       'Flexbox layout. In this game, you are presented with a series of challenges where you need'+
+                        'to arrange a group of frogs on lily pads using Flexbox properties'
+                        
+                        )" onmouseleave="stopSpeaking()">Flexbox
                             Froggy is a fun and interactive game designed to help you learn and practice CSS
                             Flexbox layout. In this game, you are presented with a series of challenges where you need
                             to arrange a group of frogs on lily pads using Flexbox properties.</p>
                         <a href="https://flexboxfroggy.com/" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
-                                class="visually-hidden">to play flexboxfroggy</span> </a>
+                            onmouseover="speakText('click here to play flexboxfroggy')"
+                            onmouseleave="stopSpeaking()">Click Here</a>
                     </div>
                 </div>
             </div>
@@ -334,15 +350,18 @@
 
                     </div>
                     <div class="content">
-                        <h2 class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">
+                        <h2 class="hover-speak" onmouseover="speakText('ScatterGories')" onmouseleave="stopSpeaking()">
                             ScatterGories😃</h2>
-                        <p class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Online
+                        <p class="hover-speak" onmouseover="speakText('Online'+
+                        'version of the Categories game. The game variants are also known as Guggenheim or'+
+                        'Scattergories. Play with friends and improve your vocabulary in any of the 40 supported'+
+                        'languages')" onmouseleave="stopSpeaking()">Online
                             version of the Categories game. The game variants are also known as Guggenheim or
                             Scattergories. Play with friends and improve your vocabulary in any of the 40 supported
                             languages.</p>
                         <a href="https://scattergoriesonline.net/" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
-                                class="visually-hidden">to play ScatterGories</span></a>
+                            onmouseover="speakText('click here to play Scattergories')"
+                            onmouseleave="stopSpeaking()">Click Here </a>
                     </div>
                 </div>
             </div>
@@ -352,16 +371,20 @@
 
                     </div>
                     <div class="content">
-                        <h2 class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Skribbl.io😄
+                        <h2 class="hover-speak" onmouseover="speakText('Skribbl.io')" onmouseleave="stopSpeaking()">
+                            Skribbl.io😄
                         </h2>
-                        <p class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">skribbl.io is
+                        <p class="hover-speak" onmouseover="speakText('skribbl.io is'+
+                        'a free online multiplayer drawing and guessing pictionary game. A normal game'+
+                        'consists of a few rounds, where every round a player has to draw their chosen word and'
++                        'others have to guess it to gain points')" onmouseleave="stopSpeaking()">skribbl.io is
                             a free online multiplayer drawing and guessing pictionary game. A normal game
                             consists of a few rounds, where every round a player has to draw their chosen word and
                             others have to guess it to gain points!</p>
 
                         <a href="https://skribblio.online/skribbl-games-io" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
-                                class="visually-hidden">to play skribbl.io </span></a>
+                            onmouseover="speakText('click here to play skribbl.io')" onmouseleave="stopSpeaking()">Click
+                            Here</a>
                     </div>
                 </div>
             </div>
@@ -371,33 +394,19 @@
 
                     </div>
                     <div class="content">
-                        <h2 class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Typing
+                        <h2 class="hover-speak" onmouseover="speakText('Typing'+
+                        'Club')" onmouseleave="stopSpeaking()">Typing
                             Club😁</h2>
-                        <p class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Typing Club
+                        <p class="hover-speak" onmouseover="speakText('Typing Club'+
+                       ' is an online program that teaches students how to type on a QWERTY keyboard.'+
+                       ' Students learn where each letter is located on the keyboard and which finger they +should use'+
+                      +'  to type each letter')" onmouseleave="stopSpeaking()">Typing Club
                             is an online program that teaches students how to type on a QWERTY keyboard.
                             Students learn where each letter is located on the keyboard and which finger they should use
                             to type each letter.</p>
                         <a href="https://www.typingclub.com/" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
-                                class="visually-hidden">to play typingclub</span> </a>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="card">
-                    <div class="sliderText" id="prodigygame">
-
-                    </div>
-                    <div class="content">
-                        <h2 class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Prodigy🥰
-                        </h2>
-                        <p class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Prodigy is an
-                            online, self-paced mathematics game for students in Grades 1 to 8. The concept
-                            of the game is centered around a mythical fantasy world, where students are challenged to
-                            conquer quests in order to defeat the evil Puppet Master.</p>
-                        <a href="https://sso.prodigygame.com/" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
-                                class="visually-hidden">to play prodigygame</span></a>
+                            onmouseover="speakText('click here to play typingclub')" onmouseleave="stopSpeaking()">Click
+                            Here </a>
                     </div>
                 </div>
             </div>
@@ -407,16 +416,19 @@
 
                     </div>
                     <div class="content">
-                        <h2 class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Blind Fold
+                        <h2 class="hover-speak" onmouseover="speakText('blind fold games')"
+                            onmouseleave="stopSpeaking()">Blind Fold
                             Games🤩</h2>
-                        <p class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Nominate
+                        <p class="hover-speak" onmouseover="speakText('Nominate'+
+                       ' someone to be blindfolded. The blind man counts to five, while the other players'+
+                        'spread out. The blind man must feel their way around the room, finding the other +players' +
+                       ' identifying them')" onmouseleave="stopSpeaking()">Nominate
                             someone to be blindfolded. The "blind man" counts to five, while the other players
                             spread out. The blind man must feel their way around the room, finding the other players and
                             identifying them</p>
 
                         <a href="https://gamesfortheblind.org/" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
-                                class="visually-hidden">to play blindfold games</span> </a>
+                            onmouseover="speakText('click here to play blindfold games')" onmouseleave="stopSpeaking()">Click Here </a>
                     </div>
                 </div>
             </div>
@@ -426,14 +438,15 @@
 
                     </div>
                     <div class="content">
-                        <h2 class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Audio Game
+                        <h2 class="hover-speak" onmouseover="speakText('audio game hub')" onmouseleave="stopSpeaking()">Audio Game
                             Hub😎</h2>
-                        <p class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Audio Game
+                        <p class="hover-speak" onmouseover="speakText('Audio Game'+
+                      '  Hub is a set of experimental arcade audiogames that use audio as their primary'+
+                       ' interface – making them accessible for both sighted and non-sighted users')" onmouseleave="stopSpeaking()">Audio Game
                             Hub is a set of experimental arcade audiogames that use audio as their primary
                             interface – making them accessible for both sighted and non-sighted users.</p>
                         <a href="https://audiogamehub.com/games/" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
-                                class="visually-hidden">to play audio games</span></span></a>
+                            onmouseover="speakText('click here to play audiogamehub')" onmouseleave="stopSpeaking()">Click Here</span></a>
                     </div>
                 </div>
             </div>
@@ -443,15 +456,17 @@
 
                     </div>
                     <div class="content">
-                        <h2 class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Grid
+                        <h2 class="hover-speak" onmouseover="speakText('grid garden')" onmouseleave="stopSpeaking()">Grid
                             Garden🤑</h2>
-                        <p class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">How well can
+                        <p class="hover-speak" onmouseover="speakText('How well can'+
+                        'you tend to your carrot garden using CSS grid? In this game, you must water your'+
+                      '  carrot crops and poison the weeds by mastering CSS grid, a powerful new module that +makes'+
+                      '  2-dimensional grid layouts a piece of cake.')" onmouseleave="stopSpeaking()">How well can
                             you tend to your carrot garden using CSS grid? In this game, you must water your
                             carrot crops and poison the weeds by mastering CSS grid, a powerful new module that makes
                             2-dimensional grid layouts a piece of cake.</p>
                         <a href="https://cssgridgarden.com/" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
-                                class="visually-hidden">to play grid garden</span></a>
+                            onmouseover="speakText('click here to play grid-garden')" onmouseleave="stopSpeaking()">Click Here </a>
                     </div>
                 </div>
             </div>
@@ -461,15 +476,16 @@
 
                     </div>
                     <div class="content">
-                        <h2 class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Flappy
+                        <h2 class="hover-speak" onmouseover="speakText('flappy code')" onmouseleave="stopSpeaking()">Flappy
                             Code😛</h2>
-                        <p class="hover-speak" onmouseover="speakText(this)" onmouseleave="stopSpeaking()">If you want
+                        <p class="hover-speak" onmouseover="speakText('If you want'+
+                     '   the bird to FLAP when you CLICK the mouse, you can do that by attaching the'+
+                     '   FLAP block to the appropriate event handler, and now in your game ')" onmouseleave="stopSpeaking()">If you want
                             the bird to FLAP when you CLICK the mouse, you can do that by attaching the
                             "FLAP" block to the appropriate event handler, and now in your game ...
                         </p>
                         <a href="https://studio.code.org/flappy/1" target="_blank" class="hover-speak"
-                            onmouseover="speakText(this)" onmouseleave="stopSpeaking()">Click Here <span
-                                class="visually-hidden">to play flappycode</span></a>
+                            onmouseover="speakText('click here to play flappycode')" onmouseleave="stopSpeaking()">Click Here</a>
                     </div>
                 </div>
             </div>
@@ -491,38 +507,45 @@
 
     <!-- screen reader js -->
     <script>
-        let utterance = new SpeechSynthesisUtterance();
-        let synth = window.speechSynthesis;
+        var screenReaderEnabled = false;
 
-        function speakText(element) {
-            utterance.text = element.innerText;
-            synth.speak(utterance);
-        }
-
-
-
-        function stopSpeaking() {
-            synth.cancel();
-        }
-    </script>
-
-    <script>
         function toggleAccessibilityMenu() {
             var menu = document.getElementById("accessibilityMenu");
-            menu.style.display = menu.style.display === "block" ? "none" : "block";
+            menu.classList.toggle("active");
         }
 
         function toggleScreenReader() {
-            // Code to toggle screen reader mode
-            alert("Screen Reader Mode Toggled");
+            screenReaderEnabled = !screenReaderEnabled;
+            var menuButton = document.getElementById("screenReaderButton");
+            if (screenReaderEnabled) {
+                speakText("Screen reader enabled");
+                menuButton.innerText = "Disable Screen Reader";
+                document.body.classList.add("screen-reader-enabled");
+                setTimeout(toggleAccessibilityMenu, 5000);
+            } else {
+
+                speakText("Screen reader disabled");
+                menuButton.innerText = "Enable Screen Reader";
+                document.body.classList.remove("screen-reader-enabled");
+                toggleAccessibilityMenu();
+            }
+            // toggleAccessibilityMenu();
         }
 
-        function toggleKeyboardNavigation() {
-            // Code to toggle keyboard navigation mode
-            alert("Keyboard Navigation Mode Toggled");
+        function speakText(text) {
+            if (screenReaderEnabled) {
+                var utterance = new SpeechSynthesisUtterance(text);
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function stopSpeaking() {
+            window.speechSynthesis.cancel();
         }
     </script>
 
 </body>
 
 </html>
+
+<!-- 513 519  -->
