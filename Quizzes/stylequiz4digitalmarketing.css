@@ -8,8 +8,9 @@
 body {
     width: 100%;
     height: 100vh;
-    background: url("https://img.freepik.com/free-photo/person-using-laptop_53876-20652.jpg?t=st=1712832211~exp=1712835811~hmac=ccf779b85c834c439edfca0484ceaa732183cbd05b250c44800c701a0557683b&w=900");
+    background: url("https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
+    background-position: center;
     color: #fff;
     display: grid;
     place-items: center;
@@ -25,8 +26,18 @@ body {
 
 .container h1 {
     font-size: 36px;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     text-decoration: none;
+    color: black;
+}
+.out-container{
+    background-color: yellow;
+    border-radius: 10px;
+    width: 40vw;
+    padding: 5px 10px;
+    background-color: #9698bb;
+    border: 3px solid black;
+    margin : 0 auto 30px;
 }
 
 .container .question {
@@ -53,38 +64,38 @@ body {
     animation: fade-in 0.5s ease forwards;
 }
 
-.choice:hover{
+.choice:hover {
     background-color: #ddd;
 }
 
-.choice.selected{
+.choice.selected {
     background-color: #d63710;
     color: #fff;
 }
 
-.btn{
+.btn {
     width: 60%;
     font-size: 20px;
     font-weight: 600;
     padding: 12px 20px;
     margin: 20px auto 0 auto;
-    background-color: #2e0227;
-    color: #fff;
+    background-color: black;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: #f16608;
 }
 
-.scoreCard{
+.scoreCard {
     font-size: 24px;
     margin-top: 20px;
 }
 
-.alert{
+.alert {
     background-color: #046846;
     border-radius: 5px;
     width: 100%;
@@ -94,13 +105,54 @@ body {
     display: none;
 }
 
-.startBtn{
+.startBtn {
     width: 15%;
     padding-block: 20px;
     text-align: center;
+    border: 4px solid rgb(0, 0, 0);
+    padding: 15px 30px;
+    border-radius: 10px;
 }
 
-.timer{
+.jello-horizontal:hover {
+    animation: jello-horizontal 0.9s both;
+}
+
+@keyframes jello-horizontal {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+.inside-container{
+    background-color:#a34b4b;
+    padding: 10px;
+    border-radius: 10px;
+}
+.timer {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -119,50 +171,54 @@ body {
 }
 
 /* Adding Animation to Timer */
-@keyframes pulse{
-    0%{
+@keyframes pulse {
+    0% {
         transform: scale(1);
     }
-    50%{
+
+    50% {
         transform: scale(1.2);
     }
-    100%{
+
+    100% {
         transform: scale(1);
     }
 }
 
 /* Adding Animation to choices */
-@keyframes fade-in{
-    0%{
+@keyframes fade-in {
+    0% {
         opacity: 0;
         transform: translateY(50%);
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-@media screen and (max-width:900px){
+@media screen and (max-width:900px) {
     .container {
         width: 100%;
         margin-top: 50px;
     }
-    .container h1{
+
+    .container h1 {
         font-size: 24px;
     }
-    .container .question{
+
+    .container .question {
         font-size: 22px;
     }
 
-    .timer{
+    .timer {
         width: 50px;
         height: 50px;
         font-size: 20px;
     }
 
-    .startBtn{
+    .startBtn {
         width: 50%;
     }
 }
-
