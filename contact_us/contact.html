@@ -35,7 +35,7 @@
                 <img src="logo-img.png" alt="contact us" class="image">
                 <div class="social-links">
                     <span class="second-text" onmouseover="speakText('Connect with us')" onmouseleave="stopSpeaking()">Connect with us:</span>
-                    <ul class="social-media">
+                    <ul class="social-media" aria-label="our social media handles" id="social">
                         <li><a href="#"><i class='bx bxl-facebook-circle'></i></a></li>
                         <li><a href="#"></a><i class='bx bxl-instagram'  ></i></li>
                         <li><a href="#"></a><i class='bx bxl-twitter'  ></i></li>
@@ -59,11 +59,11 @@
                         <label for="">Phone</label>
                     </div>
                     <div class="input-box">
-                        <textarea class="input" reqired aria-label="enter your massage for us" id="msg"></textarea>
+                        <textarea class="input" reqired aria-label="enter your message for us" id="msg"></textarea>
                         <label for="">Message</label>
                     </div>
                     <div class="button">
-                      <input type="button" value="Send Now" class="btn"/>
+                      <input type="button" value="Send Now" class="btn" aria-label="Send now" id="send"/>
                     </div>
                   </form>
             </div>
@@ -129,7 +129,16 @@
       const labelText = Message.getAttribute('aria-label');
       speakText(labelText);
     });
-
+    const send = document.getElementById('send');
+    Message.addEventListener('mouseover', () => {
+      const labelText = send.getAttribute('aria-label');
+      speakText(labelText);
+    });
+    const social = document.getElementById('social');
+    Message.addEventListener('mouseover', () => {
+      const labelText = social.getAttribute('aria-label');
+      speakText(labelText);
+    });
     </script>
  
 </body>
