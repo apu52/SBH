@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Contact Us</title>
-    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
     <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
 </head>
@@ -25,7 +25,7 @@
             <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
                     onmouseover="speakText('click here to change the screen reader mode')"
                     onmouseleave="stopSpeaking()">Enable Screen Reader</button></li>
-            <li><button onclick="toggleKeyboardNavigation()">Enable Voice Recognision</button></li>
+            <li><button onclick="toggleVoiceRecognition()">Enable Voice Recognition</button></li>
         </ul>
     </div>
 
@@ -75,11 +75,14 @@
      <script>
  
         var screenReaderEnabled = false;
+       
 
         function toggleAccessibilityMenu() {
             var menu = document.getElementById("accessibilityMenu");
             menu.classList.toggle("active");
         }
+
+        
 
         function toggleScreenReader() {
             screenReaderEnabled = !screenReaderEnabled;
