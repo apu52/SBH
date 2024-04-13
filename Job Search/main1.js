@@ -6,7 +6,7 @@ const jobs = [
     details:
       "Responsible for reaching out to potential customers and closing sales deals.",
     openPositions: "5",
-    link: "#",
+    link: "https://in.indeed.com/q-sales-representative-l-kolkata,-west-bengal-jobs.html?vjk=2c6b132eef158f06 ",
   },
 
   {
@@ -196,6 +196,7 @@ const createJobListingCards = () => {
       } else {
         openPositions.innerHTML = `${job.openPositions} open positions`;
       }
+      
 
       jobCard.appendChild(image);
       jobCard.appendChild(title);
