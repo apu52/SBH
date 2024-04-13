@@ -67,7 +67,7 @@ const quiz = [
 let currentQuestionIndex = 0;
 let score = 0;
 let quizOver = false;
-let timeLeft = 10;
+let timeLeft = 100;
 let timerID = null;
 
 // Arrow Function to Show Questions
@@ -110,7 +110,7 @@ const checkAnswer = () => {
         // alert("Wrong answer");
         displayAlert(`Wrong Answer! ${quiz[currentQuestionIndex].answer} is the Correct Answer`);
     }
-    timeLeft = 10;
+    timeLeft = 100;
     currentQuestionIndex++;
     if (currentQuestionIndex < quiz.length) {
         showQuestions();
@@ -130,6 +130,7 @@ const showScore = () => {
     nextBtn.textContent = "Play Again";
     quizOver = true;
     timer.style.display = "none";
+    speakFinalScore(score);
 }
 
 // Function to Show Alert
@@ -152,7 +153,7 @@ const startTimer = () => {
         if(timeLeft === 0){
             const confirmUser = confirm("Time Up!!! Do you want to play the quiz again");
             if(confirmUser){
-                timeLeft = 10;
+                timeLeft = 100;
                 startQuiz();
             }
             else{
@@ -182,7 +183,7 @@ const shuffleQuestions = () =>{
 
 // Function to Start Quiz
 const startQuiz = () =>{
-    timeLeft = 10;
+    timeLeft = 100;
     timer.style.display = "flex";
     shuffleQuestions();
 }
@@ -206,7 +207,7 @@ nextBtn.addEventListener('click', () => {
         scoreCard.textContent = "";
         currentQuestionIndex = 0;
         quizOver = false;
-        score = 0;
+        score = 0; 
         startQuiz();
     }
     else {
@@ -252,13 +253,25 @@ var screenReaderEnabled = false;
         }
 
         function readquestion() {
-            if(screenReaderEnabled){
-                for (const question in quiz) {
-                    if (quiz.hasOwnProperty(question)) {
-                        const questionText = quiz[question];
-                        window.speechSynthesis.speak(questionText);
-                        break;
-                    }
-                }
+            if (screenReaderEnabled) {
+                const currentQuestion = quiz[currentQuestionIndex]; // Get the current question object
+                const questionText = currentQuestion.question; // Get the text of the current question
+                speakText(questionText); // Speak the combined text
+            }
+        }
+
+        function readchoice(){
+            if (screenReaderEnabled) {
+                const currentQuestion = quiz[currentQuestionIndex]; 
+                const choices = currentQuestion.choices.join(', '); // Join choices into a string separated by commas
+                const textToSpeak = `Choices are: ${choices}`; // Combine question and choices
+                speakText(textToSpeak); // Speak the combined text
+            }
+        }
+
+        function speakFinalScore(score) {
+            if (screenReaderEnabled) {
+                const text = `Your final score is ${score} out of ${quiz.length}`;
+                speakText(text);
             }
         }

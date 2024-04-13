@@ -45,10 +45,10 @@
 
     <div class="container hover-speak">
         <h1 onmouseover="speakText('Lets play with JS')" onmouseleave="stopSpeaking()">Let's play with JS</h1>
-        <div class="inside-container" onmouseover="readquestion()" onmouseleave="stopSpeaking()">
-            <div class="question"></div>
-            <div class="choices"></div>
-            <button class="btn nextBtn">Next</button>
+        <div class="inside-container" >
+            <div class="question" onmouseover="readquestion()" onmouseleave="stopSpeaking()"></div>
+            <div class="choices" onmouseover="readchoice()" onmouseleave="stopSpeaking()"></div>
+            <button class="btn nextBtn hower-speak" onmouseover="speakText('Next Question')" onmouseleave="stopSpeaking()">Next</button>
             <div class="scoreCard"></div>
             <div class="timer"></div>
         </div>
