@@ -40,13 +40,13 @@
   <header class="header" data-header>
     <div class="container">
 
-      <h1>
-        <a href="#" class="logo">Eduversity</a>
+      <h1 class="hover-speak" onmouseover="speakText('Edeuversity')" onmouseleave="stopSpeaking()">
+        <a href="#" class="logo" aria-label="Eduversity">Eduversity</a>
       </h1>
 
       <nav class="navbar" data-navbar>
 
-        <div class="navbar-top">
+        <div class="navbar-top hover-speak">
           <a href="#" class="logo">Eduversity</a>
 
           <button class="nav-close-btn" aria-label="Close menu" data-nav-toggler>
@@ -56,31 +56,31 @@
 
         <ul class="navbar-list">
 
-          <li class="navbar-item">
+          <li class="navbar-item hover-speak" onmouseover="speakText('home')" onmouseleave="stopSpeaking()">
             <a href="#home" class="navbar-link" data-nav-toggler>Home</a>
           </li>
 
-          <li class="navbar-item">
+          <li class="navbar-item hover-speak" onmouseover="speakText('about us')" onmouseleave="stopSpeaking()">
             <a href="#about" class="navbar-link" data-nav-toggler>About us</a>
           </li>
 
-          <li class="navbar-item">
+          <li class="navbar-item hover-speak" onmouseover="speakText('courses')" onmouseleave="stopSpeaking()">
             <a href="#courses" class="navbar-link" data-nav-toggler>Courses</a>
           </li>
 
-          <li class="navbar-item">
+          <li class="navbar-item hover-speak" onmouseover="speakText('find the job')" onmouseleave="stopSpeaking()">
             <a href="#event" class="navbar-link" data-nav-toggler>Find the JOB</a>
           </li>
 
-          <li class="navbar-item">
+          <li class="navbar-item hover-speak" onmouseover="speakText('mini games')" onmouseleave="stopSpeaking()">
             <a href="#miniganes" class="navbar-link" data-nav-toggler>Mini Games</a>
           </li>
 
-          <li class="navbar-item">
+          <li class="navbar-item hover-speak" onmouseover="speakText('testimonials')" onmouseleave="stopSpeaking()">
             <a href="#testimonial" class="navbar-link" data-nav-toggler>Testimonial</a>
           </li>
 
-          <li class="navbar-item">
+          <li class="navbar-item hover-speak" onmouseover="speakText('contact us')" onmouseleave="stopSpeaking()">
             <a href="/contact_us/contact.html" class="navbar-link" data-nav-toggler>Contact us</a>
           </li>
 
@@ -90,11 +90,13 @@
 
       <div class="header-actions">
 
-        <button class="header-action-btn" aria-label="Open search" data-search-toggler>
+        <button class="header-action-btn hover-speak" aria-label="Open search"
+          onmouseover="speakText('search what you want to find')" onmouseleave="stopSpeaking()" data-search-toggler>
           <ion-icon name="search-outline"></ion-icon>
         </button>
 
-        <a href="login.html" class="header-action-btn login-btn">
+        <a href="login.html" class="header-action-btn login-btn hover-speak"
+          onmouseover="speakText('click  here to login or register')" onmouseleave="stopSpeaking()">
           <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
 
           <span class="span">Login / Register</span>
@@ -112,6 +114,24 @@
   </header>
 
 
+  <!-- Accessibility Mode Button -->
+  <div class="accessibility-button hover-speak" onclick="toggleAccessibilityMenu()"
+    onmouseover="speakText('click here to select accessibility mode')" onmouseleave="stopSpeaking()">
+    <div class="accessibility-icon">
+
+    </div>
+  </div>
+
+  <!-- Accessibility Menu -->
+  <div class="accessibility-menu" id="accessibilityMenu">
+    <ul>
+      <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
+          onmouseover="speakText('click here to change the screen reader mode')" onmouseleave="stopSpeaking()">Enable
+          Screen Reader</button></li>
+      <li><button onclick="toggleKeyboardNavigation()">Enable Keyboard Navigation</button></li>
+    </ul>
+  </div>
+
 
 
 
@@ -127,7 +147,8 @@
         <ion-icon name="close-outline"></ion-icon>
       </button>
 
-      <div class="search-wrapper">
+      <div class="search-wrapper hover-speak" onmouseover="speakText('click and enter what you want to search')"
+        onmouseleave="stopSpeaking()">
         <input type="search" name="search" placeholder="Search Here..." aria-label="Search" class="search-field">
 
         <button class="search-submit" aria-label="Submit" data-search-toggler>
@@ -154,21 +175,26 @@
 
           <div class="hero-content">
 
-            <p class="section-subtitle">The one Platform for every Learners...</p>
+            <p class="section-subtitle hover-speak" onmouseover="speakText('The one Platform for every Learners')"
+              onmouseleave="stopSpeaking()">The one Platform for every Learners...</p>
 
-            <h2 class="h1 hero-title">Education Has No LIMITS</h2>
+            <h2 class="h1 hero-title hover-speak" onmouseover="speakText('Education Has No LIMITS')"
+              onmouseleave="stopSpeaking()">Education Has No LIMITS</h2>
 
 
 
-            <p class="hero-text">
+            <p class="hero-text hover-speak" onmouseover="speakText('In the realm of learning, there are no'+'confines it is a'+
+           ' limitless journey, unrestricted and expansive, where curiosity'+
+           ' knows no bounds.')" onmouseleave="stopSpeaking()">
               In the realm of learning, there are no confines; it is a
               limitless journey, unrestricted and expansive, where curiosity
               knows no bounds.
             </p>
 
 
-            <a href="#" class="btn btn-primary">
-              <span class="span">Buy our Course</span>
+            <a href="#" class="btn btn-primary hover-speak" onmouseover="speakText('buy our course')"
+              onmouseleave="stopSpeaking()">
+              <span class="span ">Buy our Course</span>
 
               <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -202,13 +228,16 @@
       <section class="section category" aria-label="category">
         <div class="container">
 
-          <p class="section-subtitle">Our Popular Courses </p>
+          <p class="section-subtitle hover-speak" onmouseover="speakText('our Popular courses')"
+            onmouseleave="stopSpeaking()">Our Popular Courses </p>
 
-          <h2 class="h2 section-title">let's take a Quick test</h2>
+          <h2 class="h2 section-title hover-speak" onmouseover="speakText('lets take a Quick test')"
+            onmouseleave="stopSpeaking()">let's take a Quick test</h2>
 
           <ul class="grid-list">
 
-            <li>
+            <li class="hover-speak" onmouseover="speakText('Cyber Security course with 10 Questions')"
+              onmouseleave="stopSpeaking()">
               <div class="category-card">
 
                 <div class="card-icon">
@@ -216,7 +245,7 @@
                 </div>
 
                 <div>
-                  <h3 class="h3 card-title">
+                  <h3 class="h3 card-title ">
                     <a href="/Quizzes/indexquiz2cybersecurity.html">Cyber Security</a>
                   </h3>
 
@@ -226,7 +255,8 @@
               </div>
             </li>
 
-            <li>
+            <li class="hover-speak" onmouseover="speakText('cloud-computing course with 10 Questions')"
+              onmouseleave="stopSpeaking()">
               <div class="category-card">
 
                 <div class="card-icon">
@@ -246,7 +276,8 @@
 
 
 
-            <li>
+            <li class="hover-speak" onmouseover="speakText('Machine learning course with 10 Questions')"
+              onmouseleave="stopSpeaking()">
               <div class="category-card">
 
                 <div class="card-icon">
@@ -264,7 +295,8 @@
               </div>
             </li>
 
-            <li>
+            <li class="hover-speak" onmouseover="speakText('javascript course with 10 Questions')"
+              onmouseleave="stopSpeaking()">
               <div class="category-card">
 
                 <div class="card-icon">
@@ -282,25 +314,27 @@
               </div>
             </li>
 
+            <li class="hover-speak" onmouseover="speakText('Digital Marketing course with 10 Questions')"
+              onmouseleave="stopSpeaking()">
+              <div class="category-card">
 
-            <div class="category-card">
+                <div class="card-icon">
+                  <ion-icon name="headset-outline"></ion-icon>
+                </div>
 
-              <div class="card-icon">
-                <ion-icon name="headset-outline"></ion-icon>
+                <div>
+                  <h3 class="h3 card-title">
+                    <a href="/Quizzes/indexquiz4digitalmarketing.html">Digital Marketing</a>
+                  </h3>
+
+                  <span class="card-meta">10 Questions</span>
+                </div>
+
               </div>
-
-              <div>
-                <h3 class="h3 card-title">
-                  <a href="/Quizzes/indexquiz4digitalmarketing.html">Digital Marketing</a>
-                </h3>
-
-                <span class="card-meta">10 Questions</span>
-              </div>
-
-            </div>
             </li>
 
-            <li>
+            <li class="hover-speak" onmouseover="speakText('Aptitude course with 10 Questions')"
+              onmouseleave="stopSpeaking()">
               <div class="category-card">
 
                 <div class="card-icon">
@@ -341,7 +375,8 @@
       <section class="section about" id="about" aria-label="about">
         <div class="container">
 
-          <figure class="about-banner">
+          <figure class="about-banner hover-speak" onmouseover="speakText('about us banner')"
+            onmouseleave="stopSpeaking()">
 
             <img src="assets\images\Home clip.jpg" width="450" height="1000" loading="lazy" alt="about banner"
               class="w-100 about-img">
@@ -356,13 +391,16 @@
 
           <div class="about-content">
 
-            <p class="section-subtitle">About Us</p>
+            <p class="section-subtitle hover-speak" onmouseover="speakText('about us ')" onmouseleave="stopSpeaking()">
+              About Us</p>
 
-            <h2 class="h2 section-title">What we offer</h2>
+            <h2 class="h2 section-title hover-speak" onmouseover="speakText('what we are offering at Eduversity')"
+              onmouseleave="stopSpeaking()">What we offer</h2>
 
             <ul class="about-list">
 
-              <li class="about-item">
+              <li class="about-item hover-speak" onmouseover="speakText('Eduversity offers a personalized'+ 'learning experience with tech-focused courses and diverse practice'+
+             ' lessons for all students.')" onmouseleave="stopSpeaking()">
 
                 <div class="item-icon item-icon-1">
                   <img src="./assets/images/about-icon-1.png" width="30" height="30" loading="lazy" aria-hidden="true">
@@ -379,7 +417,8 @@
 
               </li>
 
-              <li class="about-item">
+              <li class="about-item hover-speak" onmouseover="speakText(' Eduversity bridges the gap between'+ 'academia and industry by offering industrial training led by tech'+
+             ' experts from MNCs, facilitating internships, and empowering students for freelance'+ 'opportunities.')" onmouseleave="stopSpeaking()">
 
                 <div class="item-icon item-icon-2">
                   <img src="./assets/images/about-icon-2.png" width="30" height="30" loading="lazy" aria-hidden="true">
@@ -396,7 +435,8 @@
 
               </li>
 
-              <li class="about-item">
+
+              <li class="about-item hover-speak"onmouseover="speakText('Community For all Students with'+ 'inclusive access for all physically'+ 'disabled student')" onmouseleave="stopSpeaking()">
 
                 <div class="item-icon item-icon-3">
                   <img src="./assets/images/about-icon-3.png" width="30" height="30" loading="lazy" aria-hidden="true">
@@ -414,7 +454,8 @@
 
             </ul>
 
-            <a href="#" class="btn btn-primary">
+            <a href="#" class="btn btn-primary hover-speak"onmouseover="speakText('click here to know more')"
+            onmouseleave="stopSpeaking()">
               <span class="span">Know more</span>
 
               <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
@@ -439,13 +480,17 @@
         style="background-image: url('./assets/images/course-bg.jpg')">
         <div class="container">
 
-          <p class="section-subtitle">Popular Courses</p>
+          <div class="hover-speak"onmouseover="speakText('our popular courses')"
+          onmouseleave="stopSpeaking()">
+            <p class="section-subtitle">Popular Courses</p>
 
           <h2 class="h2 section-title">Our Popular Courses</h2>
+          </div>
 
           <ul class="grid-list">
 
-            <li>
+            <li class="hover-speak"onmouseover="speakText(' learn intermediate level of javascripts having 8 lessons in 15 hrs at just 300 rupees.')"
+            onmouseleave="stopSpeaking()">
               <div class="course-card">
 
                 <figure class="card-banner">
@@ -457,7 +502,8 @@
 
                   <span class="badge">Intermediate</span>
 
-                  <button class="whishlist-btn" aria-label="Add to whishlist" data-whish-btn>
+                  <button class="whishlist-btn hover-speak"onclick="speakText('added to wishlist')"
+                  onmouseleave="stopSpeaking()" aria-label="Add to whishlist" data-whish-btn>
                     <ion-icon name="heart"></ion-icon>
                   </button>
 
@@ -482,7 +528,7 @@
                   </ul>
 
                   <h3 class="h3">
-                    <a href="../SBH(intermediate Pages)/indexIntermediateJSPage.HTML" class="card-title">Java Script</a>
+                    <a href="../SBH(intermediate Pages)/indexIntermediateJSPage.HTML" class="card-title ">Java Script</a>
                   </h3>
 
                   <div class="rating-wrapper">
@@ -520,7 +566,8 @@
               </div>
             </li>
 
-            <li>
+            <li class="hover-speak"onmouseover="speakText(' learn advanced level of machine learnings having 10 lessons in 20 hrs at absolutely free of cost.')"
+            onmouseleave="stopSpeaking()">
               <div class="course-card">
 
                 <figure class="card-banner">
@@ -592,7 +639,8 @@
               </div>
             </li>
 
-            <li>
+            <li class="hover-speak"onmouseover="speakText(' learn basic level of cloud computing having 15 lessons in 10 hrs at 200 rupees only.')"
+            onmouseleave="stopSpeaking()">
               <div class="course-card">
 
                 <figure class="card-banner">
@@ -667,7 +715,8 @@
               </div>
             </li>
 
-            <li>
+            <li  class="hover-speak"onmouseover="speakText(' learn advanced level of cycb security having 30 lessons in 15 hrs at 250 rupees only.')"
+            onmouseleave="stopSpeaking()">
               <div class="course-card">
 
                 <figure class="card-banner">
@@ -740,9 +789,10 @@
                 </div>
 
               </div>
-            </li>
+            
 
-            <li>
+            <li class="hover-speak"onmouseover="speakText(' learn intermediate level of Aptitude having 45 lessons in 20 hrs at 300 rupees only.')"
+            onmouseleave="stopSpeaking()">
               <div class="course-card">
 
                 <figure class="card-banner">
@@ -817,7 +867,8 @@
               </div>
             </li>
 
-            <li>
+            <li class="hover-speak"onmouseover="speakText(' learn basic level of digital marketing having 20  lessons in 10 hrs at 100 rupees only.')"
+            onmouseleave="stopSpeaking()">
               <div class="course-card">
 
                 <figure class="card-banner">
@@ -894,21 +945,17 @@
 
           </ul>
 
-          <a href="#" class="btn btn-primary">
-            <span class="span">View All Courses</span>
-
-            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-          </a>
+          <div class="hover-speak" onmouseover="speakText('tap here to view all our courses')"
+          onmouseleave="stopSpeaking()">
+            <a href="#" class="btn btn-primary">
+              <span class="span">View All Courses</span>
+  
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </div>
 
         </div>
       </section>
-
-
-
-
-
-
-
 
 
 
@@ -919,14 +966,18 @@
 
       <section class="section event" id="event" aria-label="event">
         <div class="container">
-
+          <div class="hover-speak"onmouseover="speakText('job and intership section')"
+          onmouseleave="stopSpeaking()" >
+            
           <p class="section-subtitle">Find the JOB</p>
 
           <h2 class="h2 section-title">Job Hunting is going on</h2>
+          </div>
 
           <ul class="grid-list">
 
-            <li>
+            <li class="hover-speak"onmouseover="speakText('job portal for remote and hybrid offers at big MNCs for all final and pre-final year studnts')"
+            onmouseleave="stopSpeaking()">
               <div class="event-card">
 
                 <figure class="card-banner">
@@ -959,7 +1010,8 @@
               </div>
             </li>
 
-            <li>
+            <li  class="hover-speak"onmouseover="speakText(' onsite and hybrid internship oppertunity for all year studnts portal')"
+            onmouseleave="stopSpeaking()">
               <div class="event-card">
 
                 <figure class="card-banner">
@@ -992,7 +1044,8 @@
               </div>
             </li>
 
-            <li>
+            <li  class="hover-speak"onmouseover="speakText('Freelancing oppertunities')"
+            onmouseleave="stopSpeaking()">
               <div class="event-card">
 
                 <figure class="card-banner">
@@ -1043,6 +1096,9 @@
 
           <div class="cta-content">
 
+           <div class="hover-speak"onmouseover="speakText('lets enjoy lernings with mini gams. At Eduversity, indulge in engaging learning'+ 'experiences with thrilling games, making education both'+
+           'enjoyable and enriching. Join us for an adventure in education!')"
+           onmouseleave="stopSpeaking()">
             <p class="section-subtitle">Mini games</p>
 
             <h2 class="h2 section-title">Let's Enjoy The learning</h2>
@@ -1052,8 +1108,10 @@
               At Eduversity, indulge in engaging learning experiences with thrilling games, making education both
               enjoyable and enriching. Join us for an adventure in education!
             </p>
+           </div>
 
-            <a href="../gamify.html" class="btn btn-secondary">
+            <a href="../gamify.html" class="btn btn-secondary hover-speak"onmouseover="speakText('click here to play games')"
+            onmouseleave="stopSpeaking()">
               <span class="span">Let's Start</span>
 
               <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
@@ -1219,7 +1277,8 @@
 
     <section class="section newsletter" aria-label="newsletter"
       style="background-image: url('./assets/images/newsletter-bg.jpg')">
-      <div class="container">
+      <div class="container hover-speak"onmouseover="speakText('newsletter section.subscribe to get latest news on time')"
+      onmouseleave="stopSpeaking()">
 
         <p class="section-subtitle">Subscribe Newsletter</p>
 
@@ -1263,34 +1322,42 @@
 
         <div class="footer-brand">
 
+         <div class="hover-speak" onmouseover="speakText(' Eduversity offers personalized tech courses'+ 'industry-led training, and a global community, ensuring'+
+         'inclusive access for students of all abilities to excel in their learning journey.')"
+         onmouseleave="stopSpeaking()">
           <a href="#" class="logo">Eduversity</a>
 
           <p class="section-text">
             Eduversity offers personalized tech courses, industry-led training, and a global community, ensuring
-            inclusive access for students of all abilities to excel in their learning journey.
+            inclusive access for students of all abilities to excel in their learning journey
           </p>
+         </div>
 
           <ul class="social-list">
 
-            <li>
+            <li class="hover-speak" onmouseover="speakText('follow us on facebook')"
+            onmouseleave="stopSpeaking()">
               <a href="#" class="social-link">
                 <ion-icon name="logo-facebook"></ion-icon>
               </a>
             </li>
 
-            <li>
+            <li  class="hover-speak" onmouseover="speakText('follow us on twitter')"
+            onmouseleave="stopSpeaking()">
               <a href="#" class="social-link">
                 <ion-icon name="logo-twitter"></ion-icon>
               </a>
             </li>
 
-            <li>
+            <li  class="hover-speak" onmouseover="speakText('follow us on linked-in')"
+            onmouseleave="stopSpeaking()">
               <a href="#" class="social-link">
                 <ion-icon name="logo-linkedin"></ion-icon>
               </a>
             </li>
 
-            <li>
+            <li  class="hover-speak" onmouseover="speakText('follow us on instagram')"
+            onmouseleave="stopSpeaking()">
               <a href="#" class="social-link">
                 <ion-icon name="logo-instagram"></ion-icon>
               </a>
