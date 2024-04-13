@@ -11,7 +11,7 @@
 
 <body>
     <div class="alert">Alert</div>
-    <button class="startBtn">
+    <button class="startBtn hover-speak" onmouseover="speakText('Lets Play')" onmouseleave="stopSpeaking()">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36px" height="36px">
             <rect width="36" height="36" x="0" y="0" fill="#fdd835"></rect>
             <path fill="#e53935"
@@ -39,13 +39,13 @@
                 d="M15.078,19.043c1.957-0.326,5.122-0.529,4.435,1.304c-0.489,1.304-7.185,2.185-7.185,0.652 C12.328,19.467,15.078,19.043,15.078,19.043z">
             </path>
         </svg>
-        <span class="now">now!</span>
+        <span class="now" >now!</span>
         <span class="play">Let's Play JS</span>
     </button>
 
-    <div class="container">
-        <h1>Let's play with JS</h1>
-        <div class="inside-container">
+    <div class="container hover-speak">
+        <h1 onmouseover="speakText('Lets play with JS')" onmouseleave="stopSpeaking()">Let's play with JS</h1>
+        <div class="inside-container" onmouseover="readquestion()" onmouseleave="stopSpeaking()">
             <div class="question"></div>
             <div class="choices"></div>
             <button class="btn nextBtn">Next</button>
@@ -74,44 +74,6 @@
         </ul>
     </div>
 
-    <script>
- 
-        var screenReaderEnabled = false;
-
-        function toggleAccessibilityMenu() {
-            var menu = document.getElementById("accessibilityMenu");
-            menu.classList.toggle("active");
-        }
-
-        function toggleScreenReader() {
-            screenReaderEnabled = !screenReaderEnabled;
-            var menuButton = document.getElementById("screenReaderButton");
-            if (screenReaderEnabled) {
-                speakText("Screen reader enabled");
-                menuButton.innerText = "Disable Screen Reader";
-                document.body.classList.add("screen-reader-enabled");
-                setTimeout(toggleAccessibilityMenu, 5000);
-            } else {
-
-                speakText("Screen reader disabled");
-                menuButton.innerText = "Enable Screen Reader";
-                document.body.classList.remove("screen-reader-enabled");
-                toggleAccessibilityMenu();
-            }
-            // toggleAccessibilityMenu();
-        }
-
-        function speakText(text) {
-            if (screenReaderEnabled) {
-                var utterance = new SpeechSynthesisUtterance(text);
-                window.speechSynthesis.speak(utterance);
-            }
-        }
-
-        function stopSpeaking() {
-            window.speechSynthesis.cancel();
-        }
-    </script>
 </body>
 
 </html>

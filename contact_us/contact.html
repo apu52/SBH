@@ -109,11 +109,8 @@
         function stopSpeaking() {
             window.speechSynthesis.cancel();
         }
-        const btn = document.getElementById('send');
-    btn.addEventListener('mouseover', () => {
-      const labelText = btn.getAttribute('aria-label');
-      speakText(labelText);
-    });
+        
+        
         const name = document.getElementById('name');
     name.addEventListener('mouseover', () => {
       const labelText = name.getAttribute('aria-label');
