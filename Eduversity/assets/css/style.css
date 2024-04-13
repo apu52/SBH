@@ -1481,3 +1481,75 @@ body {
   .footer-top { padding-block: 120px 80px; }
 
 }
+
+/* acceesibility class  */
+.screen-reader-enabled .hover-speak:hover {
+  border: 2px solid #e26111;
+  border-radius: 5px;
+  padding: 5px;
+  z-index: 3;
+}
+
+
+
+.accessibility-button {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  /* background-color: #007bff;  */
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6O-gPv_x4ilQWYp-pyPaM-SkUUp32Kny_NIEqKZsWCw&s");
+  background-size: cover;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+#accessibilityMenu li{
+  font-size: 16px;
+  padding: 1px;
+}
+.accessibility-menu {
+  position: fixed;
+  bottom: 128px;
+  right: 40px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 10px;
+  display: none;
+  z-index: 999;
+}
+
+.accessibility-menu.active {
+  display: block;
+}
+
+
+.accessibility-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.accessibility-menu li {
+  margin-bottom: 10px;
+}
+
+.accessibility-menu button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.accessibility-menu button:hover {
+  color: #0056b3;
+}
