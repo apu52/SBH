@@ -152,9 +152,11 @@ const jobs = [
 
 ];
 
+
 const jobsHeading = document.querySelector(".jobs-list-container h2");
 const jobsContainer = document.querySelector(".jobs-list-container .jobs");
 const jobSearch = document.querySelector(".jobs-list-container .job-search");
+const resultCount = document.querySelector(".result-count");
 
 let searchTerm = "";
 
@@ -166,6 +168,7 @@ if (jobs.length == 1) {
 
 const createJobListingCards = () => {
   jobsContainer.innerHTML = "";
+  let count = 0; // Initialize count to 0
 
   jobs.forEach((job) => {
     if (job.title.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -187,6 +190,7 @@ const createJobListingCards = () => {
       detailsBtn.href = job.link;
       detailsBtn.innerHTML = "More Details";
       detailsBtn.classList.add("details-btn");
+      detailsBtn.target = "_blank"; // Set target attribute to _blank
 
       let openPositions = document.createElement("span");
       openPositions.classList.add("open-positions");
@@ -197,6 +201,7 @@ const createJobListingCards = () => {
         openPositions.innerHTML = `${job.openPositions} open positions`;
       }
       
+      count++; // Increment count for each displayed job card
 
       jobCard.appendChild(image);
       jobCard.appendChild(title);
@@ -207,12 +212,18 @@ const createJobListingCards = () => {
       jobsContainer.appendChild(jobCard);
     }
   });
+
+  // Display the count of related job cards if search is performed
+  if (searchTerm.trim() !== "") {
+    resultCount.textContent = `Related job cards: ${count}`;
+  } else {
+    resultCount.textContent = ""; // Clear count if no search term entered
+  }
 };
 
 createJobListingCards();
 
 jobSearch.addEventListener("input", (e) => {
   searchTerm = e.target.value;
-
   createJobListingCards();
 });
