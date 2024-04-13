@@ -143,7 +143,16 @@ const jobs = [
         jobCard.appendChild(details);
         jobCard.appendChild(detailsBtn);
         jobCard.appendChild(openPositions);
-  
+        
+         // Add event listeners for screen reader functionality
+      jobCard.addEventListener("mouseover", () => {
+        jobCard.classList.add("hover-speak")
+        speakText(`${job.title}. ${job.details}. There are ${job.openPositions} open positions.`);
+      });
+
+      jobCard.addEventListener("mouseleave", () => {
+        stopSpeaking();
+      });
         jobsContainer.appendChild(jobCard);
       }
     });
@@ -157,3 +166,39 @@ const jobs = [
     createJobListingCards();
   });
   
+  
+// accessibility js 
+var screenReaderEnabled = false;
+
+function toggleAccessibilityMenu() {
+  var menu = document.getElementById("accessibilityMenu");
+  menu.classList.toggle("active");
+}
+
+function toggleScreenReader() {
+  screenReaderEnabled = !screenReaderEnabled;
+  var menuButton = document.getElementById("screenReaderButton");
+  if (screenReaderEnabled) {
+    speakText("Screen reader enabled");
+    menuButton.innerText = "Disable Screen Reader";
+    document.body.classList.add("screen-reader-enabled");
+    setTimeout(toggleAccessibilityMenu, 5000);
+  } else {
+    speakText("Screen reader disabled");
+    menuButton.innerText = "Enable Screen Reader";
+    document.body.classList.remove("screen-reader-enabled");
+    toggleAccessibilityMenu();
+  }
+}
+
+function speakText(text) {
+  if (screenReaderEnabled) {
+    var utterance = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(utterance);
+  }
+}
+
+function stopSpeaking() {
+  window.speechSynthesis.cancel();
+}
+
