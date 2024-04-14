@@ -138,7 +138,7 @@ const jobs = [
     details:
       "Responsible to schedule and follow up on virtual meetings withinterested experts and to maintain a database.",
     openPositions: "15",
-    link: "#",
+    link: "https://in.indeed.com/Client-Acquisition-jobs",
   },
   {
     title: "YouTube Content Writer",
@@ -146,7 +146,7 @@ const jobs = [
     details:
       "Responsible to make the content for a particular Youtube channel and to keep the records of the data.",
     openPositions: "3",
-    link: "#",
+    link: "https://in.indeed.com/q-youtube-content-writer-jobs.html",
   },
 
 
