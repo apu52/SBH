@@ -25,7 +25,8 @@
             <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
                     onmouseover="speakText('click here to change the screen reader mode')"
                     onmouseleave="stopSpeaking()">Enable Screen Reader</button></li>
-            <li><button onclick="toggleVoiceRecognition()">Enable Voice Recognition</button></li>
+            <li><button onclick="toggleVoiceRecognition()" id="voiceRecognitionButton">Enable Voice Recognition</button></li>
+
         </ul>
     </div>
 
@@ -46,7 +47,7 @@
             </div>
             <div class="submit-form">
                 <h4 class="third-text"onmouseover="speakText('contact us')" onmouseleave="stopSpeaking()">Contact us</h4>
-                <form action="#">
+                <form action="#" method="post">
                     <div class="input-box">
                       <input type="text" class="input"  aria-label="Enter your username" id="name" />
                       <label for="">Name</label>
@@ -64,18 +65,20 @@
                         <label for="">Message</label>
                     </div>
                     <div class="button">
-                      <input type="button" value="Send Now" class="btn" aria-label="Send now" id="send"/>
+                      <input type="submit" value="Submit" class="btn" aria-label="submit" id="send"/>
                     </div>
                   </form>
             </div>
         </div>
     </div>
 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
 
      <script>
  
         var screenReaderEnabled = false;
-       
+        var voiceRecognitionEnabled = false;
+
 
         function toggleAccessibilityMenu() {
             var menu = document.getElementById("accessibilityMenu");
@@ -101,6 +104,90 @@
             }
             // toggleAccessibilityMenu();
         }
+
+
+        function toggleVoiceRecognition() {
+        voiceRecognitionEnabled = !voiceRecognitionEnabled;
+        var menuButton = document.getElementById("voiceRecognitionButton");
+        if (voiceRecognitionEnabled) {
+            startVoiceRecognition();
+            menuButton.innerText = "Disable voice recognition";
+        } else {
+            stopVoiceRecognition();
+            menuButton.innerText = "Enaable voice recognition";
+            toggleAccessibilityMenu();
+        }
+    }
+    
+    function startVoiceRecognition() {
+        if (annyang) {
+            annyang.start();
+            speakText("Voice recognition enabled");
+        }
+    }
+
+    function stopVoiceRecognition() {
+        if (annyang) {
+            annyang.abort();
+            speakText("Voice recognition disabled");
+        }
+    }
+    
+    // Voice commands
+    if (annyang) {
+        var commands = {
+            'enable voice recognition': toggleVoiceRecognition,
+            'disable voice recognition': toggleVoiceRecognition,
+            'submit': submitForm,
+            'go to name': focusOnName,
+            'go to email': focusOnEmail,
+            'go to phone': focusOnPhone,
+            'go to message': focusOnMessage,
+            'enter name *name': enterName,
+            'enter email *email': enterEmail,
+            'enter phone *phone': enterPhone,
+            'enter message *message': enterMessage
+        };
+
+        annyang.addCommands(commands);
+        annyang.debug(true);
+    }
+
+    function submitForm() {
+        var form = document.querySelector('form');
+        form.submit();
+    }
+
+    function focusOnName() {
+        document.getElementById('name').focus();
+    }
+
+    function focusOnEmail() {
+        document.getElementById('email').focus();
+    }
+
+    function focusOnPhone() {
+        document.getElementById('phone').focus();
+    }
+
+    function focusOnMessage() {
+        document.getElementById('msg').focus();
+    }
+    function enterName(name) {
+        document.getElementById('name').value = name;
+    }
+
+    function enterEmail(email) {
+        document.getElementById('email').value = email;
+    }
+
+    function enterPhone(phone) {
+        document.getElementById('phone').value = phone;
+    }
+
+    function enterMessage(message) {
+        document.getElementById('msg').value = message;
+    }
 
         function speakText(text) {
             if (screenReaderEnabled) {
