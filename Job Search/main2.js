@@ -93,9 +93,13 @@ const jobs = [
 
   ];
   
+  
+  
+  
   const jobsHeading = document.querySelector(".jobs-list-container h2");
   const jobsContainer = document.querySelector(".jobs-list-container .jobs");
   const jobSearch = document.querySelector(".jobs-list-container .job-search");
+  const resultCount = document.querySelector(".result-count");
   
   let searchTerm = "";
   
@@ -107,6 +111,7 @@ const jobs = [
   
   const createJobListingCards = () => {
     jobsContainer.innerHTML = "";
+    let count = 0;
   
     jobs.forEach((job) => {
       if (job.title.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -138,22 +143,75 @@ const jobs = [
           openPositions.innerHTML = `${job.openPositions} open positions`;
         }
   
+        count++;
+  
         jobCard.appendChild(image);
         jobCard.appendChild(title);
         jobCard.appendChild(details);
         jobCard.appendChild(detailsBtn);
         jobCard.appendChild(openPositions);
-  
+        
+         // Add event listeners for screen reader functionality
+      jobCard.addEventListener("mouseover", () => {
+        jobCard.classList.add("hover-speak")
+        speakText(`${job.title}. ${job.details}. There are ${job.openPositions} open positions.`);
+      });
+
+      jobCard.addEventListener("mouseleave", () => {
+        stopSpeaking();
+      });
         jobsContainer.appendChild(jobCard);
       }
     });
+  
+    // Display the count of related job cards if search is performed
+    if (searchTerm.trim() !== "") {
+      resultCount.innerHTML = `<strong>Related job cards:</strong> ${count}`;
+    } else {
+      resultCount.textContent = ""; // Clear count if no search term entered
+    }
   };
   
-  createJobListingCards();
+  createJobListingCards(); // Initial call to populate job listings
   
   jobSearch.addEventListener("input", (e) => {
     searchTerm = e.target.value;
-  
     createJobListingCards();
   });
   
+  
+// accessibility js 
+var screenReaderEnabled = false;
+
+function toggleAccessibilityMenu() {
+  var menu = document.getElementById("accessibilityMenu");
+  menu.classList.toggle("active");
+}
+
+function toggleScreenReader() {
+  screenReaderEnabled = !screenReaderEnabled;
+  var menuButton = document.getElementById("screenReaderButton");
+  if (screenReaderEnabled) {
+    speakText("Screen reader enabled");
+    menuButton.innerText = "Disable Screen Reader";
+    document.body.classList.add("screen-reader-enabled");
+    setTimeout(toggleAccessibilityMenu, 5000);
+  } else {
+    speakText("Screen reader disabled");
+    menuButton.innerText = "Enable Screen Reader";
+    document.body.classList.remove("screen-reader-enabled");
+    toggleAccessibilityMenu();
+  }
+}
+
+function speakText(text) {
+  if (screenReaderEnabled) {
+    var utterance = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(utterance);
+  }
+}
+
+function stopSpeaking() {
+  window.speechSynthesis.cancel();
+}
+

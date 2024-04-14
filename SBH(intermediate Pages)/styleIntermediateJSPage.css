@@ -71,15 +71,14 @@ h3{
     cursor: pointer;
     font-weight: bolder;
 }
+.btn a{
+    text-decoration: none;
+    color: #fff;
+}
 
 .btn:hover {
     background-color: #0056b3;
 }
-
-/* a{}  ADD CSS FOR PLAY NOW  */
-
-
-
 
 .right{
     /* border: 2px solid red; */

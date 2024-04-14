@@ -128,7 +128,7 @@
       <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
           onmouseover="speakText('click here to change the screen reader mode')" onmouseleave="stopSpeaking()">Enable
           Screen Reader</button></li>
-      <li><button onclick="toggleKeyboardNavigation()">Enable Keyboard Navigation</button></li>
+      <li><button onclick="toggleKeyboardNavigation()">Enable Voice Recognition</button></li>
     </ul>
   </div>
 
@@ -1127,13 +1127,19 @@
 
       <section class="section blog has-bg-image" id="testimonial" aria-label="testimonial" <div class="container">
 
-        <p class="section-subtitle">Success Stories</p>
+        <div class="hover-speak"onmouseover="speakText('meet our successfull students and know about their success stories')"
+        onmouseleave="stopSpeaking()">
+          <p class="section-subtitle">Success Stories</p>
 
-        <h2 class="h2 section-title">Meet our Successful Students</h2>
+          <h2 class="h2 section-title">Meet our Successful Students</h2>
+        </div>
 
         <ul class="grid-list">
 
-          <li>
+          <li class="hover-speak"onmouseover="speakText('microsoft ui ux designer anurag basu says Through a comprehensive course at Proedu, I acquired the skills and knowledge needed to excel in UI/UX'+
+          'design. Now, I proudly serve as a proficient UI/UX designer, thanks to the valuable education I'+
+          'received. )"
+          onmouseleave="stopSpeaking()">
             <div class="blog-card">
 
               <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
@@ -1177,7 +1183,9 @@
             </div>
           </li>
 
-          <li>
+          <li class="hover-speak"onmouseover="speakText('metas web developer srija das  says I transformed into'+'a skilled web developer and designer after completing a course at Proedu'+
+          'equipping me with the expertise to create dynamic and visually appealing websites' )"
+          onmouseleave="stopSpeaking()">
             <div class="blog-card">
 
               <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
@@ -1219,7 +1227,9 @@
             </div>
           </li>
 
-          <li>
+          <li  class="hover-speak"onmouseover="speakText('microsofts data scientist subham sikdar says I have'+ 'evolved into a Data Scientist through Proedus course mastering the skills necessary to analyze'+
+          'and derive meaningful insights from complex datasets' )"
+          onmouseleave="stopSpeaking()">
             <div class="blog-card">
 
               <figure class="card-banner img-holder has-after" style="--width: 370; --height: 370;">
@@ -1329,7 +1339,7 @@
 
           <p class="section-text">
             Eduversity offers personalized tech courses, industry-led training, and a global community, ensuring
-            inclusive access for students of all abilities to excel in their learning journey
+            inclusive access for students of all abilities to excel in their learning journey]r
           </p>
          </div>
 
@@ -1370,7 +1380,8 @@
         <ul class="footer-list">
           <a href="#home" class="footer-link">
             <li>
-              <p class="footer-list-title">Home</p>
+              <p class="footer-list-title  hover-speak" onmouseover="speakText('go to home')"
+              onmouseleave="stopSpeaking()" >Home</p>
             </li>
           </a>
 
@@ -1378,7 +1389,8 @@
             <a href="#about" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">About Us</span>
+              <span class="span hover-speak" onmouseover="speakText('go to about us section')"
+              onmouseleave="stopSpeaking()">About Us</span>
             </a>
           </li>
 
@@ -1386,7 +1398,8 @@
             <a href="#courses" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">Courses</span>
+              <span class="span hover-speak" onmouseover="speakText('go to courses section')"
+              onmouseleave="stopSpeaking()">Courses</span>
             </a>
           </li>
 
@@ -1394,7 +1407,8 @@
             <a href="#event" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">Find the JOB</span>
+              <span class="span hover-speak" onmouseover="speakText('go to find the job section')"
+              onmouseleave="stopSpeaking()">Find the JOB</span>
             </a>
           </li>
 
@@ -1402,7 +1416,8 @@
             <a href="#miniganes" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">Mini Games</span>
+              <span class="span hover-speak" onmouseover="speakText('go to mini games')"
+              onmouseleave="stopSpeaking()">Mini Games</span>
             </a>
           </li>
 
@@ -1410,7 +1425,8 @@
             <a href="#testimonial" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">Testimonial</span>
+              <span class="span hover-speak" onmouseover="speakText('go to testimonial section')"
+              onmouseleave="stopSpeaking()">Testimonial</span>
             </a>
           </li>
 
@@ -1418,7 +1434,8 @@
             <a href="/contact_us/contact.html" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">Contact us</span>
+              <span class="span hover-speak"  onmouseover="speakText('go to contact us page')"
+              onmouseleave="stopSpeaking()">Contact us</span>
             </a>
           </li>
 
@@ -1427,14 +1444,16 @@
         <ul class="footer-list">
 
           <li>
-            <p class="footer-list-title">More About us</p>
+            <p class="footer-list-title hover-speak"  onmouseover="speakText('know more about us')"
+            onmouseleave="stopSpeaking()">More About us</p>
           </li>
 
           <li>
             <a href="#" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">Buy Courses</span>
+              <span class="span hover-speak" onmouseover="speakText('buy courses')"
+              onmouseleave="stopSpeaking()">Buy Courses</span>
             </a>
           </li>
 
@@ -1442,7 +1461,8 @@
             <a href="#" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">Privacy Policy</span>
+              <span class="span hover-speak" onmouseover="speakText('privacy Policy')"
+              onmouseleave="stopSpeaking()">Privacy Policy</span>
             </a>
           </li>
 
@@ -1450,7 +1470,8 @@
             <a href="#" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">FAQ</span>
+              <span class="span hover-speak" onmouseover="speakText('frequntly asked questions')"
+              onmouseleave="stopSpeaking()">FAQ</span>
             </a>
           </li>
 
@@ -1458,7 +1479,8 @@
             <a href="#" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">FeedBack page</span>
+              <span class="span hover-speak" onmouseover="speakText('feedback page')"
+              onmouseleave="stopSpeaking()">FeedBack page</span>
             </a>
           </li>
 
@@ -1468,7 +1490,8 @@
             <a href="#" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
-              <span class="span">Terms & Conditions</span>
+              <span class="span hover-speak" onmouseover="speakText('terms and Conditions')"
+              onmouseleave="stopSpeaking()">Terms & Conditions</span>
             </a>
           </li>
 
@@ -1477,13 +1500,15 @@
         <ul class="footer-list">
 
           <li>
-            <p class="footer-list-title">Contact Info</p>
+            <p class="footer-list-title hover-speak" onmouseover="speakText('contact Information')"
+            onmouseleave="stopSpeaking()">Contact Info</p>
           </li>
 
           <li class="footer-item">
             <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
 
-            <address class="footer-link">
+            <address class="footer-link hover-speak" onmouseover="speakText(' 8/1 S Canal road , Kolkata -'+ '700015')"
+            onmouseleave="stopSpeaking()">
               8/1 S Canal road , Kolkata - 700015
             </address>
           </li>
@@ -1491,19 +1516,20 @@
           <li class="footer-item">
             <ion-icon name="call" aria-hidden="true"></ion-icon>
 
-            <a href="tel:+13647657839" class="footer-link">+91 123456789</a>
+            <a href="tel:+13647657839" class="footer-link hover-speak"onmouseover="speakText('+91 123456789')"
+            onmouseleave="stopSpeaking()">+91 123456789</a>
           </li>
 
           <li class="footer-item">
             <ion-icon name="call" aria-hidden="true"></ion-icon>
 
-            <a href="tel:+13647657840" class="footer-link">+91 5673369533 </a>
+            <a href="tel:+13647657840" class="footer-link hover-speak">+91 5673369533 </a>
           </li>
 
           <li class="footer-item">
             <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
 
-            <a href="mailto:contact@eduhome.com" class="footer-link">eduversity19@gmail.com</a>
+            <a href="mailto:contact@eduhome.com" class="footer-link hover-speak">eduversity19@gmail.com</a>
           </li>
 
         </ul>
@@ -1511,7 +1537,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="copyright">
+        <p class="copyright ">
           Copyright 2024 Eduversity. All Rights Reserved by <a href="#" class="copyright-link">IDEACRAFTERS, TEAM
             NSEC</a>
         </p>
@@ -1528,7 +1554,8 @@
     - #BACK TO TOP
   -->
 
-  <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
+  <a href="#top" class="back-top-btn hover-speak" onmouseover="speakText('click here to back to top')"
+  onmouseleave="stopSpeaking()" aria-label="Back to top" data-back-top-btn>
     <ion-icon name="arrow-up"></ion-icon>
   </a>
 
