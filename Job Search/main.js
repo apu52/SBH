@@ -50,7 +50,7 @@ const jobs = [
     details:
       "Responsible for creating and executing marketing strategies to promote a company or product.",
     openPositions: "45",
-    link: "#",
+    link: "https://www.linkedin.com/authwall?trk=qf&original_referer=https://in.linkedin.com/jobs/digital-marketing-jobs&sessionRedirect=https%3A%2F%2Fin.linkedin.com%2Fjobs%2Fdigital-marketing-jobs%3Foriginal_referer%3Dhttps%253A%252F%252Fin.search.yahoo.com%252F",
   },
   {
     title: "Business Development Executive",
@@ -58,7 +58,7 @@ const jobs = [
     details:
       "Responsible for engaging with potential partners, presenting and managing product and services.",
     openPositions: "2",
-    link: "#",
+    link: "https://in.indeed.com/business-development-jobs",
   },
 
   {
@@ -67,7 +67,7 @@ const jobs = [
     details:
       "Responsible to develop and implement social media strategies to increase brand awareness and drive engagements",
     openPositions: "5",
-    link: "#",
+    link: "https://in.linkedin.com/jobs/social-media-marketing-jobs",
   },
 
   {
@@ -76,7 +76,7 @@ const jobs = [
     details:
       "Responsible to develop both the frontend and backend projects on some real life problems",
     openPositions: "9",
-    link: "#",
+    link: "https://in.linkedin.com/jobs/full-stack-developer-jobs?position=1&pageNum=0",
   },
 
   {
@@ -85,7 +85,7 @@ const jobs = [
     details:
       "Responsible for data related work on videoes, audio and image files.",
     openPositions: "2",
-    link: "#",
+    link: "https://in.indeed.com/q-executive-data-entry-jobs.html",
   },
 
   {
@@ -94,7 +94,7 @@ const jobs = [
     details:
       "Responsible to develop user friendly, low latency and interactive features for stock trading apps",
     openPositions: "3",
-    link: "#",
+    link: "https://in.indeed.com/q-app-developer-jobs.html?vjk=269d3cf56f5054de",
   },
 
   {
