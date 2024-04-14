@@ -6,7 +6,7 @@ const jobs = [
       details:
         "Produce engaging written content for websites, blogs, and social media platforms.",
       openPositions: "5",
-      link: "#",
+      link: "https://in.indeed.com/q-youtube-content-writer-jobs.html?vjk=fb4ec5b40759233b",
     },
   
     {
@@ -15,7 +15,7 @@ const jobs = [
       details:
         "Create visually appealing designs for branding, marketing materials, and digital media.",
       openPositions: "1",
-      link: "#",
+      link: "https://in.indeed.com/graphic-designer-jobs",
     },
   
     {
@@ -24,7 +24,7 @@ const jobs = [
       details:
         "Provide administrative and clerical support remotely to businesses and entrepreneurs.",
       openPositions: "2",
-      link: "#",
+      link: "https://www.upwork.com/freelance-jobs/virtual-assistant/",
     },
     
     {
@@ -33,7 +33,7 @@ const jobs = [
       details:
         "Translate written or spoken content between languages to facilitate communication",
       openPositions: "1",
-      link: "#",
+      link: "https://translatorpub.com/",
     },
     
     {
@@ -42,7 +42,7 @@ const jobs = [
       details:
         "Responsible for designing , developing and managing cloud-based infrastructures, applications and services.",
       openPositions: "3",
-      link: "#",
+      link: "https://in.indeed.com/q-Web-Developer-jobs.html",
     },
   
     {
@@ -51,7 +51,7 @@ const jobs = [
       details:
         "Responsible for Teaching data science prototypes, designing ML systems and developing ML Applications",
       openPositions: "3",
-      link: "#",
+      link: "https://www.linkedin.com/authwall?trk=qf&original_referer=https://in.search.yahoo.com/&sessionRedirect=https%3A%2F%2Fin.linkedin.com%2Fjobs%2Fseo-specialist-jobs",
     },
   
     {
