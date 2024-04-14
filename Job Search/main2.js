@@ -60,7 +60,7 @@ const jobs = [
       details:
         "Craft compelling copy for advertisements, marketing campaigns, and promotional materials.",
       openPositions: "14",
-      link: "#",
+      link: "https://www.upwork.com/freelance-jobs/copywriting/",
     },
     {
       title: "Data Entry Specialist",
@@ -68,7 +68,7 @@ const jobs = [
       details:
         "Input and manage data accurately and efficiently using various software tools.",
       openPositions: "5",
-      link: "#",
+      link: "https://in.jobrapido.com/Jobs-Data-Entry-jobs-in-Nashik?r=auto&utm_source=yahoo&utm_medium=cpc&utm_campaign=IN_COMBINED_SEARCH&r=auto&utm_agid=756668384&utm_kwid=kwd-8134750529:loc-90&ext=&int=&phy=116075&mt=b&dev=c&net=o&msclkid=46c8072697041cf9d1ef613d756afea5&utm_source=bing&utm_medium=cpc&utm_campaign=IN_COMBINED_SEARCH&utm_term=jobs%20data%20entry%20nashik&utm_content=nashik",
     },
   
     {
@@ -77,7 +77,7 @@ const jobs = [
       details:
         "Responsible to develop and implement social media strategies to increase brand awareness and drive engagements",
       openPositions: "4",
-      link: "#",
+      link: "https://in.linkedin.com/jobs/social-media-marketing-jobs?position=1&pageNum=0",
     },
   
     {
