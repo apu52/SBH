@@ -5,7 +5,7 @@ const jobs = [
     details:
       "Responsible for design, development, testing and maintainance of software applications",
     openPositions: "8",
-    link: "https://in.linkedin.com/jobs/software-engineer-jobs?position=1&pageNum=0",
+    link: "https://in.indeed.com/q-sales-representative-l-kolkata,-west-bengal-jobs.html?vjk=2c6b132eef158f06 ",
   },
 
   {
@@ -103,7 +103,7 @@ const jobs = [
     details:
       "Responsible to build strong sales and service teams and be a major stakeholder in product evolution",
     openPositions: "15",
-    link: "#",
+    link: "https://in.linkedin.com/jobs/regional-sales-jobs?position=1&pageNum=0",
   },
   {
     title: "Data Scientist",
@@ -111,7 +111,7 @@ const jobs = [
     details:
       "Responsible for collecting, analyzing and interpreting large data sets to help organizations make better decisions.",
     openPositions: "3",
-    link: "#",
+    link: "https://in.linkedin.com/jobs/data-scientist-jobs?position=1&pageNum=0",
   },
 
   {
@@ -120,7 +120,7 @@ const jobs = [
     details:
       "Responsible for managing the entire product life cycle, from ideation to launch and post-launch maintenance.",
     openPositions: "1",
-    link: "#",
+    link: "https://www.linkedin.com/authwall?trk=qf&original_referer=https://in.linkedin.com/jobs/product-manager-jobs&sessionRedirect=https%3A%2F%2Fin.linkedin.com%2Fjobs%2Fproduct-manager-jobs%3Foriginal_referer%3Dhttps%253A%252F%252Fin.search.yahoo.com%252F",
   },
 
   {
@@ -129,8 +129,10 @@ const jobs = [
     details:
       "Responsible for reaching out to potential customers and closing sales deals.",
     openPositions: "4",
-    link: "#",
+    link: "https://in.indeed.com/q-sales-manager-portal-jobs.html?vjk=c0fb6c16135080c0",
   },
+
+
 ];
 
 
@@ -171,6 +173,11 @@ const createJobListingCards = () => {
       detailsBtn.href = job.link;
       detailsBtn.innerHTML = "More Details";
       detailsBtn.classList.add("details-btn");
+      detailsBtn.target = "_blank"; // Set target attribute to _blank
+      // Add onclick attribute to open link in new tab
+    detailsBtn.onclick = () => {
+      window.open(job.link, '_blank');
+    };
 
       let openPositions = document.createElement("span");
       openPositions.classList.add("open-positions");
