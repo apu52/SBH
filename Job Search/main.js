@@ -5,7 +5,7 @@ const jobs = [
     details:
       "Responsible for design, development, testing and maintainance of software applications",
     openPositions: "8",
-    link: "#",
+    link: "https://in.linkedin.com/jobs/software-engineer-jobs?position=1&pageNum=0",
   },
 
   {
@@ -14,7 +14,7 @@ const jobs = [
     details:
       "Responsible to build security systems and monitor security controls to protect the data from cyber attacks.",
     openPositions: "6",
-    link: "#",
+    link: "https://www.linkedin.com/authwall?trk=qf&original_referer=https://in.search.yahoo.com/&sessionRedirect=https%3A%2F%2Fin.linkedin.com%2Fjobs%2Fsecurity-engineer-jobs",
   },
   
   {
@@ -23,7 +23,7 @@ const jobs = [
     details:
       "Responsible for planning, executing and closing projects on time and within budget.",
     openPositions: "3",
-    link: "#",
+    link: "https://in.linkedin.com/jobs/project-manager-jobs?position=1&pageNum=0",
   },
 
   {
@@ -32,7 +32,7 @@ const jobs = [
     details:
       "Responsible for designing , developing and managing cloud-based infrastructures, applications and services.",
     openPositions: "10",
-    link: "#",
+    link: "https://in.linkedin.com/jobs/cloud-developer-jobs?position=1&pageNum=0",
   },
 
   {
@@ -41,7 +41,7 @@ const jobs = [
     details:
       "Responsible for studying data science prototypes, designing ML systems and developing ML Applications",
     openPositions: "20",
-    link: "#",
+    link: "https://aiml.careers/",
   },
 
   {
