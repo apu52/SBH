@@ -16,17 +16,52 @@
         margin: 0;
         padding: 0;
         font-family: sans-serif;
-        background: #d0b0bf;
-        color: rgb(18, 113, 196);
+        /* background: #d0b0bf;
+        color: rgb(18, 113, 196); */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        background: rgb(0, 12, 36);
-        background: linear-gradient(302deg, rgba(0, 12, 36, 1) 0%, rgba(22, 214, 202, 1) 35%, rgba(32, 204, 204, 1) 35%, rgba(118, 100, 220, 1) 68%, rgba(255, 0, 236, 1) 100%);
+       /* a(32, 204, 204, 1) 35%, rgba(118, 100, 220, 1) 68%, rgba(255, 0, 236, 1) 100%); */
 
     }
+    
+        
+
+    .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffdcb5; /* Light grey background */
+    overflow: hidden;
+    text-align: center;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #26aac8; /* Green */
+    opacity: 0.6;
+    animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+}
 
     #heading-1 {
         font-family: cursive;
@@ -249,7 +284,7 @@
 
     .accessibility-menu {
         position: fixed;
-        bottom: 80px;
+        bottom: 85px;
         right: 40px;
         background-color: #f1f1f1;
         border-radius: 5px;
@@ -289,7 +324,12 @@
 </style>
 
 <body>
+<div class="background">
 
+    <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    
     <h2 id="heading-1" class="hover-speak" onmouseover="speakText('Gamify')" onmouseleave="stopSpeaking()">Gamify 🎉
     </h2>
     <h1 id="heading-2" class="hover-speak" onmouseover="speakText('play and learn')" onmouseleave="stopSpeaking()">
@@ -504,6 +544,7 @@
         </div>
         <div class="swiper-pagination"></div>
     </div>
+</div>
 
 
     <!-- Swiper JS -->
@@ -556,6 +597,36 @@
         }
 
     </script>
+    <!-- bg change scripts  -->
+<script>
+    const background = document.querySelector('.background');
+
+function createCircle() {
+    const circle = document.createElement('div');
+    circle.classList.add('circle');
+    
+    const size = Math.random() * 60 + 20; // Random size between 20 and 80
+    circle.style.width = `${size}px`;
+    circle.style.height = `${size}px`;
+    
+    const { innerWidth, innerHeight } = window;
+    const x = Math.random() * innerWidth;
+    const y = Math.random() * innerHeight;
+    
+    circle.style.left = `${x}px`;
+    circle.style.top = `${y}px`;
+    
+    background.appendChild(circle);
+    
+    setTimeout(() => {
+        circle.remove();
+    }, 5000); // Remove circle after 5 seconds
+}
+
+setInterval(createCircle, 300); // Create a new circle every 300 milliseconds
+
+</script>
+
 
 </body>
 
