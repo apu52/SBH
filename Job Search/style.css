@@ -1,4 +1,11 @@
+/**'{
+  background-image: url("");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  
 
+}*/
 .jobs-list-container {
     max-width: 900px;
     margin: 20px auto;
@@ -19,7 +26,7 @@
   
   .jobs-list-container .jobs img {
     width: 60px;
-  }
+  } 
   
   .jobs-list-container .job {
     box-shadow: 0 4px 24px -8px rgba(2, 48, 71, 0.2);
