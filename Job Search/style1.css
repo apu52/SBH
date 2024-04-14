@@ -89,9 +89,10 @@
     margin-bottom: 20px;
   }
   .result-count{
-    font-size: 30px;
+    font-size: 20px;
     border-left: 4px solid #023047;
     padding-left: 20px;
+    font-weight: bold;
   }
   
   @media (max-width: 940px) {

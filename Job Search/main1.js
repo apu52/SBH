@@ -15,7 +15,7 @@ const jobs = [
     details:
       "Responsible for design, development, testing and maintainance of software applications",
     openPositions: "1",
-    link: "#",
+    link: "https://in.indeed.com/q-sales-representative-l-kolkata,-west-bengal-jobs.html?vjk=2c6b132eef158f06",
   },
 
   {
@@ -24,7 +24,7 @@ const jobs = [
     details:
       "Responsible to build security systems and monitor security controls to protect the data from cyber attacks.",
     openPositions: "2",
-    link: "#",
+    link: "https://www.naukri.com/security-management-jobs",
   },
   
   {
@@ -33,7 +33,7 @@ const jobs = [
     details:
       "Responsible for planning, executing and closing projects on time and within budget.",
     openPositions: "1",
-    link: "#",
+    link: "https://in.linkedin.com/jobs/project-manager-jobs?position=1&pageNum=0",
   },
   
   {
@@ -42,7 +42,7 @@ const jobs = [
     details:
       "Responsible for designing , developing and managing cloud-based infrastructures, applications and services.",
     openPositions: "3",
-    link: "#",
+    link: "https://in.indeed.com/q-cloud-developer-jobs.html",
   },
 
   {
@@ -51,7 +51,7 @@ const jobs = [
     details:
       "Responsible for Teaching data science prototypes, designing ML systems and developing ML Applications",
     openPositions: "3",
-    link: "#",
+    link: "https://teachersrecruiter.in/",
   },
 
   {
@@ -60,7 +60,7 @@ const jobs = [
     details:
       "Responsible for creating and executing marketing strategies to promote a company or product.",
     openPositions: "14",
-    link: "#",
+    link: "https://in.indeed.com/q-digital-marketing-jobs.html",
   },
   {
     title: "Video Editing",
@@ -68,7 +68,7 @@ const jobs = [
     details:
       "Responsible for engaging with potential partners, presenting and editing the video content.",
     openPositions: "5",
-    link: "#",
+    link: "https://in.indeed.com/Work-From-Home-Video-Editing-jobs",
   },
 
   {
@@ -77,7 +77,7 @@ const jobs = [
     details:
       "Responsible to develop and implement social media strategies to increase brand awareness and drive engagements",
     openPositions: "4",
-    link: "#",
+    link: "https://in.indeed.com/Social-Media-Marketing-jobs",
   },
 
   {
@@ -86,7 +86,7 @@ const jobs = [
     details:
       "Responsible to develop both the frontend and backend projects on some real life problems",
     openPositions: "9",
-    link: "#",
+    link: "https://in.linkedin.com/jobs/full-stack-developer-jobs?position=1&pageNum=0",
   },
 
   {
@@ -95,7 +95,7 @@ const jobs = [
     details:
       "Responsible for content writing and reel production and E-commerce management.",
     openPositions: "2",
-    link: "#",
+    link: "https://in.linkedin.com/jobs/content-writer-jobs?original_referer=https%3A%2F%2Fin.search.yahoo.com%2F&position=1&pageNum=0",
   },
 
   {
@@ -104,7 +104,7 @@ const jobs = [
     details:
       "Responsible to develop user friendly, low latency and interactive features for stock trading apps",
     openPositions: "3",
-    link: "#",
+    link: "https://in.indeed.com/q-app-developer-jobs.html",
   },
 
   {
@@ -113,7 +113,7 @@ const jobs = [
     details:
       "Responsible to build strong sales and service teams and be a major stakeholder in product evolution",
     openPositions: "15",
-    link: "#",
+    link: "https://www.linkedin.com/authwall?trk=qf&original_referer=https://in.search.yahoo.com/&sessionRedirect=https%3A%2F%2Fin.linkedin.com%2Fjobs%2Fregional-sales-jobs",
   },
   {
     title: "Camous Ambassador",
@@ -121,7 +121,7 @@ const jobs = [
     details:
       "Responsible to serve as a brand representative and act as a liaison between the brand and their peers, helping to create awareness.",
     openPositions: "3",
-    link: "#",
+    link: "https://campus.mygov.in/campus-activity/",
   },
 
   {
@@ -130,7 +130,7 @@ const jobs = [
     details:
       "Responsible for managing the entire product life cycle, from ideation to launch and post-launch maintenance.",
     openPositions: "1",
-    link: "#",
+    link: "https://in.linkedin.com/jobs/product-manager-jobs?original_referer=https%3A%2F%2Fin.search.yahoo.com%2F&position=1&pageNum=0",
   },
   {
     title: "Client Acquisition",
@@ -138,7 +138,7 @@ const jobs = [
     details:
       "Responsible to schedule and follow up on virtual meetings withinterested experts and to maintain a database.",
     openPositions: "15",
-    link: "#",
+    link: "https://in.indeed.com/Client-Acquisition-jobs",
   },
   {
     title: "YouTube Content Writer",
@@ -146,7 +146,7 @@ const jobs = [
     details:
       "Responsible to make the content for a particular Youtube channel and to keep the records of the data.",
     openPositions: "3",
-    link: "#",
+    link: "https://in.indeed.com/q-youtube-content-writer-jobs.html",
   },
 
 
