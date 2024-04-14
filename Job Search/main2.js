@@ -133,6 +133,12 @@ const jobs = [
         detailsBtn.href = job.link;
         detailsBtn.innerHTML = "More Details";
         detailsBtn.classList.add("details-btn");
+        detailsBtn.target = "_blank"; // Set target attribute to _blank
+      // Add onclick attribute to open link in new tab
+    detailsBtn.onclick = () => {
+      window.open(job.link, '_blank');
+    };
+
   
         let openPositions = document.createElement("span");
         openPositions.classList.add("open-positions");
