@@ -11,15 +11,15 @@
         <div class="left">
             <div class="card-left">
                 <div class="card-content">
-                    <h2>Digital Marketing Essentials</h2>
-                    <p>Unlock the power of digital marketing with our comprehensive course designed to transform your skills and elevate your career prospects. Dive into the dynamic world of online marketing and gain practical expertise in key strategies and tools.</p>
-                    <h3>Lets Play Quiz!!!</h3>
-                    <button class="btn"><a href="">Play Now</a></button>
+                    <h2 class="hover-speak" onmouseover="speakText('Digital Marketing Essentials')" onmouseleave="stopSpeaking()">Digital Marketing Essentials</h2>
+                    <p class="hover-speak" onmouseover="speakText('Unlock the power of digital marketing with our comprehensive course designed to transform your skills and elevate your career prospects. Dive into the dynamic world of online marketing and gain practical expertise in key strategies and tools.')" onmouseleave="stopSpeaking()">Unlock the power of digital marketing with our comprehensive course designed to transform your skills and elevate your career prospects. Dive into the dynamic world of online marketing and gain practical expertise in key strategies and tools.</p>
+                    <h3 class="hover-speak" onmouseover="speakText('Lets Play Quiz')" onmouseleave="stopSpeaking()">Lets Play Quiz!!!</h3>
+                    <button class="btn hover-speak" onmouseover="speakText('Click here to play a quiz on Digital Marketting')" onmouseleave="stopSpeaking()"><a href="../Quizzes/indexquiz4digitalmarketing.html">Play Now</a></button>
                 </div>
             </div>
         </div>
         <div class="right">
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on How to start a blog?')" onmouseleave="stopSpeaking()">
                 <h3>1.</h3>
                 <a href="https://youtu.be/ZjVoShBahRg?si=mJsPLH2DMuXWgoMC" target="_blank"><img src="images/vid1-Digital.png" alt="">
                 <div class="content">
@@ -28,39 +28,39 @@
                 </a>
                 <h3>How to start a blog?</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Affiliate Marketing Basics')" onmouseleave="stopSpeaking()">
                 <h3>2.</h3>
-                <a href="https://youtu.be/SLE72I-2lv8?si=jSBBpCjMjR5TzBg5" target="_blank"><img src="images/vid2-digital.png" alt="">
+                <a href="https://youtu.be/SLE72I-2lv8?si=jSBBpCjMjR5TzBg5" target="_blank"><img src="images/vid3-digital.png" alt="">
                 <div class="content">
                     <p>Play</p>
                 </div></a>
                 <h3>Affiliate Marketing Basics</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on What is SEO?')" onmouseleave="stopSpeaking()">
                 <h3>3.</h3>
-                <a href="https://youtu.be/N8DhIndTi6E?si=nyyPg7-6g7JlqNQC" target="_blank"><img src="images/vid3-digital.png" alt="">
+                <a href="https://youtu.be/N8DhIndTi6E?si=nyyPg7-6g7JlqNQC" target="_blank"><img src="images/vid2-digital.png" alt="">
                     <div class="content">
                         <p>Play</p>
                     </div></a>
                 <h3>What is SEO?</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Youtube Marketing')" onmouseleave="stopSpeaking()">
                 <h3>4.</h3>
-                <a href="https://youtu.be/wc0PV2z_04o?si=TxysHw80Hc9R57KW" target="_blank"><img src="images/vid4-digital.png" alt="">
+                <a href="https://youtu.be/wc0PV2z_04o?si=TxysHw80Hc9R57KW" target="_blank"><img src="images/vid5-digital.png" alt="">
                     <div class="content">
                         <p>Play</p>
                     </div></a>
                 <h3>Youtube Marketing</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Instagram Marketing')" onmouseleave="stopSpeaking()">
                 <h3>5.</h3>
-                <a href="https://youtu.be/7NHOzZyDqDw?si=-hMv3K7TV4uYo8Lq" target="_blank"><img src="images/vid5-digital.png" alt="">
+                <a href="https://youtu.be/7NHOzZyDqDw?si=-hMv3K7TV4uYo8Lq" target="_blank"><img src="images/vid4-digital.png" alt="">
                     <div class="content">
                         <p>Play</p>
                     </div></a>
                 <h3>Instagram Marketing</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Google adwords')" onmouseleave="stopSpeaking()">
                 <h3>6.</h3>
                 <a href="https://youtu.be/fVJ1QS2_K4c?si=laT1LOswBxOv3JfR" target="_blank"><img src="images/vid6-digital.png" alt="">
                     <div class="content">
@@ -72,5 +72,60 @@
         </div>
     </section>
     <script src="script.js"></script>
+
+    <!-- Accessibility Mode Button -->
+ <div class="accessibility-button hover-speak" onclick="toggleAccessibilityMenu()"
+ onmouseover="speakText('click here to select accessibility mode')" onmouseleave="stopSpeaking()">
+ <div class="accessibility-icon">
+
+ </div>
+</div>
+
+<!-- Accessibility Menu -->
+<div class="accessibility-menu" id="accessibilityMenu">
+ <ul>
+   <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
+       onmouseover="speakText('click here to change the screen reader mode')" onmouseleave="stopSpeaking()">Enable
+       Screen Reader</button></li>
+   <li><button onclick="toggleKeyboardNavigation()">Enable Keyboard Navigation</button></li>
+ </ul>
+</div>
+
+<script>
+    // accessibility js 
+var screenReaderEnabled = false;
+
+function toggleAccessibilityMenu() {
+  var menu = document.getElementById("accessibilityMenu");
+  menu.classList.toggle("active");
+}
+
+function toggleScreenReader() {
+  screenReaderEnabled = !screenReaderEnabled;
+  var menuButton = document.getElementById("screenReaderButton");
+  if (screenReaderEnabled) {
+    speakText("Screen reader enabled");
+    menuButton.innerText = "Disable Screen Reader";
+    document.body.classList.add("screen-reader-enabled");
+    setTimeout(toggleAccessibilityMenu, 5000);
+  } else {
+    speakText("Screen reader disabled");
+    menuButton.innerText = "Enable Screen Reader";
+    document.body.classList.remove("screen-reader-enabled");
+    toggleAccessibilityMenu();
+  }
+}
+
+function speakText(text) {
+  if (screenReaderEnabled) {
+    var utterance = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(utterance);
+  }
+}
+
+function stopSpeaking() {
+  window.speechSynthesis.cancel();
+}
+</script>
 </body>
 </html>

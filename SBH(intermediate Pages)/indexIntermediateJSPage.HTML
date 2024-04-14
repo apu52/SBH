@@ -10,16 +10,19 @@
     <section class="container">
         <div class="left">
             <div class="card-left">
-                <div class="card-content">
-                    <h2>JavaScript Tutorials</h2>
-                    <p>The Complete JavaScript course offers comprehensive coverage of various JavaScript topics, emphasizing hands-on learning with project-based modules. Taught by a renowned instructor, it's beginner-friendly, requiring only a PC or Mac with no prior software setup.</p>
-                    <h3>Lets Play Quiz!!!</h3>
-                    <button class="btn"><a href="">Play Now</a></button>
+                <div class="card-content ">
+                    <h2 class="hover-speak" onmouseover="speakText('JavaScript Tutorials')" onmouseleave="stopSpeaking()">JavaScript Tutorials</h2>
+                    <p class="hover-speak" onmouseover="speakText('The Complete JavaScript course offers comprehensive coverage of various JavaScript topics'+
+                    'emphasizing hands-on learning with project-based modules'+
+                   'Taught by a renowned instructor, its beginner-friendly, requiring only a PC or Mac with no prior software setup'
+                    )" onmouseleave="stopSpeaking()">The Complete JavaScript course offers comprehensive coverage of various JavaScript topics, emphasizing hands-on learning with project-based modules. Taught by a renowned instructor, it's beginner-friendly, requiring only a PC or Mac with no prior software setup.</p>
+                    <h3 class="hover-speak" onmouseover="speakText('Lets Play Quiz')" onmouseleave="stopSpeaking()">Lets Play Quiz!!!</h3>
+                    <button class="btn hover-speak"onmouseover="speakText('Click here to play JS quiz')" onmouseleave="stopSpeaking()"><a href="../Quizzes/indexquiz1JS.html">Play Now</a></button>
                 </div>
             </div>
         </div>
         <div class="right">
-            <div class="card">
+            <div class="card hover-speak"onmouseover="speakText('Video on Variables and datatypes')" onmouseleave="stopSpeaking()">
                 <h3>1.</h3>
                 <a href="https://youtu.be/Q4p8vRQX8uY?si=jf8hldSNHRBfOUrY" target="_blank"><img src="images/vid1.jpeg" alt="">
                 <div class="content">
@@ -28,7 +31,7 @@
                 </a>
                 <h3>Variables and datatypes</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak"onmouseover="speakText('Video on Strings in JS')" onmouseleave="stopSpeaking()">
                 <h3>2.</h3>
                 <a href="https://youtu.be/fozwNnFunlo?si=zZTIGMMZSho7dM3J" target="_blank"><img src="images/vid2.jpeg" alt="">
                 <div class="content">
@@ -36,7 +39,7 @@
                 </div></a>
                 <h3>Strings in JS</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak"onmouseover="speakText('Video on Array in JS')" onmouseleave="stopSpeaking()">
                 <h3>3.</h3>
                 <a href="https://youtu.be/cejBux2gtEE?si=FSCNpKKobH8Hut64" target="_blank"><img src="images/vid3.jpeg" alt="">
                     <div class="content">
@@ -44,7 +47,7 @@
                     </div></a>
                 <h3>Array in JS</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak"onmouseover="speakText('Video on Classes and Objects in JSS')" onmouseleave="stopSpeaking()">
                 <h3>4.</h3>
                 <a href="https://youtu.be/N-O4w6PynGY?si=vZ2jk4KyIt08B28D" target="_blank"><img src="images/vid4.jpeg" alt="">
                     <div class="content">
@@ -52,7 +55,7 @@
                     </div></a>
                 <h3>Classes and Objects in JS</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak"onmouseover="speakText('Video on Functions in JS')" onmouseleave="stopSpeaking()">
                 <h3>5.</h3>
                 <a href="https://youtu.be/a_gwOwkbhZ0?si=sWuNj6_c0FSYfp7m" target="_blank"><img src="images/vid5.jpeg" alt="">
                     <div class="content">
@@ -60,7 +63,7 @@
                     </div></a>
                 <h3>Functions in JS</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak"onmouseover="speakText('Video on Events in JS')" onmouseleave="stopSpeaking()">
                 <h3>6.</h3>
                 <a href="https://youtu.be/d4PN2rJD98g?si=bdHFVSMfmtOAOogO" target="_blank"><img src="images/vid6.jpeg" alt="">
                     <div class="content">
@@ -72,5 +75,60 @@
         </div>
     </section>
     <script src="script.js"></script>
+
+            <!-- Accessibility Mode Button -->
+ <div class="accessibility-button hover-speak" onclick="toggleAccessibilityMenu()"
+ onmouseover="speakText('click here to select accessibility mode')" onmouseleave="stopSpeaking()">
+ <div class="accessibility-icon">
+
+ </div>
+</div>
+
+<!-- Accessibility Menu -->
+<div class="accessibility-menu" id="accessibilityMenu">
+ <ul>
+   <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
+       onmouseover="speakText('click here to change the screen reader mode')" onmouseleave="stopSpeaking()">Enable
+       Screen Reader</button></li>
+   <li><button onclick="toggleKeyboardNavigation()">Enable Keyboard Navigation</button></li>
+ </ul>
+</div>
+
+<script>
+    // accessibility js 
+var screenReaderEnabled = false;
+
+function toggleAccessibilityMenu() {
+  var menu = document.getElementById("accessibilityMenu");
+  menu.classList.toggle("active");
+}
+
+function toggleScreenReader() {
+  screenReaderEnabled = !screenReaderEnabled;
+  var menuButton = document.getElementById("screenReaderButton");
+  if (screenReaderEnabled) {
+    speakText("Screen reader enabled");
+    menuButton.innerText = "Disable Screen Reader";
+    document.body.classList.add("screen-reader-enabled");
+    setTimeout(toggleAccessibilityMenu, 5000);
+  } else {
+    speakText("Screen reader disabled");
+    menuButton.innerText = "Enable Screen Reader";
+    document.body.classList.remove("screen-reader-enabled");
+    toggleAccessibilityMenu();
+  }
+}
+
+function speakText(text) {
+  if (screenReaderEnabled) {
+    var utterance = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(utterance);
+  }
+}
+
+function stopSpeaking() {
+  window.speechSynthesis.cancel();
+}
+</script>
 </body>
 </html>

@@ -12,15 +12,15 @@
         <div class="left">
             <div class="card-left">
                 <div class="card-content">
-                    <h2>Cyber Security Essentials</h2>
-                    <p>Equip yourself with the critical knowledge and skills to protect digital systems and networks in today's interconnected world with our Cyber Security Essentials course designed specifically for engineering students.</p>
-                    <h3>Lets Play Quiz!!!</h3>
-                    <button class="btn"><a href="">Play Now</a></button>
+                    <h2 class="hover-speak" onmouseover="speakText('Cyber Security Essentials')" onmouseleave="stopSpeaking()">Cyber Security Essentials</h2>
+                    <p class="hover-speak" onmouseover="speakText('Equip yourself with the critical knowledge and skills to protect digital systems and networks in todays interconnected world with our Cyber Security Essentials course designed specifically for engineering students.')" onmouseleave="stopSpeaking()">Equip yourself with the critical knowledge and skills to protect digital systems and networks in today's interconnected world with our Cyber Security Essentials course designed specifically for engineering students.</p>
+                    <h3 class="hover-speak" onmouseover="speakText('Lets Play Quiz!')" onmouseleave="stopSpeaking()">Lets Play Quiz!!!</h3>
+                    <button class="btn hover-speak" onmouseover="speakText('Click here to play a quiz on Cyber security')" onmouseleave="stopSpeaking()"><a href="../Quizzes/indexquiz2cybersecurity.html">Play Now</a></button>
                 </div>
             </div>
         </div>
         <div class="right">
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Basics of Cyber Security')" onmouseleave="stopSpeaking()">
                 <h3>1.</h3>
                 <a href="https://youtu.be/njPY7pQTRWg?si=uJL4NmuW4JHrNfm1" target="_blank"><img src="images/vid1-cyber.png" alt="">
                 <div class="content">
@@ -29,7 +29,7 @@
                 </a>
                 <h3>Basics of Cyber Security</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Ethical Hacking')" onmouseleave="stopSpeaking()">
                 <h3>2.</h3>
                 <a href="https://youtu.be/cKEf8H9cQGM?si=tSDGOz1bKktJBDPg" target="_blank"><img src="images/vid2-cyber.png" alt="">
                 <div class="content">
@@ -37,7 +37,7 @@
                 </div></a>
                 <h3>Ethical Hacking</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Penetration Testing')" onmouseleave="stopSpeaking()">
                 <h3>3.</h3>
                 <a href="https://youtu.be/dqm-Lv03AN4?si=hq9zR3G_iiNQbbJV" target="_blank"><img src="images/vid3-cyber.png" alt="">
                     <div class="content">
@@ -45,7 +45,7 @@
                     </div></a>
                 <h3>Penetration Testing</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Cross-Site Scripting')" onmouseleave="stopSpeaking()">
                 <h3>4.</h3>
                 <a href="https://youtu.be/N-O4w6PynGY?si=vZ2jk4KyIt08B28D" target="_blank"><img src="images/vid4-cyber.png" alt="">
                     <div class="content">
@@ -53,7 +53,7 @@
                     </div></a>
                 <h3>Cross-Site Scripting</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Kali Linux Basics')" onmouseleave="stopSpeaking()">
                 <h3>5.</h3>
                 <a href="https://youtu.be/l77LuRue_lM?si=LsXJyV1oTGhuoZR0" target="_blank"><img src="images/vid5-cyber.png" alt="">
                     <div class="content">
@@ -61,7 +61,7 @@
                     </div></a>
                 <h3>Kali Linux Basics</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on DDOS Attack')" onmouseleave="stopSpeaking()">
                 <h3>6.</h3>
                 <a href="https://youtu.be/PTJ6UZz1pPQ?si=90laKqYcPheckEAp" target="_blank"><img src="images/vid6-cyber.png" alt="">
                     <div class="content">
@@ -73,5 +73,60 @@
         </div>
     </section>
     <script src="script.js"></script>
+
+      <!-- Accessibility Mode Button -->
+ <div class="accessibility-button hover-speak" onclick="toggleAccessibilityMenu()"
+ onmouseover="speakText('click here to select accessibility mode')" onmouseleave="stopSpeaking()">
+ <div class="accessibility-icon">
+
+ </div>
+</div>
+
+<!-- Accessibility Menu -->
+<div class="accessibility-menu" id="accessibilityMenu">
+ <ul>
+   <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
+       onmouseover="speakText('click here to change the screen reader mode')" onmouseleave="stopSpeaking()">Enable
+       Screen Reader</button></li>
+   <li><button onclick="toggleKeyboardNavigation()">Enable Keyboard Navigation</button></li>
+ </ul>
+</div>
+
+<script>
+    // accessibility js 
+var screenReaderEnabled = false;
+
+function toggleAccessibilityMenu() {
+  var menu = document.getElementById("accessibilityMenu");
+  menu.classList.toggle("active");
+}
+
+function toggleScreenReader() {
+  screenReaderEnabled = !screenReaderEnabled;
+  var menuButton = document.getElementById("screenReaderButton");
+  if (screenReaderEnabled) {
+    speakText("Screen reader enabled");
+    menuButton.innerText = "Disable Screen Reader";
+    document.body.classList.add("screen-reader-enabled");
+    setTimeout(toggleAccessibilityMenu, 5000);
+  } else {
+    speakText("Screen reader disabled");
+    menuButton.innerText = "Enable Screen Reader";
+    document.body.classList.remove("screen-reader-enabled");
+    toggleAccessibilityMenu();
+  }
+}
+
+function speakText(text) {
+  if (screenReaderEnabled) {
+    var utterance = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(utterance);
+  }
+}
+
+function stopSpeaking() {
+  window.speechSynthesis.cancel();
+}
+</script>
 </body>
 </html>

@@ -11,15 +11,15 @@
         <div class="left">
             <div class="card-left">
                 <div class="card-content">
-                    <h2>Machine learning Essentials</h2>
-                    <p>Unlock the potential of AI with our Mastering Machine Learning course. Dive into this exciting field and acquire the skills to build intelligent systems and algorithms.</p>
-                    <h3>Lets Play Quiz!!!</h3>
-                    <button class="btn"><a href="">Play Now</a></button>
+                    <h2 class="hover-speak" onmouseover="speakText('Machine learning Essentials')" onmouseleave="stopSpeaking()">Machine learning Essentials</h2>
+                    <p class="hover-speak" onmouseover="speakText('Unlock the potential of AI with our Mastering Machine Learning course. Dive into this exciting field and acquire the skills to build intelligent systems and algorithms.')" onmouseleave="stopSpeaking()">Unlock the potential of AI with our Mastering Machine Learning course. Dive into this exciting field and acquire the skills to build intelligent systems and algorithms.</p>
+                    <h3 class="hover-speak" onmouseover="speakText('Lets Play Quiz')" onmouseleave="stopSpeaking()">Lets Play Quiz!!!</h3>
+                    <button class="btn hover-speak" onmouseover="speakText('Click here to play a quiz on ML')" onmouseleave="stopSpeaking()"><a href="../Quizzes/indexquiz6ML.html">Play Now</a></button>
                 </div>
             </div>
         </div>
         <div class="right">
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Introduction to ML')" onmouseleave="stopSpeaking()">
                 <h3>1.</h3>
                 <a href="https://youtu.be/kz184QIO4ZQ?si=-Z2oi9i5Kv-mgk-A" target="_blank"><img src="images/vid1-ML.jpeg" alt="">
                 <div class="content">
@@ -28,7 +28,7 @@
                 </a>
                 <h3>Introduction to ML</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Supervised Learning Algo')" onmouseleave="stopSpeaking()">
                 <h3>2.</h3>
                 <a href="https://youtu.be/LKlOH8OLLcw?si=eNJdg9KyE2Gsi777" target="_blank"><img src="images/vid2-ML.jpeg" alt="">
                 <div class="content">
@@ -36,7 +36,7 @@
                 </div></a>
                 <h3>Supervised Learning Algo</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Regression Introduction')" onmouseleave="stopSpeaking()">
                 <h3>3.</h3>
                 <a href="https://youtu.be/cHT-qLnRm0E?si=fGK-LCMWniOvwXcm" target="_blank"><img src="images/vid3-ML.jpeg" alt="">
                     <div class="content">
@@ -44,7 +44,7 @@
                     </div></a>
                 <h3>Regression Introduction</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Linear Regression')" onmouseleave="stopSpeaking()">
                 <h3>4.</h3>
                 <a href="https://youtu.be/zUQr6HAAKp4?si=k2ikAoyByOJ07Z_d" target="_blank"><img src="images/vid4-ML.jpeg" alt="">
                     <div class="content">
@@ -52,7 +52,7 @@
                     </div></a>
                 <h3>Linear Regression</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Logistic Regression')" onmouseleave="stopSpeaking()">
                 <h3>5.</h3>
                 <a href="https://youtu.be/r8OjlgWpAI0?si=PWvMN2jSUBlkS-3d" target="_blank"><img src="images/vid5-ML.jpeg" alt="">
                     <div class="content">
@@ -60,7 +60,7 @@
                     </div></a>
                 <h3>Logistic Regression</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Linear versus Logistic Regression')" onmouseleave="stopSpeaking()">
                 <h3>6.</h3>
                 <a href="https://youtu.be/BVP1EDKb6_g?si=qrPG_wjJBhGrtoFS" target="_blank"><img src="images/vid6-ML.jpeg" alt="">
                     <div class="content">
@@ -72,5 +72,60 @@
         </div>
     </section>
     <script src="script.js"></script>
+
+                <!-- Accessibility Mode Button -->
+ <div class="accessibility-button hover-speak" onclick="toggleAccessibilityMenu()"
+ onmouseover="speakText('click here to select accessibility mode')" onmouseleave="stopSpeaking()">
+ <div class="accessibility-icon">
+
+ </div>
+</div>
+
+<!-- Accessibility Menu -->
+<div class="accessibility-menu" id="accessibilityMenu">
+ <ul>
+   <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
+       onmouseover="speakText('click here to change the screen reader mode')" onmouseleave="stopSpeaking()">Enable
+       Screen Reader</button></li>
+   <li><button onclick="toggleKeyboardNavigation()">Enable Keyboard Navigation</button></li>
+ </ul>
+</div>
+
+<script>
+    // accessibility js 
+var screenReaderEnabled = false;
+
+function toggleAccessibilityMenu() {
+  var menu = document.getElementById("accessibilityMenu");
+  menu.classList.toggle("active");
+}
+
+function toggleScreenReader() {
+  screenReaderEnabled = !screenReaderEnabled;
+  var menuButton = document.getElementById("screenReaderButton");
+  if (screenReaderEnabled) {
+    speakText("Screen reader enabled");
+    menuButton.innerText = "Disable Screen Reader";
+    document.body.classList.add("screen-reader-enabled");
+    setTimeout(toggleAccessibilityMenu, 5000);
+  } else {
+    speakText("Screen reader disabled");
+    menuButton.innerText = "Enable Screen Reader";
+    document.body.classList.remove("screen-reader-enabled");
+    toggleAccessibilityMenu();
+  }
+}
+
+function speakText(text) {
+  if (screenReaderEnabled) {
+    var utterance = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(utterance);
+  }
+}
+
+function stopSpeaking() {
+  window.speechSynthesis.cancel();
+}
+</script>
 </body>
 </html>
