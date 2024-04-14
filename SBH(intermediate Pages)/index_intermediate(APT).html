@@ -11,15 +11,15 @@
         <div class="left">
             <div class="card-left">
                 <div class="card-content">
-                    <h2>Engineering Aptitude Mastery</h2>
-                    <p>Prepare for success in engineering exams and careers with our comprehensive Engineering Aptitude Mastery course. Develop essential skills and knowledge to excel in technical assessments and advance your engineering journey.</p>
-                    <h3>Lets Play Quiz!!!</h3>
-                    <button class="btn"><a href="../Quizzes/indexquiz5aptitude.html">Play Now</a></button>
+                    <h2 class="hover-speak" onmouseover="speakText('Engineering Aptitude Mastery')" onmouseleave="stopSpeaking()">Engineering Aptitude Mastery</h2>
+                    <p class="hover-speak" onmouseover="speakText('Prepare for success in engineering exams and careers with our comprehensive Engineering Aptitude Mastery course. Develop essential skills and knowledge to excel in technical assessments and advance your engineering journey.')" onmouseleave="stopSpeaking()">Prepare for success in engineering exams and careers with our comprehensive Engineering Aptitude Mastery course. Develop essential skills and knowledge to excel in technical assessments and advance your engineering journey.</p>
+                    <h3 class="hover-speak" onmouseover="speakText('Lets Play Quiz')" onmouseleave="stopSpeaking()">Lets Play Quiz!!!</h3>
+                    <button class="btn hover-speak" onmouseover="speakText('Click here to play a quiz n Aptitude')" onmouseleave="stopSpeaking()"><a href="../Quizzes/indexquiz5aptitude.html">Play Now</a></button>
                 </div>
             </div>
         </div>
         <div class="right">
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Fraction and Decimals')" onmouseleave="stopSpeaking()">
                 <h3>1.</h3>
                 <a href="https://youtu.be/tnc9ojITRg4?si=HvhcCD6lL9GuBHqf" target="_blank"><img src="images/vid1-APT.jpeg" alt="">
                 <div class="content">
@@ -28,7 +28,7 @@
                 </a>
                 <h3>Fraction and Decimals</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Simplification')" onmouseleave="stopSpeaking()">
                 <h3>2.</h3>
                 <a href="https://youtu.be/ZuMJFleXmiw?si=KJynMMSl_UeewRPG" target="_blank"><img src="images/vid2-APT.jpeg" alt="">
                 <div class="content">
@@ -36,7 +36,7 @@
                 </div></a>
                 <h3>Simplification</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Indices and Surds')" onmouseleave="stopSpeaking()">
                 <h3>3.</h3>
                 <a href="https://youtu.be/jAbpPTpz2bQ?si=1VAVzAI6_3CGU2mz" target="_blank"><img src="images/vid3-APT.jpeg" alt="">
                     <div class="content">
@@ -44,7 +44,7 @@
                     </div></a>
                 <h3>Indices and Surds</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Permutation and Combination')" onmouseleave="stopSpeaking()">
                 <h3>4.</h3>
                 <a href="https://youtu.be/ETiRE7N7pEI?si=Ta0E4Nyn3Z0ZoU8J" target="_blank"><img src="images/vid4-APT.jpeg" alt="">
                     <div class="content">
@@ -52,7 +52,7 @@
                     </div></a>
                 <h3>Permutation and Combination</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Probability')" onmouseleave="stopSpeaking()">
                 <h3>5.</h3>
                 <a href="https://youtu.be/ximxxERGSUc?si=F9VQ0A8QK5t291UZ" target="_blank"><img src="images/vid5-APT.jpeg" alt="">
                     <div class="content">
@@ -60,7 +60,7 @@
                     </div></a>
                 <h3>Probability</h3>
             </div>
-            <div class="card">
+            <div class="card hover-speak" onmouseover="speakText('Video on Mixture and Alligation')" onmouseleave="stopSpeaking()">
                 <h3>6.</h3>
                 <a href="https://youtu.be/OKSJDDAyqP0?si=3diTn4X6RScydVzs" target="_blank"><img src="images/vid6-APT.jpeg" alt="">
                     <div class="content">
@@ -72,5 +72,60 @@
         </div>
     </section>
     <script src="script.js"></script>
+
+     <!-- Accessibility Mode Button -->
+ <div class="accessibility-button hover-speak" onclick="toggleAccessibilityMenu()"
+ onmouseover="speakText('click here to select accessibility mode')" onmouseleave="stopSpeaking()">
+ <div class="accessibility-icon">
+
+ </div>
+</div>
+
+<!-- Accessibility Menu -->
+<div class="accessibility-menu" id="accessibilityMenu">
+ <ul>
+   <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
+       onmouseover="speakText('click here to change the screen reader mode')" onmouseleave="stopSpeaking()">Enable
+       Screen Reader</button></li>
+   <li><button onclick="toggleKeyboardNavigation()">Enable Keyboard Navigation</button></li>
+ </ul>
+</div>
+
+<script>
+    // accessibility js 
+var screenReaderEnabled = false;
+
+function toggleAccessibilityMenu() {
+  var menu = document.getElementById("accessibilityMenu");
+  menu.classList.toggle("active");
+}
+
+function toggleScreenReader() {
+  screenReaderEnabled = !screenReaderEnabled;
+  var menuButton = document.getElementById("screenReaderButton");
+  if (screenReaderEnabled) {
+    speakText("Screen reader enabled");
+    menuButton.innerText = "Disable Screen Reader";
+    document.body.classList.add("screen-reader-enabled");
+    setTimeout(toggleAccessibilityMenu, 5000);
+  } else {
+    speakText("Screen reader disabled");
+    menuButton.innerText = "Enable Screen Reader";
+    document.body.classList.remove("screen-reader-enabled");
+    toggleAccessibilityMenu();
+  }
+}
+
+function speakText(text) {
+  if (screenReaderEnabled) {
+    var utterance = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(utterance);
+  }
+}
+
+function stopSpeaking() {
+  window.speechSynthesis.cancel();
+}
+</script>
 </body>
 </html>
