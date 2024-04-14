@@ -6,7 +6,7 @@ const jobs = [
       details:
         "Produce engaging written content for websites, blogs, and social media platforms.",
       openPositions: "5",
-      link: "#",
+      link: "https://in.indeed.com/q-youtube-content-writer-jobs.html?vjk=fb4ec5b40759233b",
     },
   
     {
@@ -15,7 +15,7 @@ const jobs = [
       details:
         "Create visually appealing designs for branding, marketing materials, and digital media.",
       openPositions: "1",
-      link: "#",
+      link: "https://in.indeed.com/graphic-designer-jobs",
     },
   
     {
@@ -24,7 +24,7 @@ const jobs = [
       details:
         "Provide administrative and clerical support remotely to businesses and entrepreneurs.",
       openPositions: "2",
-      link: "#",
+      link: "https://www.upwork.com/freelance-jobs/virtual-assistant/",
     },
     
     {
@@ -33,7 +33,7 @@ const jobs = [
       details:
         "Translate written or spoken content between languages to facilitate communication",
       openPositions: "1",
-      link: "#",
+      link: "https://translatorpub.com/",
     },
     
     {
@@ -42,7 +42,7 @@ const jobs = [
       details:
         "Responsible for designing , developing and managing cloud-based infrastructures, applications and services.",
       openPositions: "3",
-      link: "#",
+      link: "https://in.indeed.com/q-Web-Developer-jobs.html",
     },
   
     {
@@ -51,7 +51,7 @@ const jobs = [
       details:
         "Responsible for Teaching data science prototypes, designing ML systems and developing ML Applications",
       openPositions: "3",
-      link: "#",
+      link: "https://www.linkedin.com/authwall?trk=qf&original_referer=https://in.search.yahoo.com/&sessionRedirect=https%3A%2F%2Fin.linkedin.com%2Fjobs%2Fseo-specialist-jobs",
     },
   
     {
@@ -60,7 +60,7 @@ const jobs = [
       details:
         "Craft compelling copy for advertisements, marketing campaigns, and promotional materials.",
       openPositions: "14",
-      link: "#",
+      link: "https://www.upwork.com/freelance-jobs/copywriting/",
     },
     {
       title: "Data Entry Specialist",
@@ -68,7 +68,7 @@ const jobs = [
       details:
         "Input and manage data accurately and efficiently using various software tools.",
       openPositions: "5",
-      link: "#",
+      link: "https://in.jobrapido.com/Jobs-Data-Entry-jobs-in-Nashik?r=auto&utm_source=yahoo&utm_medium=cpc&utm_campaign=IN_COMBINED_SEARCH&r=auto&utm_agid=756668384&utm_kwid=kwd-8134750529:loc-90&ext=&int=&phy=116075&mt=b&dev=c&net=o&msclkid=46c8072697041cf9d1ef613d756afea5&utm_source=bing&utm_medium=cpc&utm_campaign=IN_COMBINED_SEARCH&utm_term=jobs%20data%20entry%20nashik&utm_content=nashik",
     },
   
     {
@@ -77,7 +77,7 @@ const jobs = [
       details:
         "Responsible to develop and implement social media strategies to increase brand awareness and drive engagements",
       openPositions: "4",
-      link: "#",
+      link: "https://in.linkedin.com/jobs/social-media-marketing-jobs?position=1&pageNum=0",
     },
   
     {
@@ -86,7 +86,7 @@ const jobs = [
       details:
         " Develop and manage online stores, including product listings, inventory management, and customer service.",
       openPositions: "9",
-      link: "#",
+      link: "https://in.indeed.com/E-Commerce-jobs",
     },
   
 
@@ -133,6 +133,12 @@ const jobs = [
         detailsBtn.href = job.link;
         detailsBtn.innerHTML = "More Details";
         detailsBtn.classList.add("details-btn");
+        detailsBtn.target = "_blank"; // Set target attribute to _blank
+      // Add onclick attribute to open link in new tab
+    detailsBtn.onclick = () => {
+      window.open(job.link, '_blank');
+    };
+
   
         let openPositions = document.createElement("span");
         openPositions.classList.add("open-positions");
