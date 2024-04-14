@@ -1449,7 +1449,7 @@
           </li>
 
           <li>
-            <a href="#" class="footer-link">
+            <a href="../Paymentnew.html" class="footer-link">
               <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
 
               <span class="span hover-speak" onmouseover="speakText('buy courses')"
@@ -1546,6 +1546,41 @@
     </div>
   </footer>
 
+<!-- Pop up Modal -->
+
+<div class="modal-container">
+  <div class="modal-wrapper">
+    <div class="cross-container">
+      <i class="fas fa-times close-btn" onclick="closeModal()"></i>
+    </div>
+    <div class="modal-newsletter">
+      <div class="modal-header">
+        <div style="display: flex;flex-flow: column;">
+          <a href="#" class="nav__logo"
+            style="pointer-events:none;color:#000;scale: 0.75;">Eduversity<span>.</span></a>
+          <h3 style="font-weight: 600;font-size: 24px;">Get Flat 50% OFF</h3>
+          <span style="color: #02201f; padding: .5rem; font-size: 13px;">Sign up and grab your discount for Early bird offer</span>
+        </div>
+      </div>
+      <div class="modal-content">
+        <form id="modal-form">
+          <input type="email" id="modal-email" placeholder="Email Address" required>
+          <button class="modal-btn" id="news-subscribe" type="submit">Subscribe</button>
+        </form>
+        <span style="color: #3950ac; padding: 1rem 0 0 0; font-weight: 600;cursor:pointer;font-size: 16px;"
+          onclick="closeModal()">No, thanks</span>
+        <span style="color: #043b44; padding: 1rem; font-size: 13px;">You are signing up to receive our newsletters
+          via
+          email and can unsubscribe at any time.</span>
+      </div>
+    </div>
+    <div>
+      <!--img src="/Eduversity/assets/images/Person 3.png" class="modal-image" alt="">-->
+      <img src="/Eduversity/assets/images/Newsletter.png" class="modal-image" alt="">
+    </div>
+  </div>
+</div>
+
 
 
 
@@ -1573,6 +1608,9 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  
+
 
 </body>
 
