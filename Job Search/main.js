@@ -136,6 +136,7 @@ const jobs = [
   const jobsHeading = document.querySelector(".jobs-list-container h2");
   const jobsContainer = document.querySelector(".jobs-list-container .jobs");
   const jobSearch = document.querySelector(".jobs-list-container .job-search");
+  const resultCount = document.querySelector(".result-count");
   
   let searchTerm = "";
   
@@ -147,6 +148,7 @@ const jobs = [
   
   const createJobListingCards = () => {
     jobsContainer.innerHTML = "";
+    let count = 0;
   
     jobs.forEach((job) => {
       if (job.title.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -178,6 +180,8 @@ const jobs = [
           openPositions.innerHTML = `${job.openPositions} open positions`;
         }
   
+        count++;
+  
         jobCard.appendChild(image);
         jobCard.appendChild(title);
         jobCard.appendChild(details);
@@ -187,13 +191,19 @@ const jobs = [
         jobsContainer.appendChild(jobCard);
       }
     });
+  
+    // Display the count of related job cards if search is performed
+    if (searchTerm.trim() !== "") {
+      resultCount.innerHTML = `<strong>Related job cards:</strong> ${count}`;
+    } else {
+      resultCount.textContent = ""; // Clear count if no search term entered
+    }
   };
   
   createJobListingCards();
   
   jobSearch.addEventListener("input", (e) => {
     searchTerm = e.target.value;
-  
     createJobListingCards();
   });
   
