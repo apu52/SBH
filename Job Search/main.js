@@ -133,9 +133,11 @@ const jobs = [
   },
 ];
 
+
 const jobsHeading = document.querySelector(".jobs-list-container h2");
 const jobsContainer = document.querySelector(".jobs-list-container .jobs");
 const jobSearch = document.querySelector(".jobs-list-container .job-search");
+const resultCount = document.querySelector(".result-count"); // Added
 
 let searchTerm = "";
 
@@ -147,6 +149,7 @@ if (jobs.length == 1) {
 
 const createJobListingCards = () => {
   jobsContainer.innerHTML = "";
+  let count = 0; // Initialize count to 0
 
   jobs.forEach((job) => {
     if (job.title.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -195,8 +198,17 @@ const createJobListingCards = () => {
       });
 
       jobsContainer.appendChild(jobCard);
+
+      count++; // Increment count for each displayed job card
     }
   });
+
+  // Display the count of related job cards if search is performed
+  if (searchTerm.trim() !== "") {
+    resultCount.textContent = `Related job cards: ${count}`;
+  } else {
+    resultCount.textContent = ""; 
+  }
 };
 
 createJobListingCards();
@@ -206,39 +218,3 @@ jobSearch.addEventListener("input", (e) => {
 
   createJobListingCards();
 });
-
-// accessibility js 
-var screenReaderEnabled = false;
-
-function toggleAccessibilityMenu() {
-  var menu = document.getElementById("accessibilityMenu");
-  menu.classList.toggle("active");
-}
-
-function toggleScreenReader() {
-  screenReaderEnabled = !screenReaderEnabled;
-  var menuButton = document.getElementById("screenReaderButton");
-  if (screenReaderEnabled) {
-    speakText("Screen reader enabled");
-    menuButton.innerText = "Disable Screen Reader";
-    document.body.classList.add("screen-reader-enabled");
-    setTimeout(toggleAccessibilityMenu, 5000);
-  } else {
-    speakText("Screen reader disabled");
-    menuButton.innerText = "Enable Screen Reader";
-    document.body.classList.remove("screen-reader-enabled");
-    toggleAccessibilityMenu();
-  }
-}
-
-function speakText(text) {
-  if (screenReaderEnabled) {
-    var utterance = new SpeechSynthesisUtterance(text);
-    window.speechSynthesis.speak(utterance);
-  }
-}
-
-function stopSpeaking() {
-  window.speechSynthesis.cancel();
-}
-
