@@ -86,7 +86,7 @@ const jobs = [
       details:
         " Develop and manage online stores, including product listings, inventory management, and customer service.",
       openPositions: "9",
-      link: "#",
+      link: "https://in.indeed.com/E-Commerce-jobs",
     },
   
 
