@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-pUA-Compatible" content="ie=edge" />
+    <title>FEEDBACK PAGE</title>
+    <link rel="icon"
+        href="Eduversity\assets\images\logo.png"
+        type="image/x-icon" />
+    <link rel="stylesheet" href="feedback.css">
+    <!-- FontAwsome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="glassmorphism-container">
+            <h1 class="feedback-heading">HOW WAS YOUR EXPERIENCE?</h1>
+
+            <!-- <div class="stars" id="stars-container"> -->
+            <!-- Stars will be added dynamically using JavaScript -->
+            <!-- </div> -->
+
+
+
+            <p>How easy was it to navigate through the website?</p>
+            <div class="stars" id="navEase-stars-container"></div>
+            <p id="navEase-rating-text">Rating: 0</p>
+
+            <p>How much straightforward and easy was the QUIZ process?</p>
+            <div class="stars" id="bookingProcess-stars-container"></div>
+            <p id="bookingProcess-rating-text">Rating: 0</p>
+
+            <p>How much you will recommend Our courses to your Community?</p>
+            <div class="stars" id="paymentOptions-stars-container"></div>
+            <p id="paymentOptions-rating-text">Rating: 0</p>
+
+            <p>How responsive and helpful was the customer support team?</p>
+            <div class="stars" id="customerSupport-stars-container"></div>
+            <p id="customerSupport-rating-text">Rating: 0</p>
+
+            <p>How much would you recommend this Eduversity Web App to others?</p>
+            <div class="stars" id="recommendation-stars-container"></div>
+            <p id="recommendation-rating-text">Rating: 0</p>
+
+            <p>If you've bought a Course from this website, how was the overall experience?</p>
+            <div class="stars" id="packageTour-stars-container"></div>
+            <p id="packageTour-rating-text">Rating: 0</p>
+
+            <!-- Feedback input box section -->
+            <div>
+
+                <label for="feedback-input" id="rating-text">Your feedback:</label>
+                <br><br>
+                <textarea id="feedback-input" placeholder="Please Write Your honest review!"></textarea>
+            </div>
+            <button class="button" onclick="submitFeedback()">Submit</button>
+        </div>
+        <div><button class="button" onclick="location.href = 'Eduversity/index.html';">Return To Home Page</button></div>
+    </div>
+
+    </div>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script src="feedback.js" defer></script>
+</body>
+
+</html>
