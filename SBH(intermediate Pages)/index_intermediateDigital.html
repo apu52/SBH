@@ -72,6 +72,7 @@
         </div>
     </section>
     <script src="script.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
 
     <!-- Accessibility Mode Button -->
  <div class="accessibility-button hover-speak" onclick="toggleAccessibilityMenu()"
@@ -87,13 +88,14 @@
    <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
        onmouseover="speakText('click here to change the screen reader mode')" onmouseleave="stopSpeaking()">Enable
        Screen Reader</button></li>
-   <li><button onclick="toggleKeyboardNavigation()">Enable Keyboard Navigation</button></li>
+       <li><button onclick="toggleVoiceRecognition()" id="voiceRecognitionButton">Enable Voice Recognition</button></li>
  </ul>
 </div>
 
 <script>
     // accessibility js 
 var screenReaderEnabled = false;
+var voiceRecognitionEnabled = false;
 
 function toggleAccessibilityMenu() {
   var menu = document.getElementById("accessibilityMenu");
@@ -125,6 +127,101 @@ function speakText(text) {
 
 function stopSpeaking() {
   window.speechSynthesis.cancel();
+}
+
+function toggleVoiceRecognition() {
+    voiceRecognitionEnabled = !voiceRecognitionEnabled;
+    var menuButton = document.getElementById("voiceRecognitionButton");
+    if (voiceRecognitionEnabled) {
+        startVoiceRecognition();
+        menuButton.innerText = "Disable voice recognition";
+    } else {
+        stopVoiceRecognition();
+        menuButton.innerText = "Enaable voice recognition";
+        toggleAccessibilityMenu();
+    }
+}
+
+function startVoiceRecognition() {
+    if (annyang) {
+        annyang.start();
+        speakText("Voice recognition enabled");
+    }
+}
+
+function stopVoiceRecognition() {
+    if (annyang) {
+        annyang.abort();
+        speakText("Voice recognition disabled");
+    }
+}
+
+// Voice commands
+if (annyang) {
+    var commands = {
+        'enable voice recognition': toggleVoiceRecognition,
+        'disable voice recognition': toggleVoiceRecognition,
+        'play quiz on digital marketing': function() {
+            playquiz();
+            speakText('redirecting to Digital Marketing quiz');
+        },
+        'play video one': function() {
+            playvideo1();
+            speakText('playing video on How to start a blog?');
+        },
+        'play video two': function() {
+            playvideo2();
+            speakText('playing video on Affiliate Marketing Basics');
+        },
+        'play video three': function() {
+            playvideo3();
+            speakText('playing video on What is SEO?');
+        },
+        'play video four': function() {
+            playvideo4();
+            speakText('playing video on Youtube Marketing');
+        },
+        'play video five': function() {
+            playvideo5();
+            speakText('Playing video on Instagram Marketing');
+        },
+        'play video six': function() {
+            playvideo6();
+            speakText('playing video on Google adwords');
+        },
+    };
+
+    annyang.addCommands(commands);
+    annyang.debug(true);
+
+    function playquiz() {
+        var url = '/Quizzes/indexquiz2cybersecurity.html';
+        window.location.href = url;
+    }
+    function playvideo1() {
+        var url = 'https://youtu.be/ZjVoShBahRg?si=mJsPLH2DMuXWgoMC';
+        window.location.href = url;
+    }
+    function playvideo2() {
+        var url = 'https://youtu.be/SLE72I-2lv8?si=jSBBpCjMjR5TzBg5';
+        window.location.href = url;
+    }
+    function playvideo3() {
+        var url = 'https://youtu.be/N8DhIndTi6E?si=nyyPg7-6g7JlqNQC';
+        window.location.href = url;
+    }
+    function playvideo4() {
+        var url = 'https://youtu.be/wc0PV2z_04o?si=TxysHw80Hc9R57KW';
+        window.location.href = url;
+    }
+    function playvideo5() {
+        var url = 'https://youtu.be/7NHOzZyDqDw?si=-hMv3K7TV4uYo8Lq';
+        window.location.href = url;
+    }
+    function playvideo6() {
+        var url = 'https://youtu.be/fVJ1QS2_K4c?si=laT1LOswBxOv3JfR';
+        window.location.href = url;
+    }
 }
 </script>
 </body>

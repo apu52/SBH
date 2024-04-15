@@ -72,6 +72,7 @@
         </div>
     </section>
     <script src="script.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
 
      <!-- Accessibility Mode Button -->
  <div class="accessibility-button hover-speak" onclick="toggleAccessibilityMenu()"
@@ -87,13 +88,14 @@
    <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
        onmouseover="speakText('click here to change the screen reader mode')" onmouseleave="stopSpeaking()">Enable
        Screen Reader</button></li>
-   <li><button onclick="toggleKeyboardNavigation()">Enable Keyboard Navigation</button></li>
+       <li><button onclick="toggleVoiceRecognition()" id="voiceRecognitionButton">Enable Voice Recognition</button></li>
  </ul>
 </div>
 
 <script>
     // accessibility js 
 var screenReaderEnabled = false;
+var voiceRecognitionEnabled = false;
 
 function toggleAccessibilityMenu() {
   var menu = document.getElementById("accessibilityMenu");
@@ -125,6 +127,101 @@ function speakText(text) {
 
 function stopSpeaking() {
   window.speechSynthesis.cancel();
+}
+
+function toggleVoiceRecognition() {
+    voiceRecognitionEnabled = !voiceRecognitionEnabled;
+    var menuButton = document.getElementById("voiceRecognitionButton");
+    if (voiceRecognitionEnabled) {
+        startVoiceRecognition();
+        menuButton.innerText = "Disable voice recognition";
+    } else {
+        stopVoiceRecognition();
+        menuButton.innerText = "Enaable voice recognition";
+        toggleAccessibilityMenu();
+    }
+}
+
+function startVoiceRecognition() {
+    if (annyang) {
+        annyang.start();
+        speakText("Voice recognition enabled");
+    }
+}
+
+function stopVoiceRecognition() {
+    if (annyang) {
+        annyang.abort();
+        speakText("Voice recognition disabled");
+    }
+}
+
+// Voice commands
+if (annyang) {
+    var commands = {
+        'enable voice recognition': toggleVoiceRecognition,
+        'disable voice recognition': toggleVoiceRecognition,
+        'play quiz on aptitude': function() {
+            playquiz();
+            speakText('redirecting to Aptitude quiz');
+        },
+        'play video one': function() {
+            playvideo1();
+            speakText('playing video on Fraction and Decimals');
+        },
+        'play video two': function() {
+            playvideo2();
+            speakText('playing video on Simplification');
+        },
+        'play video three': function() {
+            playvideo3();
+            speakText('playing video on Indices and Surds');
+        },
+        'play video four': function() {
+            playvideo4();
+            speakText('playing video on Permutation and Combination');
+        },
+        'play video five': function() {
+            playvideo5();
+            speakText('Playing video on Probability');
+        },
+        'play video six': function() {
+            playvideo6();
+            speakText('playing video on Mixture and Alligation');
+        },
+    };
+
+    annyang.addCommands(commands);
+    annyang.debug(true);
+
+    function playquiz() {
+        var url = '/Quizzes/indexquiz5aptitude.html';
+        window.location.href = url;
+    }
+    function playvideo1() {
+        var url = 'https://youtu.be/tnc9ojITRg4?si=HvhcCD6lL9GuBHqf';
+        window.location.href = url;
+    }
+    function playvideo2() {
+        var url = 'https://youtu.be/ZuMJFleXmiw?si=KJynMMSl_UeewRPG';
+        window.location.href = url;
+    }
+    function playvideo3() {
+        var url = 'https://youtu.be/jAbpPTpz2bQ?si=1VAVzAI6_3CGU2mz';
+        window.location.href = url;
+    }
+    function playvideo4() {
+        var url = 'https://youtu.be/ETiRE7N7pEI?si=Ta0E4Nyn3Z0ZoU8J';
+        window.location.href = url;
+    }
+    function playvideo5() {
+        var url = 'https://youtu.be/ximxxERGSUc?si=F9VQ0A8QK5t291UZ';
+        window.location.href = url;
+    }
+    function playvideo6() {
+        var url = 'https://youtu.be/OKSJDDAyqP0?si=3diTn4X6RScydVzs';
+        window.location.href = url;
+    }
 }
 </script>
 </body>

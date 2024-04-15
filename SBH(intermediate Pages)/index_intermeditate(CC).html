@@ -72,6 +72,7 @@
         </div>
     </section>
     <script src="script.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
 
     
                 <!-- Accessibility Mode Button -->
@@ -88,13 +89,14 @@
    <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
        onmouseover="speakText('click here to change the screen reader mode')" onmouseleave="stopSpeaking()">Enable
        Screen Reader</button></li>
-   <li><button onclick="toggleKeyboardNavigation()">Enable Keyboard Navigation</button></li>
+       <li><button onclick="toggleVoiceRecognition()" id="voiceRecognitionButton">Enable Voice Recognition</button></li>
  </ul>
 </div>
 
 <script>
     // accessibility js 
 var screenReaderEnabled = false;
+var voiceRecognitionEnabled = false;
 
 function toggleAccessibilityMenu() {
   var menu = document.getElementById("accessibilityMenu");
@@ -126,6 +128,101 @@ function speakText(text) {
 
 function stopSpeaking() {
   window.speechSynthesis.cancel();
+}
+
+function toggleVoiceRecognition() {
+    voiceRecognitionEnabled = !voiceRecognitionEnabled;
+    var menuButton = document.getElementById("voiceRecognitionButton");
+    if (voiceRecognitionEnabled) {
+        startVoiceRecognition();
+        menuButton.innerText = "Disable voice recognition";
+    } else {
+        stopVoiceRecognition();
+        menuButton.innerText = "Enaable voice recognition";
+        toggleAccessibilityMenu();
+    }
+}
+
+function startVoiceRecognition() {
+    if (annyang) {
+        annyang.start();
+        speakText("Voice recognition enabled");
+    }
+}
+
+function stopVoiceRecognition() {
+    if (annyang) {
+        annyang.abort();
+        speakText("Voice recognition disabled");
+    }
+}
+
+// Voice commands
+if (annyang) {
+    var commands = {
+        'enable voice recognition': toggleVoiceRecognition,
+        'disable voice recognition': toggleVoiceRecognition,
+        'play quiz on cloud computing': function() {
+            playquiz();
+            speakText('redirecting to Cloud computing quiz');
+        },
+        'play video one': function() {
+            playvideo1();
+            speakText('playing video on Cloud Computing Introduction');
+        },
+        'play video two': function() {
+            playvideo2();
+            speakText('playing video on Platform as a Service(PAAS)');
+        },
+        'play video three': function() {
+            playvideo3();
+            speakText('playing video on Software as a Service(SAAS)');
+        },
+        'play video four': function() {
+            playvideo4();
+            speakText('playing video on Cloud Deployment Models');
+        },
+        'play video five': function() {
+            playvideo5();
+            speakText('Playing video on Cloud Computing Benefits');
+        },
+        'play video six': function() {
+            playvideo6();
+            speakText('playing video on Characteristics of CC');
+        },
+    };
+
+    annyang.addCommands(commands);
+    annyang.debug(true);
+
+    function playquiz() {
+        var url = '/Quizzes/indexquiz3cloudcomputing.html';
+        window.location.href = url;
+    }
+    function playvideo1() {
+        var url = 'https://www.youtube.com/watch?v=njPY7pQTRWg';
+        window.location.href = url;
+    }
+    function playvideo2() {
+        var url = 'https://www.youtube.com/watch?v=cKEf8H9cQGM';
+        window.location.href = url;
+    }
+    function playvideo3() {
+        var url = 'https://www.youtube.com/watch?v=dqm-Lv03AN4';
+        window.location.href = url;
+    }
+    function playvideo4() {
+        var url = 'https://youtu.be/N-O4w6PynGY?si=vZ2jk4KyIt08B28D';
+        window.location.href = url;
+    }
+    function playvideo5() {
+        var url = 'https://youtu.be/l77LuRue_lM?si=LsXJyV1oTGhuoZR0';
+        window.location.href = url;
+    }
+    function playvideo6() {
+        var url = 'https://youtu.be/PTJ6UZz1pPQ?si=90laKqYcPheckEAp';
+        window.location.href = url;
+    }
 }
 </script>
 </body>

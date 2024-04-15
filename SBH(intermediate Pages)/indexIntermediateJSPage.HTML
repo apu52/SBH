@@ -90,13 +90,17 @@
    <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
        onmouseover="speakText('click here to change the screen reader mode')" onmouseleave="stopSpeaking()">Enable
        Screen Reader</button></li>
-   <li><button onclick="toggleKeyboardNavigation()">Enable Keyboard Navigation</button></li>
+    <li><button onclick="toggleVoiceRecognition()" id="voiceRecognitionButton">Enable Voice Recognition</button></li>
  </ul>
 </div>
 
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
 <script>
     // accessibility js 
 var screenReaderEnabled = false;
+var voiceRecognitionEnabled = false;
+
 
 function toggleAccessibilityMenu() {
   var menu = document.getElementById("accessibilityMenu");
@@ -128,6 +132,101 @@ function speakText(text) {
 
 function stopSpeaking() {
   window.speechSynthesis.cancel();
+}
+
+function toggleVoiceRecognition() {
+    voiceRecognitionEnabled = !voiceRecognitionEnabled;
+    var menuButton = document.getElementById("voiceRecognitionButton");
+    if (voiceRecognitionEnabled) {
+        startVoiceRecognition();
+        menuButton.innerText = "Disable voice recognition";
+    } else {
+        stopVoiceRecognition();
+        menuButton.innerText = "Enaable voice recognition";
+        toggleAccessibilityMenu();
+    }
+}
+
+function startVoiceRecognition() {
+    if (annyang) {
+        annyang.start();
+        speakText("Voice recognition enabled");
+    }
+}
+
+function stopVoiceRecognition() {
+    if (annyang) {
+        annyang.abort();
+        speakText("Voice recognition disabled");
+    }
+}
+
+// Voice commands
+if (annyang) {
+    var commands = {
+        'enable voice recognition': toggleVoiceRecognition,
+        'disable voice recognition': toggleVoiceRecognition,
+        'play quiz on js': function() {
+            playquiz();
+            speakText('redirecting to JS quiz');
+        },
+        'play video one': function() {
+            playvideo1();
+            speakText('playing video on Variables and datatypes');
+        },
+        'play video two': function() {
+            playvideo2();
+            speakText('playing video on Strings in JS');
+        },
+        'play video three': function() {
+            playvideo3();
+            speakText('playing video on Array in JS');
+        },
+        'play video four': function() {
+            playvideo4();
+            speakText('playing video on Classes and Objects in JS');
+        },
+        'play video five': function() {
+            playvideo5();
+            speakText('Playing video on Functions in JS');
+        },
+        'play video six': function() {
+            playvideo6();
+            speakText('playing video on Events in JS');
+        },
+    };
+
+    annyang.addCommands(commands);
+    annyang.debug(true);
+
+    function playquiz() {
+        var url = '/Quizzes/indexquiz1JS.html';
+        window.location.href = url;
+    }
+    function playvideo1() {
+        var url = 'https://youtu.be/Q4p8vRQX8uY?si=jf8hldSNHRBfOUrY';
+        window.location.href = url;
+    }
+    function playvideo2() {
+        var url = 'https://youtu.be/fozwNnFunlo?si=zZTIGMMZSho7dM3J';
+        window.location.href = url;
+    }
+    function playvideo3() {
+        var url = 'https://youtu.be/cejBux2gtEE?si=FSCNpKKobH8Hut64';
+        window.location.href = url;
+    }
+    function playvideo4() {
+        var url = 'https://youtu.be/N-O4w6PynGY?si=vZ2jk4KyIt08B28D';
+        window.location.href = url;
+    }
+    function playvideo5() {
+        var url = 'https://youtu.be/a_gwOwkbhZ0?si=sWuNj6_c0FSYfp7m';
+        window.location.href = url;
+    }
+    function playvideo6() {
+        var url = 'https://youtu.be/d4PN2rJD98g?si=bdHFVSMfmtOAOogO';
+        window.location.href = url;
+    }
 }
 </script>
 </body>
