@@ -1285,22 +1285,51 @@
         - #FEEDBACK
       -->
 
-    <section class="section newsletter" aria-label="newsletter"
-      style="background-image: url('./assets/images/newsletter-bg.jpg')">
-      <div class="container hover-speak"onmouseover="speakText('newsletter section.subscribe to get latest news on time')"
-      onmouseleave="stopSpeaking()">
-
-        <p class="section-subtitle">GIVE US YOUR FEEDBACK</p>
-
-        <h2 class="h2 section-title">How was your Experience</h2>
-
-            <!---Add A button with feedback.html to check the Feedback page-->
-
-      </div>
-    </section>
-
-    </article>
-  </main>
+      
+          <style>
+              .button-container {
+                  text-align: center;
+                  margin-top: 20px; /* Adjust as needed */
+              }
+              .feedback-button {
+                  display: inline-block;
+                  padding: 10px 20px;
+                  background-color: #007bff; /* Adjust to your desired color */
+                  color: white;
+                  border: none;
+                  border-radius: 5px;
+                  cursor: pointer;
+                  font-size: 16px;
+                  transition: background-color 0.3s;
+              }
+              .feedback-button:hover {
+                  background-color: #0056b3; /* Adjust to your desired hover color */
+              }
+          </style>
+      </head>
+      <body>
+      
+          <main>
+              <section class="section newsletter" aria-label="newsletter"
+              style="background-image: url('./assets/images/newsletter-bg.jpg')">
+                  <div class="container hover-speak" onmouseover="speakText('newsletter section.subscribe to get latest news on time')"
+                  onmouseleave="stopSpeaking()">
+      
+                      <p class="section-subtitle">GIVE US YOUR FEEDBACK</p>
+      
+                      <h2 class="h2 section-title">How was your Experience</h2>
+      
+                      <div class="button-container">
+                          <a href="/feedback.html" class="feedback-button">Give Feedback</a>
+                      </div>
+      
+                  </div>
+              </section>
+          </main>
+      
+      </body>
+      </html>
+      
 
 
 
