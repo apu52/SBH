@@ -195,7 +195,6 @@ if (annyang) {
       // navigateToPage('mini-games');
         window.location.href = '../gamify.html';
       
-                window.location.href = '../gamify.html'; 
             
   },
   'go to testimonials': () => {
