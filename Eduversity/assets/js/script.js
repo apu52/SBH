@@ -77,6 +77,7 @@ for (let i = 0; i < whishlistBtns.length; i++) {
 
 // accessibility js 
 var screenReaderEnabled = false;
+var voiceRecognitionEnabled = false;
 
 function toggleAccessibilityMenu() {
     var menu = document.getElementById("accessibilityMenu");
@@ -142,3 +143,75 @@ form.addEventListener("submit", subscribe)
 // Open the modal as soon as the page loads
 window.onload = openModal();
 
+// voice recog js 
+
+function toggleVoiceRecognition() {
+  voiceRecognitionEnabled = !voiceRecognitionEnabled;
+  var menuButton = document.getElementById("voiceRecognitionButton");
+  if (voiceRecognitionEnabled) {
+      startVoiceRecognition();
+      menuButton.innerText = "Disable voice recognition";
+  } else {
+      stopVoiceRecognition();
+      menuButton.innerText = "Enaable voice recognition";
+      toggleAccessibilityMenu();
+  }
+}
+
+function startVoiceRecognition() {
+  if (annyang) {
+      annyang.start();
+      speakText("Voice recognition enabled");
+  }
+}
+
+function stopVoiceRecognition() {
+  if (annyang) {
+      annyang.abort();
+      speakText("Voice recognition disabled");
+  }
+}
+
+// Voice commands
+if (annyang) {
+  var commands = {
+    'go to home': () => {
+      navigateToPage('home');
+  },
+  'go to about us': () => {
+      navigateToPage('about');
+  },
+  'go to courses': () => {
+      navigateToPage('courses');
+  },
+  'go to find a job': () => {
+      navigateToPage('find-job');
+  },
+  'go to mini games': () => {
+      navigateToPage('mini-games');
+  },
+  'go to testimonials': () => {
+      navigateToPage('testimonials');
+  },
+  'go to contact us': () => {
+      navigateToPage('contact');
+  },
+  'go to log in': () => {
+      navigateToPage('login');
+  },
+  'go to sign up': () => {
+      navigateToPage('signup');
+  }
+  };
+      // Function to navigate to a specific page
+      function navigateToPage(pageId) {
+        const pageElement = document.getElementById(pageId);
+        if (pageElement) {
+            window.location.href = pageElement.href;
+        } else {
+            console.error(`Page ID "${pageId}" not found.`);
+        }
+    }
+  annyang.addCommands(commands);
+  annyang.debug(true);
+}

@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
 
 </head>
 
@@ -56,31 +56,31 @@
 
         <ul class="navbar-list">
 
-          <li class="navbar-item hover-speak" onmouseover="speakText('home')" onmouseleave="stopSpeaking()">
+          <li class="navbar-item hover-speak" onmouseover="speakText('home')" onmouseleave="stopSpeaking()" id="home">
             <a href="#home" class="navbar-link" data-nav-toggler>Home</a>
           </li>
 
           <li class="navbar-item hover-speak" onmouseover="speakText('about us')" onmouseleave="stopSpeaking()">
-            <a href="#about" class="navbar-link" data-nav-toggler>About us</a>
+            <a href="#about"  id="about" class="navbar-link" data-nav-toggler>About us</a>
           </li>
 
-          <li class="navbar-item hover-speak" onmouseover="speakText('courses')" onmouseleave="stopSpeaking()">
+          <li class="navbar-item hover-speak" onmouseover="speakText('courses')" onmouseleave="stopSpeaking()"id="courses">
             <a href="#courses" class="navbar-link" data-nav-toggler>Courses</a>
           </li>
 
-          <li class="navbar-item hover-speak" onmouseover="speakText('find the job')" onmouseleave="stopSpeaking()">
+          <li class="navbar-item hover-speak" onmouseover="speakText('find the job')" onmouseleave="stopSpeaking()" id="find-job">
             <a href="#event" class="navbar-link" data-nav-toggler>Find the JOB</a>
           </li>
 
-          <li class="navbar-item hover-speak" onmouseover="speakText('mini games')" onmouseleave="stopSpeaking()">
+          <li class="navbar-item hover-speak" onmouseover="speakText('mini games')" onmouseleave="stopSpeaking()"  id="mini-games">
             <a href="#miniganes" class="navbar-link" data-nav-toggler>Mini Games</a>
           </li>
 
-          <li class="navbar-item hover-speak" onmouseover="speakText('testimonials')" onmouseleave="stopSpeaking()">
+          <li class="navbar-item hover-speak" onmouseover="speakText('testimonials')" onmouseleave="stopSpeaking()" id="testimonials">
             <a href="#testimonial" class="navbar-link" data-nav-toggler>Testimonial</a>
           </li>
 
-          <li class="navbar-item hover-speak" onmouseover="speakText('contact us')" onmouseleave="stopSpeaking()">
+          <li class="navbar-item hover-speak" onmouseover="speakText('contact us')" onmouseleave="stopSpeaking()"id="contact">
             <a href="/contact_us/contact.html" class="navbar-link" data-nav-toggler>Contact us</a>
           </li>
 
@@ -95,7 +95,7 @@
           <ion-icon name="search-outline"></ion-icon>
         </button>
 
-        <a href="login.html" class="header-action-btn login-btn hover-speak"
+        <a href="login.html" id="login" class="header-action-btn login-btn hover-speak"
           onmouseover="speakText('click  here to login or register')" onmouseleave="stopSpeaking()">
           <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
 
@@ -128,7 +128,7 @@
       <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
           onmouseover="speakText('click here to change the screen reader mode')" onmouseleave="stopSpeaking()">Enable
           Screen Reader</button></li>
-      <li><button onclick="toggleKeyboardNavigation()">Enable Voice Recognition</button></li>
+      <li><button onclick="toggleVoiceRecognition()" id="voiceRecognitionButton">Enable Voice Recognition</button></li>
     </ul>
   </div>
 
