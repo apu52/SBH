@@ -176,42 +176,50 @@ function stopVoiceRecognition() {
 if (annyang) {
   var commands = {
     'go to home': () => {
-      navigateToPage('home');
+      // navigateToPage('home');
+        window.location.href = '../gamify.html';
   },
   'go to about us': () => {
-      navigateToPage('about');
+      // navigateToPage('about');
+        window.location.href = '../gamify.html';
   },
   'go to courses': () => {
-      navigateToPage('courses');
+      // navigateToPage('courses');
+        window.location.href = '../gamify.html';
   },
   'go to find a job': () => {
-      navigateToPage('find-job');
+      // navigateToPage('find-job');
+        window.location.href = '../gamify.html';
   },
   'go to mini games': () => {
-      navigateToPage('mini-games');
+      // navigateToPage('mini-games');
+        window.location.href = '../gamify.html';
+      
+                window.location.href = '../gamify.html'; 
+            
   },
   'go to testimonials': () => {
-      navigateToPage('testimonials');
+      // navigateToPage('testimonials');
+        window.location.href = '../gamify.html';
   },
   'go to contact us': () => {
-      navigateToPage('contact');
+      // navigateToPage('contact');
+        window.location.href = '../gamify.html';
   },
   'go to log in': () => {
-      navigateToPage('login');
-  },
-  'go to sign up': () => {
-      navigateToPage('signup');
+      // navigateToPage('login');
+        window.location.href = '../gamify.html';
   }
   };
       // Function to navigate to a specific page
-      function navigateToPage(pageId) {
-        const pageElement = document.getElementById(pageId);
-        if (pageElement) {
-            window.location.href = pageElement.href;
-        } else {
-            console.error(`Page ID "${pageId}" not found.`);
-        }
-    }
+    //   function navigateToPage(pageId) {
+    //     const pageElement = document.getElementById(pageId);
+    //     if (pageElement) {
+    //         window.location.href = pageElement.href;
+    //     } else {
+    //         console.error(`Page ID "${pageId}" not found.`);
+    //     }
+    // }
   annyang.addCommands(commands);
   annyang.debug(true);
 }
