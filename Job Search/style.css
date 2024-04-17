@@ -1,9 +1,11 @@
 body {
-  background-image: url("https://img.freepik.com/free-photo/pale-gray-sandy-template_1194-6817.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  opacity: 2px;
+  /* background-image: url("https://img.freepik.com/free-photo/pale-gray-sandy-template_1194-6817.jpg"); */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  /* background-attachment: fixed; */
+  /* opacity: 2px; */
+  background: rgb(255, 255, 255);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(199, 199, 199, 1) 77%);
 }
 
 .jobs-list-container {
@@ -36,11 +38,13 @@ body {
   display: flex;
   flex-direction: column;
   transition: all 400ms ease;
+  border: 1px solid black;
 }
 
 .jobs-list-container .job:hover {
   transform: scale(1.03);
-  box-shadow: 0 8px 30px rgba(2, 48, 71, 0.3); /* Shadow on hover */
+  box-shadow: 0 8px 30px rgba(2, 48, 71, 0.3);
+  /* Shadow on hover */
 }
 
 .jobs-list-container .open-positions {

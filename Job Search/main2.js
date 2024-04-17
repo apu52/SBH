@@ -47,7 +47,7 @@ const jobs = [
   
     {
       title: "SEO Specialist",
-      image: "https://tse3.explicit.bing.net/th?id=OIP.SBBZdRxnoFqsgDDzMi-o6QHaDQ&pid=Api&P=0&h=180",
+      image: "https://img.freepik.com/free-vector/seo-concept-illustration_114360-5766.jpg?w=740&t=st=1713331725~exp=1713332325~hmac=78525ed90760d178595c9761ab144cb5e1e4dc6c8feb39009baf19663294d0b9",
       details:
         "Responsible for Teaching data science prototypes, designing ML systems and developing ML Applications",
       openPositions: "3",
@@ -64,7 +64,7 @@ const jobs = [
     },
     {
       title: "Data Entry Specialist",
-      image: "https://tse1.mm.bing.net/th?id=OIP.SoAFlDeFypUeKI6axeOLfwHaEK&pid=Api&P=0&h=180",
+      image: "https://img.freepik.com/free-photo/cropped-view-hands-typing-laptop_1262-3196.jpg?t=st=1713331790~exp=1713335390~hmac=49bc1bb26d7942bae0c5d163ba32198e0c58503de0330ca542649530d4682751&w=996",
       details:
         "Input and manage data accurately and efficiently using various software tools.",
       openPositions: "5",
