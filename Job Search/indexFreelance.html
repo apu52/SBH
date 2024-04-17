@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>get freelance</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style2.css" />
-  </head>
-  <body>
-    <div class="jobs-list-container">
-      <h2>6 Internship</h2>
-      <div class="result-count"></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>get freelance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style2.css" />
+</head>
+
+<body>
+  <div class="jobs-list-container">
+    <h2>6 Internship</h2>
+    <div class="result-count"></div>
 
 
-      <input class="job-search" type="text" placeholder="Search here..." />
+    <input class="job-search" type="text" placeholder="Search here..." />
 
-      <div class="jobs"></div>
+    <div class="jobs"></div>
+  </div>
+  <!-- Accessibility Mode Button -->
+  <div class="accessibility-button hover-speak" onclick="toggleAccessibilityMenu()"
+    onmouseover="speakText('click here to select accessibility mode')" onmouseleave="stopSpeaking()">
+    <div class="accessibility-icon">
+
     </div>
-        <!-- Accessibility Mode Button -->
- <div class="accessibility-button hover-speak" onclick="toggleAccessibilityMenu()"
- onmouseover="speakText('click here to select accessibility mode')" onmouseleave="stopSpeaking()">
- <div class="accessibility-icon">
+  </div>
 
- </div>
-</div>
+  <!-- Accessibility Menu -->
+  <div class="accessibility-menu" id="accessibilityMenu">
+    <ul>
+      <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
+          onmouseover="speakText('click here to change the screen reader mode')" onmouseleave="stopSpeaking()">Enable
+          Screen Reader</button></li>
+      <li><button onclick="toggleKeyboardNavigation()">Enable Voice Recognition</button></li>
+    </ul>
+  </div>
 
-<!-- Accessibility Menu -->
-<div class="accessibility-menu" id="accessibilityMenu">
- <ul>
-   <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
-       onmouseover="speakText('click here to change the screen reader mode')" onmouseleave="stopSpeaking()">Enable
-       Screen Reader</button></li>
-   <li><button onclick="toggleKeyboardNavigation()">Enable Voice Recognition</button></li>
- </ul>
-</div>
-    
 
-    <script src="main2.js"></script>
-  </body>
+  <script src="main2.js"></script>
+</body>
+
 </html>

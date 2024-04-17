@@ -1,4 +1,7 @@
-
+body{
+  background: rgb(215,177,177);
+background: linear-gradient(135deg, rgba(215,177,177,1) 0%, rgba(207,221,221,1) 14%);
+}
 .jobs-list-container {
     max-width: 900px;
     margin: 20px auto;
@@ -29,6 +32,7 @@
     display: flex;
     flex-direction: column;
     transition: all 400ms ease;
+    border: 1px solid black;
   }
   
   .jobs-list-container .job:hover {
