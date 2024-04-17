@@ -177,11 +177,12 @@ if (annyang) {
   var commands = {
     'go to home': () => {
       // navigateToPage('home');
-        window.location.href = '../gamify.html';
+      var url ='index.html#home'
+      window.location.href = url; //not working
   },
   'go to about us': () => {
       // navigateToPage('about');
-        window.location.href = '../gamify.html';
+        window.location.href = 'index.html#home'; 
   },
   'go to courses': () => {
       // navigateToPage('courses');
@@ -189,25 +190,31 @@ if (annyang) {
   },
   'go to find a job': () => {
       // navigateToPage('find-job');
-        window.location.href = '../gamify.html';
+        window.location.href = '../Job Search/indexjobsearch.html';
+  },
+  'go to internship oppurtunities': () => {
+    // navigateToPage('find-job');
+      window.location.href = '../Job Search/indexinternshipsearch.html';
+  },
+  'go to freelancing offers': () => {
+  // navigateToPage('find-job');
+    window.location.href = '../Job Search/indexFreelance.html';
   },
   'go to mini games': () => {
       // navigateToPage('mini-games');
-        window.location.href = '../gamify.html';
-      
-            
+        window.location.href = '../gamify.html';         
   },
   'go to testimonials': () => {
       // navigateToPage('testimonials');
-        window.location.href = '../gamify.html';
+        window.location.href = 'index.html#home';
   },
   'go to contact us': () => {
       // navigateToPage('contact');
-        window.location.href = '../gamify.html';
+        window.location.href = '../contact_us/contact.html';
   },
-  'go to log in': () => {
+  'go to login': () => {
       // navigateToPage('login');
-        window.location.href = '../gamify.html';
+        window.location.href = 'login.html';
   }
   };
       // Function to navigate to a specific page
