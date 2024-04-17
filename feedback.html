@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <div class="glassmorphism-container">
-            <h1 class="feedback-heading">HOW WAS YOUR EXPERIENCE?</h1>
+            <h1 class="feedback-heading hover-speak" onmouseover="speakText('HOW WAS YOUR EXPERIENCE')" onmouseleave="stopSpeaking()">HOW WAS YOUR EXPERIENCE?</h1>
 
             <!-- <div class="stars" id="stars-container"> -->
             <!-- Stars will be added dynamically using JavaScript -->
@@ -25,40 +25,40 @@
 
 
 
-            <p>How easy was it to navigate through the website?</p>
+            <p class="hover-speak" onmouseover="speakText('How easy was it to navigate through the website')" onmouseleave="stopSpeaking()">How easy was it to navigate through the website?</p>
             <div class="stars" id="navEase-stars-container"></div>
             <p id="navEase-rating-text">Rating: 0</p>
 
-            <p>How much straightforward and easy was the QUIZ process?</p>
+            <p class="hover-speak" onmouseover="speakText('How much straightforward and easy was the QUIZ process')" onmouseleave="stopSpeaking()">How much straightforward and easy was the QUIZ process?</p>
             <div class="stars" id="bookingProcess-stars-container"></div>
             <p id="bookingProcess-rating-text">Rating: 0</p>
 
-            <p>How much you will recommend Our courses to your Community?</p>
+            <p class="hover-speak" onmouseover="speakText('How much you will recommend Our courses to your Community')" onmouseleave="stopSpeaking()">How much you will recommend Our courses to your Community?</p>
             <div class="stars" id="paymentOptions-stars-container"></div>
             <p id="paymentOptions-rating-text">Rating: 0</p>
 
-            <p>How responsive and helpful was the customer support team?</p>
+            <p class="hover-speak" onmouseover="speakText('How responsive and helpful was the customer support team?')" onmouseleave="stopSpeaking()">How responsive and helpful was the customer support team?</p>
             <div class="stars" id="customerSupport-stars-container"></div>
             <p id="customerSupport-rating-text">Rating: 0</p>
 
-            <p>How much would you recommend this Eduversity Web App to others?</p>
+            <p class="hover-speak" onmouseover="speakText('How much would you recommend this Eduversity Web App to others')" onmouseleave="stopSpeaking()">How much would you recommend this Eduversity Web App to others?</p>
             <div class="stars" id="recommendation-stars-container"></div>
             <p id="recommendation-rating-text">Rating: 0</p>
 
-            <p>If you've bought a Course from this website, how was the overall experience?</p>
+            <p class="hover-speak" onmouseover="speakText('If you have bought a Course from this website, how was the overall experience')" onmouseleave="stopSpeaking()">If you've bought a Course from this website, how was the overall experience?</p>
             <div class="stars" id="packageTour-stars-container"></div>
             <p id="packageTour-rating-text">Rating: 0</p>
 
             <!-- Feedback input box section -->
             <div>
 
-                <label for="feedback-input" id="rating-text">Your feedback:</label>
+                <label for="feedback-input" id="rating-text" class="hover-speak" onmouseover="speakText('Your feedback')" onmouseleave="stopSpeaking()">Your feedback:</label>
                 <br><br>
-                <textarea id="feedback-input" placeholder="Please Write Your honest review!"></textarea>
+                <textarea id="feedback-input" placeholder="Please Write Your honest review!" method="post"></textarea>
             </div>
-            <button class="button" onclick="submitFeedback()">Submit</button>
+            <button id="myButton" class="button hover-speak" onclick="submitFeedback()" onmouseover="speakText('Submit Your feedback')" onmouseleave="stopSpeaking()">Submit</button>
         </div>
-        <div><button class="button" onclick="location.href = 'Eduversity/index.html';">Return To Home Page</button></div>
+        <div><button class="button hover-speak" onclick="location.href = 'Eduversity/index.html';" onmouseover="speakText('Return To Home Page')" onmouseleave="stopSpeaking()">Return To Home Page</button></div>
     </div>
 
     </div>
@@ -66,6 +66,25 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <script src="feedback.js" defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+
+    <!-- Accessibility Mode Button -->
+<div class="accessibility-button hover-speak" onclick="toggleAccessibilityMenu()"
+onmouseover="speakText('click here to select accessibility mode')" onmouseleave="stopSpeaking()">
+<div class="accessibility-icon">
+
+</div>
+</div>
+
+<!-- Accessibility Menu -->
+<div class="accessibility-menu" id="accessibilityMenu">
+<ul>
+  <li><button class="hover-speak" onclick="toggleScreenReader()" id="screenReaderButton"
+      onmouseover="speakText('click here to change the screen reader mode')" onmouseleave="stopSpeaking()">Enable
+      Screen Reader</button></li>
+      <li><button onclick="toggleVoiceRecognition()" id="voiceRecognitionButton">Enable Voice Recognition</button></li>
+</ul>
+</div>
 </body>
 
 </html>
