@@ -25,7 +25,7 @@
  </p>
  </div>
 
- <h2>Hi there👋, All the tech Enthusiasts </h2>
+ <h2>Hi there 👋, All the tech Enthusiasts </h2>
 
 
 <p>Hello All Tech Enthusiasts👨‍💻 ,🤖 Here is our project of the front-end Web Developement.Welcome to EDUVERSITY! 🎓 Your ultimate destination for tech education catering to all, especially specially-abled students. Dive into courses, quizzes, and practice lessons. Explore top company internships, freelancing, and job opportunities. Enjoy special features like screen readers, keyboard accessibility, and voice recognition for seamless learning! 🚀
